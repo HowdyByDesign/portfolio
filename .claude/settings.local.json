@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx skills:*)",
+      "Read(//c/Users/Howdy/Downloads/**)",
+      "Bash(python -c \"import zipfile; z=zipfile.ZipFile\\(''ux-designer.zip''\\); print\\(''\\\\n''.join\\(z.namelist\\(\\)\\)\\)\")",
+      "Bash(python -c \"import zipfile; z=zipfile.ZipFile\\(''C:/Users/Howdy/Downloads/ux-designer-20260227T134443Z-3-001.zip''\\); print\\(''\\\\n''.join\\(z.namelist\\(\\)\\)\\)\")",
+      "Bash(python -c \"import zipfile; z=zipfile.ZipFile\\(''C:/Users/Howdy/Downloads/ui-designer-20260227T134446Z-3-001.zip''\\); print\\(''\\\\n''.join\\(z.namelist\\(\\)\\)\\)\")",
+      "Skill(ux-designer)",
+      "Skill(ux-designer:*)",
+      "Skill(ui-designer)",
+      "Skill(ui-designer:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npm:*)",
+      "Bash(where node:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/next/package.json''\\).version\\)\")",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"var fs=require\\(''fs''\\); [''components/Logo.tsx'',''components/Nav.tsx'',''components/HeroAnimated.tsx'',''app/layout.tsx'',''app/page.tsx'',''tailwind.config.ts''].forEach\\(function\\(f\\){var s=fs.readFileSync\\(f,''utf8''\\); var warn=s.indexOf\\(''font-sriracha''\\)>-1||s.indexOf\\(''Sriracha''\\)>-1; console.log\\(\\(warn?''WARN'':''OK''\\), f, s.length+''ch''\\);}\\)\")",
+      "Bash(node -e \"var fs=require\\(''fs''\\); [''app/work/air-force/page.tsx'',''app/work/dcmn/page.tsx'',''app/work/pfizer/page.tsx'',''app/about/page.tsx''].forEach\\(function\\(f\\){var s=fs.readFileSync\\(f,''utf8''\\); var hasSriracha=s.indexOf\\(''font-sriracha''\\)>-1; var hasSignet=s.indexOf\\(''font-signet''\\)>-1; var hasTldr=s.indexOf\\(''Problem''\\)>-1&&s.indexOf\\(''Action''\\)>-1&&s.indexOf\\(''Outcome''\\)>-1; console.log\\(f.split\\(''/''\\).slice\\(-2\\).join\\(''/''\\)+'': sriracha=''+hasSriracha+'' signet=''+hasSignet+'' tldr=''+hasTldr\\);}\\)\")",
+      "Bash(node -e \"var fs=require\\(''fs''\\); console.log\\(''playwright.config:'', fs.existsSync\\(''playwright.config.ts''\\)||fs.existsSync\\(''playwright.config.js''\\)\\); console.log\\(''tests dir:'', fs.existsSync\\(''tests''\\)||fs.existsSync\\(''e2e''\\)||fs.existsSync\\(''test''\\)\\); console.log\\(''playwright in deps:'', JSON.stringify\\(JSON.parse\\(fs.readFileSync\\(''package.json'',''utf8''\\)\\).devDependencies||{}\\).includes\\(''playwright''\\)\\);\")",
+      "Bash(npx playwright:*)",
+      "Bash(dir \"C:\\\\Users\\\\Howdy\\\\AppData\\\\Local\\\\ms-playwright\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(npx kill-port:*)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":3001\")",
+      "Bash(findstr LISTENING)",
+      "Bash(taskkill /PID 228 /F)",
+      "Bash(cmd /c \"taskkill /PID 228 /F\")",
+      "Bash(cmd /c \"del /f C:\\\\Users\\\\Howdy\\\\Desktop\\\\portfolio\\\\.next\\\\dev\\\\lock\")",
+      "Bash(cmd /c \"more C:\\\\Users\\\\Howdy\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Howdy-Desktop-portfolio\\\\tasks\\\\brzo6t7xd.output\")"
+    ]
+  }
+}

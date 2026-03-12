@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #FF3200;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  /* Reusable section label — small all-caps zinc-400 */
+  .label {
+    @apply text-xs font-semibold text-zinc-400 tracking-widest uppercase;
+  }
+
+  /* Left-border callout blocks */
+  .callout {
+    @apply pl-5 border-l-2 border-zinc-200 py-0.5;
+  }
+
+  /* Dark callout for Messy Middle section */
+  .callout-dark {
+    @apply bg-zinc-950 text-white rounded-2xl p-8;
+  }
+
+  /* Section separator */
+  .rule {
+    @apply border-t border-zinc-100 pt-16;
+  }
+}

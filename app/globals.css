@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Exponential easing curves — use in inline styles or CSS where Tailwind classes can't reach */
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Warm tinted base — feels human, not clinical */
+    background-color: #faf8f7; /* warm-50 */
+    /* Deep warm near-black — never pure #000 */
+    color: #252120; /* warm-900 */
+    /* 8pt geometric dot grid — fixed canvas, warm-300 at 10% */
+    background-image: radial-gradient(circle, rgba(205, 198, 190, 0.10) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    background-attachment: fixed;
+    background-position: 12px 12px;
+  }
+
+  /* Fade out the grid for print / reduced-motion users */
+  @media (prefers-reduced-motion: reduce) {
+    body { background-image: none; }
+  }
+
+  /* Stint Ultra Expanded — tight tracking by default for architectural feel */
+  .font-signet {
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background-color: #FF3200;
+    color: #faf8f7;
+  }
+}
+
+@layer components {
+  /* Section label — small all-caps in warm-400 */
+  .label {
+    @apply text-xs font-semibold text-warm-400 tracking-widest uppercase;
+  }
+
+  /* Section separator */
+  .rule {
+    @apply border-t border-warm-100 pt-16;
+  }
+}
