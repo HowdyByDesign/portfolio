@@ -570,7 +570,7 @@ export default function AirForceCaseStudy() {
                     This report used to take a full day; now it takes 15 minutes.
                   </p>
                   <footer className="mt-8 flex items-center gap-4">
-                    <span className="font-signet italic font-bold tracking-tight text-base text-accent leading-none">Howdy</span>
+                    <span className="font-signet font-bold tracking-tight text-base text-accent leading-none">Howdy</span>
                     <span className="w-px h-5 bg-warm-200" aria-hidden />
                     <cite className="not-italic text-xs text-warm-400 uppercase tracking-widest">
                       Unit Training Manager · DAF

@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import HeroAnimated from "@/components/HeroAnimated";
+
+export const metadata: Metadata = {
+  title: "Ben Howard | Systems Architect & Design Strategist",
+  description:
+    "Specializing in enterprise digital transformation, AI integration, and design systems for global organizations like the U.S. Air Force and Pfizer.",
+};
 
 // ─── UPDATE THESE ────────────────────────────────────────────────────────────
 const credentials = [

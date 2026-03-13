@@ -19,16 +19,19 @@ import { test, expect } from "@playwright/test";
 test.describe("Typography — font-signet (Stint Ultra Expanded)", () => {
   test("Howdy! on homepage uses font-signet", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByText("Howdy!", { exact: true })).toHaveClass(
+    // Scoped to main — footer also contains a Howdy! signature
+    await expect(page.locator("main").getByText("Howdy!", { exact: true })).toHaveClass(
       /font-signet/
     );
   });
 
   test("Howdy! on about page uses font-signet", async ({ page }) => {
     await page.goto("/about");
-    await expect(page.getByText("Howdy!", { exact: true })).toHaveClass(
-      /font-signet/
-    );
+    // Scoped to main — footer also contains a Howdy! signature.
+    // .first() because the portrait overlay adds a second aria-hidden Howdy! node.
+    await expect(
+      page.locator("main").getByText("Howdy!", { exact: true }).first()
+    ).toHaveClass(/font-signet/);
   });
 
   test("case study Howdy signatures use font-signet, not font-sriracha", async ({
@@ -78,7 +81,7 @@ test.describe("Color — warm palette + accent", () => {
   test("Logo SVG path fill attribute is #FF3200", async ({ page }) => {
     await page.goto("/");
     const fill = await page
-      .locator("header svg path")
+      .locator('header svg[aria-label="Howdy by Design"] path')
       .getAttribute("fill");
     expect(fill?.toUpperCase()).toBe("#FF3200");
   });
@@ -143,7 +146,7 @@ test.describe("Navigation stagger animation", () => {
     await page.goto("/");
     await page.waitForTimeout(300);
     const items = page.locator("header nav ul li");
-    await expect(items).toHaveCount(3);
+    await expect(items).toHaveCount(4);
     for (const item of await items.all()) {
       await expect(item).toBeVisible();
     }

@@ -167,7 +167,7 @@ export default function DcmnCaseStudy() {
             At the start of each month, I had five reports due. Each one could take a full day.
           </p>
           <footer className="mt-6 flex items-center gap-4">
-            <span className="font-signet italic font-bold tracking-tight text-base text-accent leading-none">Howdy</span>
+            <span className="font-signet font-bold tracking-tight text-base text-accent leading-none">Howdy</span>
             <span className="w-px h-5 bg-warm-200" aria-hidden />
             <cite className="not-italic text-xs text-warm-400 uppercase tracking-widest">
               Janine · Senior Marketing Strategist, DCMN

@@ -21,7 +21,8 @@ test.describe("Homepage", () => {
   // ── Hero ──────────────────────────────────────────────────────────────────
 
   test("renders Howdy! brand signature in font-signet", async ({ page }) => {
-    const greeting = page.getByText("Howdy!", { exact: true });
+    // Scoped to main — footer also contains a Howdy! signature
+    const greeting = page.locator("main").getByText("Howdy!", { exact: true });
     await expect(greeting).toBeVisible();
     await expect(greeting).toHaveClass(/font-signet/);
   });

@@ -24,18 +24,34 @@ const zillaSlab = Zilla_Slab({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://howdybydesign.com"),
   title: {
-    default: "Ben Howard — Staff Designer",
+    default: "Ben Howard — Senior Product Designer & Systems Strategist",
     template: "%s — Ben Howard",
   },
   description:
-    "I design the systems that modernize how complex organizations operate — working at the intersection of organizational complexity, AI integration, and measurable business outcomes.",
+    "Nine years designing for Pfizer, the U.S. Air Force, and Capital Group. I orchestrate digital systems that reclaim thousands of manual hours and modernize enterprise operations.",
   openGraph: {
-    title: "Ben Howard — Staff Designer",
+    title: "Ben Howard — Senior Product Designer & Systems Strategist",
     description:
-      "I design the systems that modernize how complex organizations operate.",
+      "Bridging the gap between complex user needs and strategic business goals with a d.MBA lens.",
     type: "website",
     url: "https://howdybydesign.com",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ben Howard — Senior Product Designer & Systems Strategist",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ben Howard — Senior Product Designer & Systems Strategist",
+    description:
+      "Bridging the gap between complex user needs and strategic business goals with a d.MBA lens.",
+    images: ["/og-image.png"],
   },
 };
 

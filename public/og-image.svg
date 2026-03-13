@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Warm-50 background -->
+    <rect id="bg" width="1200" height="630" fill="#F9F8F6"/>
+
+    <!-- Dot-grid pattern -->
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1.2" fill="#E8E4DC"/>
+    </pattern>
+
+    <!-- Subtle radial vignette to focus the center -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="72%">
+      <stop offset="0%" stop-color="#F9F8F6" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#EDE9E1" stop-opacity="0.55"/>
+    </radialGradient>
+
+    <!-- H Signet clip / mask  -->
+    <clipPath id="signetClip">
+      <rect x="80" y="215" width="200" height="200" rx="20"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── Layer 0: Base fill ───────────────────────────────────────────── -->
+  <rect width="1200" height="630" fill="#F9F8F6"/>
+
+  <!-- ── Layer 1: Dot grid ────────────────────────────────────────────── -->
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- ── Layer 2: Vignette ────────────────────────────────────────────── -->
+  <rect width="1200" height="630" fill="url(#vignette)"/>
+
+  <!-- ── Layer 3: Left accent bar ─────────────────────────────────────── -->
+  <rect x="80" y="80" width="4" height="470" rx="2" fill="#FF3200" opacity="0.18"/>
+
+  <!-- ── Layer 4: H Signet (simplified geometric mark) ───────────────── -->
+  <!--
+    Faithful reproduction of the portfolio H Signet in #FF3200.
+    Two vertical strokes + one horizontal crossbar, set inside a
+    generous white card so it reads as a deliberate badge.
+  -->
+  <rect x="80" y="200" width="176" height="176" rx="18" fill="#FFFFFF" opacity="0.72"/>
+  <!-- Left vertical -->
+  <rect x="118" y="228" width="22" height="120" rx="4" fill="#FF3200"/>
+  <!-- Right vertical -->
+  <rect x="216" y="228" width="22" height="120" rx="4" fill="#FF3200"/>
+  <!-- Crossbar -->
+  <rect x="118" y="282" width="120" height="22" rx="4" fill="#FF3200"/>
+
+  <!-- ── Layer 5: Name ──────────────────────────────────────────────────
+    Bricolage Grotesque isn't available as an SVG-embedded font, so we
+    fall back to system-ui / Georgia for the PNG rasterisation step.
+    The weight + letter-spacing matches the portfolio's font-display heading.
+  -->
+  <text
+    x="308"
+    y="292"
+    font-family="'Bricolage Grotesque', 'Georgia', serif"
+    font-size="68"
+    font-weight="700"
+    letter-spacing="-1.5"
+    fill="#1A1814"
+  >Ben Howard</text>
+
+  <!-- ── Layer 6: Tagline in Zilla Slab Bold Italic ───────────────────── -->
+  <text
+    x="310"
+    y="352"
+    font-family="'Zilla Slab', 'Georgia', serif"
+    font-size="30"
+    font-weight="700"
+    font-style="italic"
+    letter-spacing="-0.2"
+    fill="#FF3200"
+  >Systems Architect &amp; Design Strategist</text>
+
+  <!-- ── Layer 7: Descriptor line ─────────────────────────────────────── -->
+  <text
+    x="310"
+    y="398"
+    font-family="'Instrument Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="21"
+    font-weight="400"
+    letter-spacing="0.2"
+    fill="#7C7469"
+  >Pfizer · U.S. Air Force · Capital Group</text>
+
+  <!-- ── Layer 8: Bottom rule + domain ───────────────────────────────── -->
+  <rect x="80" y="536" width="1040" height="1" fill="#E8E4DC"/>
+  <text
+    x="80"
+    y="572"
+    font-family="'Instrument Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="18"
+    font-weight="500"
+    letter-spacing="0.8"
+    fill="#B3ADA6"
+  >howdybydesign.com</text>
+
+  <!-- ── Layer 9: "Howdy!" brand signature (top-right) ─────────────────── -->
+  <text
+    x="1120"
+    y="572"
+    text-anchor="end"
+    font-family="'Zilla Slab', 'Georgia', serif"
+    font-size="22"
+    font-weight="700"
+    font-style="italic"
+    fill="#FF3200"
+    opacity="0.55"
+  >Howdy!</text>
+</svg>

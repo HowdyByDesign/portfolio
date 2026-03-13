@@ -87,12 +87,12 @@ test.describe("Navigation", () => {
 
   // ── Stagger timing contract ─────────────────────────────────────────────
 
-  test("all 3 nav links visible within 300ms stagger budget", async ({ page }) => {
-    // delayChildren 120ms + staggerChildren 55ms × 2 = 230ms for last link.
+  test("all 4 nav links visible within 300ms stagger budget", async ({ page }) => {
+    // delayChildren 120ms + staggerChildren 55ms × 3 = 285ms for last link (LinkedIn icon).
     // Waiting 300ms ensures every item is well into its reveal animation.
     await page.waitForTimeout(300);
     const items = page.locator("header nav ul li");
-    await expect(items).toHaveCount(3);
+    await expect(items).toHaveCount(4);
     for (const item of await items.all()) {
       await expect(item).toBeVisible();
     }
