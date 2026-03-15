@@ -29,7 +29,7 @@ test.describe("Homepage", () => {
 
   test("renders role label", async ({ page }) => {
     await expect(
-      page.getByText("Senior Product Designer · 9 Years Experience", {
+      page.getByText("UX Strategist · 10 Years Experience", {
         exact: true,
       })
     ).toBeVisible();
@@ -38,7 +38,7 @@ test.describe("Homepage", () => {
   test("H1 is present and contains the brand statement", async ({ page }) => {
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toBeVisible();
-    await expect(h1).toContainText("I design systems");
+    await expect(h1).toContainText("I orchestrate solutions");
   });
 
   // ── CTAs ──────────────────────────────────────────────────────────────────
@@ -67,16 +67,16 @@ test.describe("Homepage", () => {
   test("renders three impact metric cards below the hero copy", async ({
     page,
   }) => {
-    // The <p> textContent includes the unit span text: "9yrs", "4k+", "3×".
+    // The <p> textContent includes the unit span text: "10yrs", "4k+", "3×".
     // exact: true matches the <p> itself; parent <div> text is longer so it won't match.
-    await expect(page.getByText("9yrs", { exact: true })).toBeVisible();
+    await expect(page.getByText("10yrs", { exact: true })).toBeVisible();
     await expect(page.getByText("4k+",  { exact: true })).toBeVisible();
     await expect(page.getByText("3×",   { exact: true })).toBeVisible();
   });
 
   test("metric labels describe the stats", async ({ page }) => {
     await expect(
-      page.getByText("Enterprise design experience", { exact: true })
+      page.getByText("Enterprise UX strategy experience", { exact: true })
     ).toBeVisible();
     await expect(
       page.getByText("Daily active users on live systems", { exact: true })

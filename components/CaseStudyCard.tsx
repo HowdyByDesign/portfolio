@@ -50,7 +50,7 @@ export default function CaseStudyCard({
           <div className="flex items-center gap-2 mb-4">
             <span className="label">{client}</span>
             {nda && (
-              <span className="text-[10px] font-semibold text-warm-300 tracking-widest uppercase">
+              <span className="text-[10px] font-semibold text-warm-700 tracking-widest uppercase">
                 · NDA
               </span>
             )}
@@ -80,11 +80,11 @@ export default function CaseStudyCard({
             </span>
           </div>
 
-          <p className="text-warm-500 leading-relaxed mt-4 max-w-2xl text-[0.9375rem]">
+          <p className="text-warm-900 font-medium leading-relaxed mt-4 max-w-2xl text-[0.9375rem]">
             {description}
           </p>
 
-          <p className="text-xs text-warm-300 mt-5">{category}</p>
+          <p className="text-xs font-semibold text-warm-700 tracking-widest uppercase mt-5">{category}</p>
         </div>
       </div>
     </Link>

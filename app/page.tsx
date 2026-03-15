@@ -4,7 +4,7 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import HeroAnimated from "@/components/HeroAnimated";
 
 export const metadata: Metadata = {
-  title: "Ben Howard | Systems Architect & Design Strategist",
+  title: "Ben Howard | UX Strategist",
   description:
     "Specializing in enterprise digital transformation, AI integration, and design systems for global organizations like the U.S. Air Force and Pfizer.",
 };
@@ -23,7 +23,7 @@ const caseStudies = [
     category: "Enterprise Platform · Design Systems · Defense",
     title: "Modernizing Mission-Critical Training at Scale",
     description:
-      "A 20-year-old training and readiness management system was costing the Air Force millions in annual maintenance and weeks of operational friction per cycle. I led the end-to-end redesign — new interaction model, unified design system, governance structure — and delivered 3 months ahead of schedule. Now serving 4,000+ daily active users, with Phase 2 approved and funded.",
+      "A 20-year-old training platform was costing the Air Force millions annually while leaving Airmen without a reliable readiness source of truth. I orchestrated the full modernization — synthesizing stakeholder needs across commands into a unified strategic blueprint, establishing a governance structure built to outlast the project, and delivering 3 months ahead of schedule through co-creation strategy sessions that aligned design intent before a single sprint began. Now serving 4,000+ daily active users, with Phase 2 approved and funded.",
     href: "/work/air-force",
     nda: true,
   },
@@ -33,7 +33,7 @@ const caseStudies = [
     category: "Dashboard Design · Data Visualization · Performance Marketing",
     title: "Eliminating 400 Hours of Monthly Reporting Waste",
     description:
-      "A performance marketing agency with 50 clients was burning 400 hours every month on manual Excel reporting — error-prone, inconsistent, and impossible to scale. I led the end-to-end redesign through weekly workshops, user research, and a fully connected live dashboard. Adopted by 40 individuals across 5 internal teams. The Excel templates are gone.",
+      "A performance marketing agency was burning 400 hours monthly on manual Excel reporting while its most strategic talent was trapped doing data entry. I orchestrated the solution — synthesizing stakeholder and user needs across 5 teams into a unified strategic blueprint, then delivering a fully connected live dashboard that eliminated the manual cycle entirely. Adopted by 40 individuals across the organization. The Excel templates are gone.",
     href: "/work/dcmn",
     nda: false,
   },
@@ -43,7 +43,7 @@ const caseStudies = [
     category: "Generative AI · Enterprise SaaS · Pharmaceutical",
     title: "Designing for Trust in a Gen AI Marketing System",
     description:
-      "Pfizer's marketing teams needed a Gen AI tool for brand-specific pharmaceutical copy — inside a regulatory environment that doesn't move as fast as the technology. The design challenge wasn't the UI. It was building enough transparency into the system that marketers could use and defend its outputs. I led UX through MVP delivery and beta onboarding.",
+      "Pfizer's marketing teams faced low AI adoption — not because of poor UX, but because marketers couldn't defend generated outputs in medical-legal review. I reframed the problem as a transparency design challenge, orchestrated cross-functional alignment across marketing, regulatory, and engineering stakeholders, and developed the strategic blueprint that repositioned AI as an Idea Accelerator. MVP delivered for beta onboarding.",
     href: "/work/pfizer",
     nda: true,
   },

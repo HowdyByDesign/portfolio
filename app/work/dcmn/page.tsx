@@ -6,15 +6,15 @@ import EfficiencyMap from "@/components/EfficiencyMap";
 export const metadata: Metadata = {
   title: "DCMN Reporting Dashboard",
   description:
-    "Eliminating 400 hours of monthly manual Excel reporting at a performance marketing agency through user research, workshop facilitation, and a connected dashboard.",
+    "Eliminating 400 hours of monthly manual Excel reporting at a performance marketing agency through co-creation strategy sessions, user research, and a strategic reporting system that unified 50 clients onto a single platform.",
 };
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
 const meta = [
-  { label: "Role",      value: "Systems Architect · Lead UX/UI Designer" },
+  { label: "Role",      value: "UX Strategist · Sole Strategic Designer" },
   { label: "Timeline",  value: "6 months · 2021–2022" },
-  { label: "Deliverables", value: "Workshop facilitation, user research, standardized reporting system, usability testing" },
+  { label: "Deliverables", value: "Co-creation strategy sessions, user research, customer experience blueprints, standardized reporting system" },
 ];
 
 const constraints = [
@@ -133,7 +133,7 @@ export default function DcmnCaseStudy() {
             },
           ].map(({ label, text }) => (
             <div key={label} className="flex gap-3 items-baseline">
-              <span className="font-signet font-semibold text-xs text-warm-400 uppercase tracking-widest w-16 flex-shrink-0">
+              <span className="font-signet font-bold text-xs text-[#FF3200] uppercase tracking-widest w-16 flex-shrink-0">
                 {label}
               </span>
               <p className="text-sm text-warm-600 leading-relaxed">{text}</p>
@@ -184,7 +184,7 @@ export default function DcmnCaseStudy() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="grid grid-cols-3 divide-x divide-warm-200">
             {[
-              { label: "Role",      value: "Lead Designer" },
+              { label: "Role",      value: "Strategic Designer" },
               { label: "Timeline",  value: "6 Months" },
               { label: "Impact",    value: "400 hrs/mo" },
             ].map((item) => (
@@ -204,12 +204,13 @@ export default function DcmnCaseStudy() {
 
         {/* ── Hook summary + Hero image ─────────────────────────────────── */}
         <section className="pt-12 pb-16 border-b border-warm-100">
-          <p className="text-warm-500 leading-relaxed mb-10 max-w-[58ch]">
+          <p className="text-warm-900 font-medium leading-relaxed mb-10 max-w-[58ch]">
             400 hours of monthly strategist capacity reclaimed. I orchestrated the
-            end-to-end redesign — facilitated discovery workshops, user research, and
-            a standardized live dashboard — that unified 50 client accounts onto a
-            single reporting platform and achieved institutional alignment company-wide.
-            Adopted by 40 individuals across 5 internal teams. The Excel templates are gone.
+            full transformation — leading co-creation strategy sessions to synthesize
+            stakeholder and user needs across 5 teams, then developing the strategic
+            blueprint for a live dashboard that unified 50 client accounts onto a
+            single platform and achieved institutional alignment company-wide.
+            Adopted by 40 individuals across the organization. The Excel templates are gone.
           </p>
 
           <div className="rounded-xl overflow-hidden border border-warm-100">
@@ -230,7 +231,7 @@ export default function DcmnCaseStudy() {
           <div className="space-y-8 mb-12">
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">The organization</h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 DCMN is a performance marketing agency specializing in offline channels —
                 TV, audio, out-of-home — for growth-stage companies. The business model
                 depends on demonstrating measurable channel performance to clients every
@@ -240,7 +241,7 @@ export default function DcmnCaseStudy() {
             </div>
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">The target user</h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 Janine — a senior marketing strategist and our primary target user — put it
                 plainly: a single client report could consume a full working day, and at
                 the start of each month, she had up to five clients expecting reports
@@ -255,7 +256,7 @@ export default function DcmnCaseStudy() {
             {constraints.map((c) => (
               <div key={c.title} className="pl-5 border-l-2 border-warm-200 py-1">
                 <p className="text-sm font-semibold text-warm-800 mb-1">{c.title}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{c.body}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{c.body}</p>
               </div>
             ))}
           </div>
@@ -270,7 +271,7 @@ export default function DcmnCaseStudy() {
               <h2 className="font-display text-h2 font-semibold text-warm-900 mb-4 leading-tight">
                 From Excel Slog to Live Dashboard
               </h2>
-              <p className="text-warm-500 leading-relaxed mb-10">
+              <p className="text-warm-900 font-medium leading-relaxed mb-10">
                 Every step below represents time that was no longer available for the work
                 that matters. The left column shows what the team was losing every month.
                 The right column is what replaced it.
@@ -297,7 +298,7 @@ export default function DcmnCaseStudy() {
               </div>
               <div className="border-l-2 border-warm-200 pl-4">
                 <p className="text-xs font-semibold text-warm-400 uppercase tracking-widest mb-2">Process age</p>
-                <p className="text-xs text-warm-500 leading-relaxed">The Excel workflow had existed for 4+ years before the redesign killed it in 6 months.</p>
+                <p className="text-xs text-warm-900 font-medium leading-relaxed">The Excel workflow had existed for 4+ years before the redesign killed it in 6 months.</p>
               </div>
             </aside>
           </div>
@@ -313,14 +314,15 @@ export default function DcmnCaseStudy() {
               <div className="space-y-8">
                 <div>
                   <h3 className="text-sm font-semibold text-warm-700 mb-3">
-                    Weekly workshops as the engine
+                    Co-creation strategy sessions as the engine
                   </h3>
-                  <p className="text-warm-500 leading-relaxed">
-                    I facilitated weekly workshops via Miro with the product team and internal
-                    users throughout the engagement. These weren&apos;t status meetings — they
-                    were working sessions where we audited the current reports together,
-                    surfaced disagreements about what data mattered, and negotiated the
-                    information architecture of the new system in real time.
+                  <p className="text-warm-900 font-medium leading-relaxed">
+                    I orchestrated weekly co-creation strategy sessions via Miro with the
+                    product team and internal users throughout the engagement. These weren&apos;t
+                    status meetings — they were structured alignment sessions where we audited
+                    the current reports together, synthesized competing views on what data
+                    mattered, and built stakeholder consensus on the information architecture
+                    of the new system before a single component was designed.
                   </p>
                 </div>
 
@@ -328,7 +330,7 @@ export default function DcmnCaseStudy() {
                   <h3 className="text-sm font-semibold text-warm-700 mb-3">
                     Auditing what existed — before designing anything new
                   </h3>
-                  <p className="text-warm-500 leading-relaxed">
+                  <p className="text-warm-900 font-medium leading-relaxed">
                     Before committing to a direction, I audited the existing reports and
                     catalogued the most common data points across all client accounts. The
                     audit revealed that roughly 70% of the content was consistent — the
@@ -389,7 +391,7 @@ export default function DcmnCaseStudy() {
           <h2 className="font-display text-h2 font-semibold text-warm-900 mb-4 leading-tight">
             The Hard Part
           </h2>
-          <p className="text-warm-500 leading-relaxed mb-10 max-w-[54ch]">
+          <p className="text-warm-900 font-medium leading-relaxed mb-10 max-w-[54ch]">
             The resistance, the prototype that missed, and the political KPI negotiations
             that shaped the final system.
           </p>
@@ -397,7 +399,7 @@ export default function DcmnCaseStudy() {
           <div className="space-y-4">
             {hardPart.map((item) => (
               <div key={item.label} className="bg-warm-950 text-warm-100 rounded-xl p-8">
-                <p className="text-xs font-semibold text-warm-500 uppercase tracking-widest mb-4">
+                <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
                   {item.label}
                 </p>
                 <p className="text-warm-300 leading-relaxed text-[0.9375rem]">{item.body}</p>
@@ -409,7 +411,7 @@ export default function DcmnCaseStudy() {
         {/* ── 05 — The Dashboard System ────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
           <p className="label mb-10">05 — The Dashboard System</p>
-          <p className="text-warm-500 leading-relaxed mb-8">
+          <p className="text-warm-900 font-medium leading-relaxed mb-8">
             The final dashboard split reporting into three distinct views aligned to how
             strategists actually communicate performance — not how the data happened to
             be structured in the source systems.
@@ -419,7 +421,7 @@ export default function DcmnCaseStudy() {
             {dashboardFeatures.map((item) => (
               <div key={item.view} className="pl-5 border-l-2 border-warm-200 py-1">
                 <p className="text-sm font-semibold text-warm-800 mb-1">{item.view}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{item.features}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.features}</p>
               </div>
             ))}
           </div>
@@ -486,7 +488,7 @@ export default function DcmnCaseStudy() {
                 <p className="sm:w-56 flex-shrink-0 text-sm font-semibold text-warm-900 leading-snug">
                   {item.metric}
                 </p>
-                <p className="text-sm text-warm-500 leading-relaxed">{item.detail}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -505,14 +507,14 @@ export default function DcmnCaseStudy() {
         {/* ── 07 — What I'd Do Differently ─────────────────────────────── */}
         <section className="py-16">
           <p className="label mb-8">07 — What I&apos;d Do Differently</p>
-          <p className="text-warm-500 leading-relaxed mb-4">
+          <p className="text-warm-900 font-medium leading-relaxed mb-4">
             I would have built the parallel validation period into the rollout plan
             intentionally rather than discovering it emergently. The insight — that letting
             teams self-verify accelerates adoption more than a hard cutover — was real and
             useful, but we stumbled into it. A planned transition protocol would have been
             faster and less anxious for the team members running dual systems.
           </p>
-          <p className="text-warm-500 leading-relaxed">
+          <p className="text-warm-900 font-medium leading-relaxed">
             I would also have pushed earlier for a client-facing version of the dashboard.
             We built for internal users first, and the shareable reporting capability was
             partially retrofitted. The client interaction model — exploring data live in a

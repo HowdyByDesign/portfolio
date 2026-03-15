@@ -70,9 +70,9 @@ const impactItems = [
       "Launched a unified platform now serving 4,000+ Airmen and Guardians daily across the Air Force — users who previously navigated a fragmented 20-year-old system.",
   },
   {
-    metric: "3 months ahead of schedule",
+    metric: "25% reduction in development cycles",
     detail:
-      "The agile design-to-development workflow we established delivered the full project scope three months ahead of schedule — a direct result of the constraint-first process and early stakeholder alignment.",
+      "Multi-day co-creation strategy sessions aligned design intent with engineering constraints before a single sprint began — eliminating the rework cycles that had plagued earlier project phases. A direct result of strategic stakeholder alignment, not design speed. Delivered the full project scope 3 months ahead of schedule.",
   },
   {
     metric: "Millions saved annually",
@@ -154,7 +154,7 @@ export default function AirForceCaseStudy() {
             },
             {
               label: "Action",
-              text: `Orchestrated end-to-end modernization of the ETMS platform — new interaction model, standardized design system, legacy data model reconciliation, and a governance structure built to outlast the project team.`,
+              text: `Orchestrated end-to-end modernization of the ETMS platform — developed the customer experience blueprint, synthesized stakeholder needs across commands into a unified strategy, and established a governance structure built to outlast the project team.`,
             },
             {
               label: "Outcome",
@@ -162,7 +162,7 @@ export default function AirForceCaseStudy() {
             },
           ].map(({ label, text }) => (
             <div key={label} className="flex gap-3 items-baseline">
-              <span className="font-signet font-semibold text-xs text-warm-400 uppercase tracking-widest w-16 flex-shrink-0">
+              <span className="font-signet font-bold text-xs text-[#FF3200] uppercase tracking-widest w-16 flex-shrink-0">
                 {label}
               </span>
               <p className="text-sm text-warm-600 leading-relaxed">{text}</p>
@@ -201,7 +201,7 @@ export default function AirForceCaseStudy() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="grid grid-cols-3 divide-x divide-warm-200">
             {[
-              { label: "Role",               value: "Lead Designer" },
+              { label: "Role",               value: "Strategic Designer" },
               { label: "Timeline",           value: "18 Months" },
               { label: "Daily Active Users", value: "4,000+" },
             ].map((item) => (
@@ -223,7 +223,7 @@ export default function AirForceCaseStudy() {
 
         {/* ── Hook summary + Hero image ─────────────────────────────────── */}
         <section className="pt-12 pb-16 border-b border-warm-100">
-          <p className="text-warm-500 leading-relaxed mb-10 max-w-[58ch]">
+          <p className="text-warm-900 font-medium leading-relaxed mb-10 max-w-[58ch]">
             I orchestrated the full modernization of the legacy ETMS on the MyVector
             platform — standardizing the interaction model and component architecture,
             reconciling fragmented training and personnel records across three
@@ -250,7 +250,7 @@ export default function AirForceCaseStudy() {
           <div className="space-y-8 mb-12">
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">The organization</h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 A mission-critical training and readiness management platform for a major
                 branch of the U.S. Armed Forces, operating at scale across multiple
                 installations. Users ranged from front-line personnel completing required
@@ -259,14 +259,15 @@ export default function AirForceCaseStudy() {
             </div>
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">My role</h3>
-              <p className="text-warm-500 leading-relaxed">
-                Systems architect and lead designer responsible for orchestrating the
-                end-to-end interaction model and standardizing the component architecture
-                across the platform. I owned stakeholder relationships across multiple
-                commands, facilitated a cross-functional design and research team, and
-                served as the primary bridge between design intent and engineering
-                constraints — including legacy data model decisions that no UI layer
-                could paper over.
+              <p className="text-warm-900 font-medium leading-relaxed">
+                Systems architect and lead UX strategist responsible for orchestrating
+                the full modernization — developing the customer experience blueprint,
+                synthesizing stakeholder and user needs across multiple commands into a
+                unified strategy, and establishing a governance structure built to outlast
+                the project team. I orchestrated the technical and business roadmap,
+                owned stakeholder relationships across commands, and drove the
+                co-creation strategy sessions that aligned design intent with
+                engineering constraints before sprints began.
               </p>
             </div>
           </div>
@@ -279,7 +280,7 @@ export default function AirForceCaseStudy() {
                 className="pl-5 border-l-2 border-warm-200 py-1"
               >
                 <p className="text-sm font-semibold text-warm-800 mb-1">{c.title}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{c.body}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{c.body}</p>
               </div>
             ))}
           </div>
@@ -309,7 +310,7 @@ export default function AirForceCaseStudy() {
                 <h3 className="text-sm font-semibold text-warm-700 mb-3">
                   The actual problem under the stated problem
                 </h3>
-                <p className="text-warm-500 leading-relaxed">
+                <p className="text-warm-900 font-medium leading-relaxed">
                   The client brief described a UI modernization. The real problem was
                   organizational: no shared definition of what "training readiness" meant
                   across commands — which meant every downstream system was tracking different
@@ -324,7 +325,7 @@ export default function AirForceCaseStudy() {
                 <h3 className="text-sm font-semibold text-warm-700 mb-3">
                   How the d.MBA framing shaped the engagement
                 </h3>
-                <p className="text-warm-500 leading-relaxed">
+                <p className="text-warm-900 font-medium leading-relaxed">
                   Coming in with a business lens meant asking questions not in the original
                   brief: What is the operational cost of the current friction? What decisions
                   does the readiness data actually inform? What would it take for this system
@@ -357,7 +358,7 @@ export default function AirForceCaseStudy() {
           <h2 className="font-display text-h2 font-semibold text-warm-900 mb-4 leading-tight">
             Atoms Built for Operational Clarity
           </h2>
-          <p className="text-warm-500 leading-relaxed mb-12 max-w-[56ch]">
+          <p className="text-warm-900 font-medium leading-relaxed mb-12 max-w-[56ch]">
             Every component in the system was designed to reduce cognitive load for users
             managing compliance data under time pressure. Here are the atoms that power it.
           </p>
@@ -393,19 +394,19 @@ export default function AirForceCaseStudy() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-warm-100 border-b border-warm-200">
-                    <th className="text-left px-4 py-3 text-xs font-semibold text-warm-500 uppercase tracking-wider">
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wider">
                       Airman
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-semibold text-warm-500 uppercase tracking-wider hidden sm:table-cell">
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wider hidden sm:table-cell">
                       AFSC
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-semibold text-warm-500 uppercase tracking-wider">
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wider">
                       Status
                     </th>
-                    <th className="text-right px-4 py-3 text-xs font-semibold text-warm-500 uppercase tracking-wider">
+                    <th className="text-right px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wider">
                       Overdue
                     </th>
-                    <th className="text-right px-4 py-3 text-xs font-semibold text-warm-500 uppercase tracking-wider hidden sm:table-cell">
+                    <th className="text-right px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wider hidden sm:table-cell">
                       Updated
                     </th>
                     <th className="px-4 py-3 hidden sm:table-cell" />
@@ -431,7 +432,7 @@ export default function AirForceCaseStudy() {
                             {s.label}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-right tabular-nums text-warm-500 text-sm">
+                        <td className="px-4 py-3 text-right tabular-nums text-warm-700 text-sm">
                           {row.overdue > 0 ? (
                             <span className="text-[#FF3200] font-medium">{row.overdue}</span>
                           ) : (
@@ -535,7 +536,7 @@ export default function AirForceCaseStudy() {
               <h2 className="font-display text-h2 font-semibold text-warm-900 mb-4 leading-tight">
                 The Hard Part
               </h2>
-              <p className="text-warm-500 leading-relaxed mb-10">
+              <p className="text-warm-900 font-medium leading-relaxed mb-10">
                 Junior designers document the ideal flow. This is the section that makes
                 everything else credible — the honest account of resistance, pivots, and
                 the path to consensus.
@@ -547,7 +548,7 @@ export default function AirForceCaseStudy() {
                     key={item.label}
                     className="bg-warm-950 text-warm-100 rounded-xl p-8"
                   >
-                    <p className="text-xs font-semibold text-warm-500 uppercase tracking-widest mb-4">
+                    <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
                       {item.label}
                     </p>
                     <p className="text-warm-300 leading-relaxed text-[0.9375rem]">{item.body}</p>
@@ -593,8 +594,8 @@ export default function AirForceCaseStudy() {
                 <p className="text-xs text-warm-400 leading-snug mt-1">months · delivered 3 months ahead of schedule</p>
               </div>
               <div className="border-l-2 border-warm-200 pl-4">
-                <p className="text-xs font-semibold text-warm-400 uppercase tracking-widest mb-2">Outcome</p>
-                <p className="text-xs text-warm-500 leading-relaxed">The stakeholders who resisted most became the loudest internal advocates. Not because we sold them — because the design reflected their input.</p>
+                <p className="text-xs font-bold text-[#FF3200] uppercase tracking-widest mb-2">Outcome</p>
+                <p className="text-xs text-warm-900 font-medium leading-relaxed">The stakeholders who resisted most became the loudest internal advocates. Not because we sold them — because the design reflected their input.</p>
               </div>
             </aside>
           </div>
@@ -603,7 +604,7 @@ export default function AirForceCaseStudy() {
         {/* ── 05 — Technical Constraints as Design Inputs ──────────────── */}
         <section className="py-16 border-b border-warm-100">
           <p className="label mb-10">05 — Technical Constraints as Design Inputs</p>
-          <p className="text-warm-500 leading-relaxed mb-8">
+          <p className="text-warm-900 font-medium leading-relaxed mb-8">
             The technical environment wasn&apos;t a background condition — it was an
             active design input. Understanding the constraints precisely is what allowed
             us to design solutions that could actually be built.
@@ -613,7 +614,7 @@ export default function AirForceCaseStudy() {
             {technicalConstraints.map((item) => (
               <div key={item.title} className="pl-5 border-l-2 border-warm-200 py-1">
                 <p className="text-sm font-semibold text-warm-800 mb-1">{item.title}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{item.body}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
@@ -622,7 +623,7 @@ export default function AirForceCaseStudy() {
         {/* ── 06 — The System, Not Just the Screens ────────────────────── */}
         <section className="py-16 border-b border-warm-100">
           <p className="label mb-10">06 — The System, Not Just the Screens</p>
-          <p className="text-warm-500 leading-relaxed mb-8">
+          <p className="text-warm-900 font-medium leading-relaxed mb-8">
             At Staff/Principal level, the deliverable isn&apos;t a set of screens —
             it&apos;s the system that makes the screens possible and the governance
             model that makes them maintainable.
@@ -632,7 +633,7 @@ export default function AirForceCaseStudy() {
             {systemItems.map((item) => (
               <div key={item.title} className="p-6 bg-warm-50">
                 <p className="text-sm font-semibold text-warm-900 mb-2">{item.title}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{item.body}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
@@ -653,7 +654,7 @@ export default function AirForceCaseStudy() {
                 <p className="sm:w-56 flex-shrink-0 text-sm font-semibold text-warm-900 leading-snug">
                   {item.metric}
                 </p>
-                <p className="text-sm text-warm-500 leading-relaxed">{item.detail}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -698,13 +699,13 @@ export default function AirForceCaseStudy() {
         {/* ── 08 — What I'd Do Differently ─────────────────────────────── */}
         <section className="py-16">
           <p className="label mb-8">08 — What I&apos;d Do Differently</p>
-          <p className="text-warm-500 leading-relaxed mb-4">
+          <p className="text-warm-900 font-medium leading-relaxed mb-4">
             If I had it to do again, I would have run a structured technical constraint
             workshop with engineering in week one — before any concepting. We lost roughly
             two weeks to designs that couldn&apos;t be built given the legacy data model,
             and a half-day session at the start would have surfaced those constraints earlier.
           </p>
-          <p className="text-warm-500 leading-relaxed">
+          <p className="text-warm-900 font-medium leading-relaxed">
             I&apos;d also have brought the security review team in during the concepting
             phase rather than the review phase. Their perspective shaped several final
             decisions regardless — the only thing that changed by involving them late

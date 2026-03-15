@@ -15,7 +15,7 @@ export default function Footer() {
               Ben Howard
             </p>
             <p className="text-xs text-warm-400">
-              Systems Architect &amp; Design Strategist
+              UX Strategist
             </p>
           </div>
 

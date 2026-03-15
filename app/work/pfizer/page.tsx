@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 // ── Data ─────────────────────────────────────────────────────────────────────
 
 const metaBar = [
-  { label: "Role",        value: `Systems Architect · Lead UX Designer` },
-  { label: "Deliverables", value: `Stakeholder alignment, design sprints, wireframes, prototypes, user testing` },
+  { label: "Role",        value: `UX Strategist · Sole Strategic Designer` },
+  { label: "Deliverables", value: `Stakeholder alignment, co-creation strategy sessions, customer experience blueprints, prototypes` },
   { label: "Status",      value: `MVP delivered · Beta testing` },
 ];
 
@@ -113,7 +113,7 @@ export default function PfizerCaseStudy() {
               },
             ].map(({ label, text }) => (
               <div key={label} className="flex gap-3 items-baseline">
-                <span className="font-signet font-semibold text-xs text-warm-400 uppercase tracking-widest w-16 flex-shrink-0">
+                <span className="font-signet font-bold text-xs text-[#FF3200] uppercase tracking-widest w-16 flex-shrink-0">
                   {label}
                 </span>
                 <p className="text-sm text-warm-600 leading-relaxed">{text}</p>
@@ -167,7 +167,7 @@ export default function PfizerCaseStudy() {
             marketers can&apos;t fully verify, inside a regulatory environment
             that doesn&apos;t move as fast as the technology.&quot;
           </p>
-          <p className="mt-6 text-warm-500 leading-relaxed">
+          <p className="mt-6 text-warm-900 font-medium leading-relaxed">
             I orchestrated the UX architecture for Pfizer&apos;s generative AI
             marketing platform — leveraging cross-functional alignment across
             marketing, regulatory, and engineering stakeholders to implement a
@@ -196,7 +196,7 @@ export default function PfizerCaseStudy() {
           <div className="space-y-8 mb-12">
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">The organization</h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 Pfizer&apos;s marketing teams develop brand-specific content for
                 pharmaceutical products across multiple channels and global
                 markets. Content must pass through medical-legal review and comply
@@ -207,14 +207,14 @@ export default function PfizerCaseStudy() {
             </div>
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">My role</h3>
-              <p className="text-warm-500 leading-relaxed">
-                Systems architect and lead UX designer responsible for orchestrating
-                cross-functional alignment and implementing the end-to-end workflow
-                architecture. I facilitated design sprints, navigated stakeholder
-                relationships across multiple Pfizer teams, and served as the primary
-                bridge between design intent and developer constraints — leveraging
-                mid-engagement engineering constraints as design inputs rather than
-                treating them as blockers.
+              <p className="text-warm-900 font-medium leading-relaxed">
+                Systems architect and lead UX strategist responsible for orchestrating
+                cross-functional alignment across marketing, regulatory, and engineering
+                stakeholders. I developed the customer experience blueprint, synthesized
+                competing stakeholder needs into a unified adoption strategy, and led
+                the co-creation strategy sessions that produced the "Idea Accelerator"
+                reframe — repositioning AI adoption as a shared organizational goal
+                rather than a top-down mandate.
               </p>
             </div>
           </div>
@@ -227,7 +227,7 @@ export default function PfizerCaseStudy() {
                 className="p-5 rounded-lg border border-warm-200 bg-warm-50"
               >
                 <p className="text-sm font-semibold text-warm-800 mb-1">{c.title}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{c.body}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{c.body}</p>
               </div>
             ))}
           </div>
@@ -245,7 +245,7 @@ export default function PfizerCaseStudy() {
                   <h3 className="text-sm font-semibold text-warm-700 mb-3">
                     Reframing adoption resistance as a design problem
                   </h3>
-                  <p className="text-warm-500 leading-relaxed">
+                  <p className="text-warm-900 font-medium leading-relaxed">
                     The initial framing of low AI adoption was a change management
                     problem — resistant users who needed training and persuasion. The
                     actual problem was a design failure: the system gave users no
@@ -260,7 +260,7 @@ export default function PfizerCaseStudy() {
                   <h3 className="text-sm font-semibold text-warm-700 mb-3">
                     Positioning Gen AI as an Idea Accelerator, not a replacement
                   </h3>
-                  <p className="text-warm-500 leading-relaxed">
+                  <p className="text-warm-900 font-medium leading-relaxed">
                     Pharmaceutical marketers typically develop 3–5 copy concepts to
                     pitch. The reframe that unlocked adoption: Gen AI as a tool that
                     generates the same volume of initial concepts in minutes, leaving
@@ -296,7 +296,7 @@ export default function PfizerCaseStudy() {
         <section className="py-16 border-b border-warm-100">
           <p className="label mb-10">03 — Prompt Architecture</p>
 
-          <p className="text-warm-500 leading-relaxed mb-10">
+          <p className="text-warm-900 font-medium leading-relaxed mb-10">
             The generation workflow was designed as a transparent pipeline.
             Marketers needed to see the parameters they set, trace them through
             to the output, and understand why the system produced what it did —
@@ -340,7 +340,7 @@ export default function PfizerCaseStudy() {
                   <circle cx="14" cy="14" r="13" stroke="#FF3200" strokeWidth="1.5" strokeOpacity="0.4"/>
                   <path d="M9 14l3.5 3.5L19 9" stroke="#FF3200" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <p className="text-xs text-warm-500 leading-tight">Brand model + regulatory filters</p>
+                <p className="text-xs text-warm-700 leading-tight">Brand model + regulatory filters</p>
               </div>
 
               {/* Arrow connector */}
@@ -402,7 +402,7 @@ export default function PfizerCaseStudy() {
           <div className="space-y-8">
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-3">Starting with the user journey</h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 Before wireframing, I mapped the user journey against the business
                 requirements and MVP features — not as a deliverable but as a
                 guide that was updated throughout the engagement as features were
@@ -413,7 +413,7 @@ export default function PfizerCaseStudy() {
 
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-3">Sketching → wireframes → prototype</h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 Initial layouts for the copy generation workflow were sketched
                 first, then translated to black-and-white wireframes for
                 structured feedback before any visual design decisions were made.
@@ -424,14 +424,14 @@ export default function PfizerCaseStudy() {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-warm-700 mb-3">Stakeholder presentation cadence</h3>
-              <p className="text-warm-500 leading-relaxed">
-                Design ideas, workflow diagrams, and interactive prototypes were
-                presented to stakeholders across multiple Pfizer teams at regular
-                intervals. The cadence was intentional — showing work early and
-                often with diverse stakeholder groups in a regulated environment
-                surfaces compliance and brand concerns before they become
-                late-stage blockers.
+              <h3 className="text-sm font-semibold text-warm-700 mb-3">Co-creation strategy sessions with stakeholders</h3>
+              <p className="text-warm-900 font-medium leading-relaxed">
+                Co-creation strategy sessions with stakeholders across multiple
+                Pfizer teams were held at regular intervals — not to present
+                completed work, but to synthesize competing perspectives before
+                they hardened into blockers. In a regulated environment, surfacing
+                compliance and brand constraints upstream is itself a strategic
+                outcome, not a process step.
               </p>
             </div>
           </div>
@@ -475,14 +475,14 @@ export default function PfizerCaseStudy() {
           <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-14 lg:items-start">
           <div>
           <p className="label mb-4">05 — The Hard Part</p>
-          <p className="text-warm-500 leading-relaxed mb-10">
+          <p className="text-warm-900 font-medium leading-relaxed mb-10">
             The problems that weren&apos;t in the brief — and how they changed the design.
           </p>
 
           <div className="space-y-4">
             {/* The trust problem */}
             <div className="rounded-lg bg-warm-950 p-6">
-              <p className="text-xs font-semibold text-warm-500 uppercase tracking-widest mb-4">
+              <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
                 The trust problem
               </p>
               <p className="text-warm-300 leading-relaxed">
@@ -498,12 +498,12 @@ export default function PfizerCaseStudy() {
 
             {/* The Idea Accelerator reframe — change management victory */}
             <div className="rounded-lg bg-warm-950 p-6">
-              <p className="text-xs font-semibold text-warm-500 uppercase tracking-widest mb-4">
+              <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
                 The change management victory — reframing AI as an Idea Accelerator
               </p>
               <div className="grid sm:grid-cols-2 gap-4 mb-4">
                 <div className="rounded-lg bg-warm-900 p-4 border border-warm-800">
-                  <p className="text-xs font-medium text-warm-500 mb-2">Before the reframe</p>
+                  <p className="text-xs font-medium text-warm-600 mb-2">Before the reframe</p>
                   <p className="text-sm text-warm-400 leading-relaxed">
                     &ldquo;AI will write your copy. Your job is to check it.&rdquo;<br/>
                     <span className="text-warm-600 text-xs mt-1 block">Result: resistance, low adoption, professional threat framing</span>
@@ -513,7 +513,7 @@ export default function PfizerCaseStudy() {
                   <p className="text-xs font-medium text-accent mb-2">After the reframe</p>
                   <p className="text-sm text-warm-300 leading-relaxed">
                     &ldquo;AI drafts the first five ideas. You decide which one is right.&rdquo;<br/>
-                    <span className="text-warm-500 text-xs mt-1 block">Result: adoption unlocked — human judgment repositioned as the premium skill</span>
+                    <span className="text-warm-700 text-xs mt-1 block">Result: adoption unlocked — human judgment repositioned as the premium skill</span>
                   </p>
                 </div>
               </div>
@@ -529,7 +529,7 @@ export default function PfizerCaseStudy() {
 
             {/* Engineering constraints */}
             <div className="rounded-lg bg-warm-950 p-6">
-              <p className="text-xs font-semibold text-warm-500 uppercase tracking-widest mb-4">
+              <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
                 Designing around constraints I didn&apos;t control
               </p>
               <p className="text-warm-300 leading-relaxed">
@@ -585,7 +585,7 @@ export default function PfizerCaseStudy() {
                 className="p-5 rounded-lg border border-warm-200 bg-warm-50"
               >
                 <p className="text-sm font-semibold text-warm-800 mb-1">{item.title}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{item.body}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
@@ -617,7 +617,7 @@ export default function PfizerCaseStudy() {
         {/* ── Section 07 — MVP Feature Set ─────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
           <p className="label mb-10">07 — MVP Feature Set</p>
-          <p className="text-warm-500 leading-relaxed mb-8">
+          <p className="text-warm-900 font-medium leading-relaxed mb-8">
             The MVP was scoped to establish the core generation workflow and
             layout system before expanding. Each feature was designed not just
             for its own workflow but for how it would coexist with future
@@ -631,7 +631,7 @@ export default function PfizerCaseStudy() {
                 className="p-5 rounded-lg border border-warm-200 bg-warm-50"
               >
                 <p className="text-sm font-semibold text-warm-800 mb-1">{item.feature}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{item.detail}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -644,7 +644,7 @@ export default function PfizerCaseStudy() {
           <div className="space-y-4">
             <div className="p-5 rounded-lg border border-warm-200 bg-warm-50">
               <p className="text-sm font-semibold text-warm-800 mb-1">MVP delivered for beta onboarding</p>
-              <p className="text-sm text-warm-500 leading-relaxed">
+              <p className="text-sm text-warm-900 font-medium leading-relaxed">
                 The complete MVP workflow — copy generation, translation, image
                 selection — was delivered and prepared for the first set of beta
                 testers. The flexible layout system means new features can ship
@@ -654,7 +654,7 @@ export default function PfizerCaseStudy() {
 
             <div className="p-5 rounded-lg border border-warm-200 bg-warm-50">
               <p className="text-sm font-semibold text-warm-800 mb-1">Institutional alignment around a new way of working</p>
-              <p className="text-sm text-warm-500 leading-relaxed">
+              <p className="text-sm text-warm-900 font-medium leading-relaxed">
                 The Idea Accelerator reframe achieved institutional alignment across
                 marketing, regulatory, and leadership stakeholders — making adoption
                 a shared goal rather than a top-down mandate. The transparency layer
@@ -666,7 +666,7 @@ export default function PfizerCaseStudy() {
 
             <div className="p-5 rounded-lg border border-warm-200 bg-warm-50">
               <p className="label mb-2">[Add specific metrics here if available]</p>
-              <p className="text-sm text-warm-500 leading-relaxed">
+              <p className="text-sm text-warm-900 font-medium leading-relaxed">
                 e.g., number of beta users, time saved per copy iteration,
                 adoption rate among target teams, number of brands onboarded,
                 stakeholder count, engagement rate — whatever is shareable under NDA terms.
@@ -692,7 +692,7 @@ export default function PfizerCaseStudy() {
         {/* ── Section 09 — What I'd Do Differently ────────────────────────── */}
         <section className="py-16">
           <p className="label mb-8">09 — What I&apos;d Do Differently</p>
-          <p className="text-warm-500 leading-relaxed mb-4">
+          <p className="text-warm-900 font-medium leading-relaxed mb-4">
             I would have pushed for a medical-legal reviewer to be part of the
             design research process earlier — not as a gatekeeper, but as a user.
             The compliance review workflow is downstream of the tool, but its
@@ -700,7 +700,7 @@ export default function PfizerCaseStudy() {
             perspective in week two rather than week eight would have changed the
             initial framing significantly.
           </p>
-          <p className="text-warm-500 leading-relaxed">
+          <p className="text-warm-900 font-medium leading-relaxed">
             [Add a second reflection here — something specific to this project
             that you&apos;d change with hindsight.]
           </p>

@@ -78,7 +78,7 @@ export default function HeroAnimated({ credentials }: Props) {
             variants={heroItem}
             className="font-sans text-[0.68rem] font-medium tracking-widest uppercase text-warm-400 mb-6"
           >
-            Senior Product Designer&nbsp;&middot;&nbsp;9 Years Experience
+            UX Strategist&nbsp;&middot;&nbsp;10 Years Experience
           </motion.p>
 
           {/* Main headline */}
@@ -86,19 +86,19 @@ export default function HeroAnimated({ credentials }: Props) {
             variants={heroItem}
             className="text-display font-bold text-warm-900 mb-8 max-w-[22ch]"
           >
-            I design systems that modernize how complex organizations operate.
+            I orchestrate solutions for complex organizations.
           </motion.h1>
 
           {/* Body copy */}
           <motion.p
             variants={heroItem}
-            className="text-xl text-warm-500 leading-relaxed max-w-xl"
+            className="text-xl text-warm-900 font-medium leading-relaxed max-w-xl"
           >
-            Nine years designing for Pfizer, the U.S. Air Force, and Capital
-            Group — at the intersection of organizational complexity, AI
-            integration, and measurable business outcomes. A d.MBA graduate,
-            I speak both the language of design and the language of business
-            to make it stick.
+            I bridge the gap between business strategy and human-centric
+            design. Leveraging a d.MBA lens and a decade of experience with
+            partners like Pfizer and the U.S. Air Force, I develop strategic
+            blueprints that solve real problems for real people — and deliver
+            outcomes organizations can measure.
           </motion.p>
 
         </div>
@@ -126,7 +126,7 @@ export default function HeroAnimated({ credentials }: Props) {
               alt="Benjamin Howard — Senior Product Designer"
               fill
               className="object-cover object-top"
-              style={{ filter: "sepia(0.1) saturate(1.1)", transform: "scaleX(-1)" }}
+              style={{ filter: "sepia(0.1) saturate(1.1)" }}
               sizes="(max-width: 768px) 160px, 192px"
               priority
             />
@@ -167,7 +167,7 @@ export default function HeroAnimated({ credentials }: Props) {
         className="grid grid-cols-3 gap-px bg-warm-100 rounded-xl overflow-hidden border border-warm-100"
       >
         {[
-          { value: "9",   unit: "yrs", label: "Enterprise design experience" },
+          { value: "10",  unit: "yrs", label: "Enterprise UX strategy experience" },
           { value: "4k+", unit: "",    label: "Daily active users on live systems" },
           { value: "3",   unit: "×",   label: "Fortune 500 + DoD clients" },
         ].map((stat) => (
@@ -181,7 +181,7 @@ export default function HeroAnimated({ credentials }: Props) {
                 <span className="text-base text-accent font-bold ml-0.5">{stat.unit}</span>
               )}
             </p>
-            <p className="text-xs text-warm-400 leading-snug">{stat.label}</p>
+            <p className="text-xs text-warm-700 font-semibold leading-snug">{stat.label}</p>
           </div>
         ))}
       </motion.div>

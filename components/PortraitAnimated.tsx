@@ -28,7 +28,7 @@ export default function PortraitAnimated() {
           alt="Benjamin Howard — Senior Product Designer"
           fill
           className="object-cover object-top"
-          style={{ filter: "sepia(0.1) saturate(1.1)", transform: "scaleX(-1)" }}
+          style={{ filter: "sepia(0.1) saturate(1.1)" }}
           sizes="176px"
           priority
         />

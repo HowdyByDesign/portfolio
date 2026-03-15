@@ -101,7 +101,7 @@ export default function Process() {
         >
           How I Work
         </h1>
-        <p className="text-warm-500 leading-relaxed text-lg max-w-prose-wide">
+        <p className="text-warm-900 font-medium leading-relaxed text-lg max-w-prose-wide">
           This page documents my methods, frameworks, and operating model.
           It&apos;s shared in outreach conversations and not linked from the
           main navigation — a working document, not a marketing page.
@@ -124,7 +124,7 @@ export default function Process() {
                     <p className="text-sm font-semibold text-warm-700 mb-2">
                       {tool.name}
                     </p>
-                    <p className="text-sm text-warm-500 leading-relaxed">
+                    <p className="text-sm text-warm-900 font-medium leading-relaxed">
                       {tool.description}
                     </p>
                   </div>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 // ── Data ─────────────────────────────────────────────────────────────────────
 
 const metaBar = [
-  { label: "Role",        value: `Lead UX/UI Designer · Workshop Facilitator` },
+  { label: "Role",        value: `UX Strategist · Workshop Facilitator` },
   { label: "Deliverables", value: `Design sprints, user journeys, wireframes, prototypes, user testing` },
   { label: "Domain",      value: `Retirement planning · Financial services` },
 ];
@@ -145,7 +145,7 @@ export default function CapitalGroupCaseStudy() {
             shouldn&apos;t need to be pension administrators. The existing process
             assumed they were.
           </p>
-          <p className="mt-6 text-warm-500 leading-relaxed">
+          <p className="mt-6 text-warm-900 font-medium leading-relaxed">
             Capital Group&apos;s Client Service Center handled retirement plan
             management for small businesses — a complex, high-stakes domain where
             users were filling out forms they didn&apos;t understand, submitting
@@ -162,7 +162,7 @@ export default function CapitalGroupCaseStudy() {
           <div className="space-y-8 mb-12">
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">The organization</h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 Capital Group is one of the largest investment management firms in
                 the world. The Client Service Center is the platform through which
                 employers — typically small business owners — create and maintain
@@ -172,12 +172,12 @@ export default function CapitalGroupCaseStudy() {
             </div>
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">My role</h3>
-              <p className="text-warm-500 leading-relaxed">
-                Lead UX/UI designer responsible for the end-to-end design process
-                — from initial user interviews through design sprints, wireframes,
-                prototyping, and usability testing. I also facilitated workshops
-                with the product team and internal stakeholders to align on
-                information architecture and form system design.
+              <p className="text-warm-900 font-medium leading-relaxed">
+                Orchestrated the end-to-end design process — from initial user
+                interviews through design sprints, wireframes, prototyping, and
+                usability testing. Facilitated workshops with the product team
+                and internal stakeholders to align on information architecture
+                and form system design.
               </p>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function CapitalGroupCaseStudy() {
             {researchFindings.map((f) => (
               <div key={f.title} className="p-5 rounded-lg border border-warm-200 bg-warm-50">
                 <p className="text-sm font-semibold text-warm-800 mb-1">{f.title}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{f.body}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{f.body}</p>
               </div>
             ))}
           </div>
@@ -202,7 +202,7 @@ export default function CapitalGroupCaseStudy() {
               <h3 className="text-sm font-semibold text-warm-700 mb-3">
                 Design sprints to move from research to concept
               </h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 After user interviews established the five core friction points, I
                 ran a series of design sprints to ideate, sketch, and test
                 solutions before committing to full wireframes. The sprint format
@@ -214,7 +214,7 @@ export default function CapitalGroupCaseStudy() {
               <h3 className="text-sm font-semibold text-warm-700 mb-3">
                 The IA problem came first
               </h3>
-              <p className="text-warm-500 leading-relaxed">
+              <p className="text-warm-900 font-medium leading-relaxed">
                 Form discoverability was an information architecture problem, not
                 a UI problem. Before designing any screens, we mapped the 40+
                 form types against user needs (not regulatory categories) and
@@ -257,7 +257,7 @@ export default function CapitalGroupCaseStudy() {
             {designDecisions.map((item) => (
               <div key={item.title} className="p-5 rounded-lg border border-warm-200 bg-warm-50">
                 <p className="text-sm font-semibold text-warm-800 mb-1">{item.title}</p>
-                <p className="text-sm text-warm-500 leading-relaxed">{item.body}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
@@ -292,7 +292,7 @@ export default function CapitalGroupCaseStudy() {
         {/* ── Section 04 — The Hard Part ───────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
           <p className="label mb-4">04 — The Hard Part</p>
-          <p className="text-warm-500 leading-relaxed mb-10">
+          <p className="text-warm-900 font-medium leading-relaxed mb-10">
             The hardest part of this project wasn&apos;t the UI — it was
             negotiating what &quot;simplified&quot; actually meant in a regulated
             financial context.
@@ -300,7 +300,7 @@ export default function CapitalGroupCaseStudy() {
 
           <div className="space-y-4">
             <div className="rounded-lg bg-warm-950 p-6">
-              <p className="text-xs font-semibold text-warm-500 uppercase tracking-widest mb-4">
+              <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
                 The language problem
               </p>
               <p className="text-warm-300 leading-relaxed">
@@ -316,7 +316,7 @@ export default function CapitalGroupCaseStudy() {
             </div>
 
             <div className="rounded-lg bg-warm-950 p-6">
-              <p className="text-xs font-semibold text-warm-500 uppercase tracking-widest mb-4">
+              <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
                 40+ forms, one pattern
               </p>
               <p className="text-warm-300 leading-relaxed">
@@ -347,7 +347,7 @@ export default function CapitalGroupCaseStudy() {
                 <p className="sm:w-56 flex-shrink-0 text-sm font-semibold text-warm-900 leading-snug">
                   {item.metric}
                 </p>
-                <p className="text-sm text-warm-500 leading-relaxed">
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">
                   {item.detail}
                 </p>
               </div>

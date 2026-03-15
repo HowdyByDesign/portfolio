@@ -54,7 +54,7 @@ export default function About() {
             <p className="font-signet font-bold tracking-tight text-xl text-[#FF3200] mb-3">
               Howdy!
             </p>
-            <p className="label mb-6">Systems Architect &amp; Design Strategist</p>
+            <p className="label mb-6">UX Strategist</p>
             <h1
               className="font-display font-semibold text-warm-900 leading-tight mb-8"
               style={{ fontSize: "clamp(2.25rem, 4vw + 0.75rem, 3.75rem)", letterSpacing: "-0.035em" }}
@@ -63,7 +63,7 @@ export default function About() {
             </h1>
 
             {/* Senior summary — d.MBA + 25% Air Force metric as first-read context */}
-            <div className="space-y-5 text-warm-500 leading-relaxed text-[1.05rem]">
+            <div className="space-y-5 text-warm-900 font-medium leading-relaxed text-[1.05rem]">
               <p>
                 I build high-performance digital environments where business
                 strategy and technical feasibility meet. With a{" "}
@@ -98,7 +98,7 @@ export default function About() {
                  * shadow-md lifts it off the warm-50 background.
                  * sepia(0.1) applied for palette consistency with all other images.
                  */}
-                <figure className="flex-shrink-0 mt-5 sm:mt-0 self-center sm:self-start rotate-3 shadow-md bg-white p-2.5 pb-0 w-32 sm:w-36">
+                <figure className="flex-shrink-0 mt-6 sm:mt-0 self-center sm:self-start rotate-3 shadow-xl bg-white p-3 pb-0 w-56 sm:w-64">
                   <div className="relative w-full aspect-square overflow-hidden">
                     <Image
                       src="/images/darcy_planter.jpg"
@@ -106,10 +106,10 @@ export default function About() {
                       fill
                       className="object-cover"
                       style={{ filter: "sepia(0.1) saturate(1.1)" }}
-                      sizes="144px"
+                      sizes="(max-width: 640px) 224px, 256px"
                     />
                   </div>
-                  <figcaption className="font-sans text-[0.48rem] uppercase tracking-widest text-warm-400 leading-snug py-2.5 text-center">
+                  <figcaption className="font-sans text-[0.56rem] uppercase tracking-widest text-warm-700 leading-snug py-3 text-center">
                     DARCY &mdash; CHIEF OF INVESTIGATIONS &amp; QUALITY
                     ASSURANCE. Specializes in structural integrity testing of
                     garden furniture and deep-soil data retrieval.
@@ -127,7 +127,7 @@ export default function About() {
       <section className="py-16 border-b border-warm-100">
         <p className="label mb-6">Why the d.MBA</p>
 
-        <div className="space-y-5 text-warm-500 leading-relaxed">
+        <div className="space-y-5 text-warm-900 font-medium leading-relaxed">
           <p>
             I pursued the{" "}
             <span className="text-warm-700 font-medium">
@@ -164,7 +164,7 @@ export default function About() {
           {workingPrinciples.map((p) => (
             <div key={p.title} className="p-5 rounded-lg border border-warm-200 bg-warm-50">
               <p className="font-semibold text-warm-900 mb-2">{p.title}</p>
-              <p className="text-warm-500 leading-relaxed">{p.body}</p>
+              <p className="text-warm-900 font-medium leading-relaxed">{p.body}</p>
             </div>
           ))}
         </div>
@@ -206,7 +206,7 @@ export default function About() {
             <p className="text-sm font-semibold text-warm-900 mb-1">
               Reduction in development cycles
             </p>
-            <p className="text-sm text-warm-500 leading-relaxed">
+            <p className="text-sm text-warm-900 leading-relaxed">
               Achieved through multi-day co-creation workshops that aligned design
               intent with engineering constraints before a single sprint began —
               eliminating the rework cycles that typically follow late-stage
@@ -219,7 +219,7 @@ export default function About() {
       {/* ── Currently / CTA ───────────────────────────────────────────────── */}
       <section className="py-16">
         <p className="label mb-6">Currently</p>
-        <p className="text-warm-500 leading-relaxed mb-8 max-w-prose-wide">
+        <p className="text-warm-900 font-medium leading-relaxed mb-8 max-w-prose-wide">
           Open to Staff / Principal Designer roles at enterprise SaaS companies
           and top-tier consulting practices where design operates at the
           strategic level — particularly teams building AI-native products in

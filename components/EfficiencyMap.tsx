@@ -68,7 +68,7 @@ export default function EfficiencyMap() {
             >
               <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded border border-warm-200 bg-warm-100" aria-hidden />
               <div className="flex-1 min-w-0">
-                <span className="text-sm text-warm-500 leading-snug">{step.label}</span>
+                <span className="text-sm text-warm-700 leading-snug">{step.label}</span>
               </div>
               <span className="text-xs text-warm-400 tabular-nums flex-shrink-0 pt-0.5">
                 {step.time}
