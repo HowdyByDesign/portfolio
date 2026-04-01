@@ -23,7 +23,7 @@ const caseStudies = [
     category: "Enterprise Platform · Design Systems · Defense",
     title: "Modernizing Mission-Critical Training at Scale",
     description:
-      "A 20-year-old training platform was costing the Air Force millions annually while leaving Airmen without a reliable readiness source of truth. I orchestrated the full modernization — synthesizing stakeholder needs across commands into a unified strategic blueprint, establishing a governance structure built to outlast the project, and delivering 3 months ahead of schedule through co-creation strategy sessions that aligned design intent before a single sprint began. Now serving 4,000+ daily active users, with Phase 2 approved and funded.",
+      "A 20-year-old DAF training platform was costing millions annually while leaving Airmen without a reliable readiness source of truth. I orchestrated end-to-end modernization — unifying three fragmented systems, establishing governance built to outlast the project, and delivering 3 months early. 4,000+ daily users at launch. Phase 2 funded.",
     href: "/work/air-force",
     nda: true,
   },
@@ -33,7 +33,7 @@ const caseStudies = [
     category: "Dashboard Design · Data Visualization · Performance Marketing",
     title: "Eliminating 400 Hours of Monthly Reporting Waste",
     description:
-      "A performance marketing agency was burning 400 hours monthly on manual Excel reporting while its most strategic talent was trapped doing data entry. I orchestrated the solution — synthesizing stakeholder and user needs across 5 teams into a unified strategic blueprint, then delivering a fully connected live dashboard that eliminated the manual cycle entirely. Adopted by 40 individuals across the organization. The Excel templates are gone.",
+      "A performance marketing agency was burning 400 hours monthly on manual Excel reporting while its sharpest strategists were trapped doing data entry. I orchestrated the full transformation — workshops across 5 teams, a unified data model, and a live dashboard adopted by 40 individuals company-wide. The Excel templates are gone.",
     href: "/work/dcmn",
     nda: false,
   },
@@ -43,7 +43,7 @@ const caseStudies = [
     category: "Generative AI · Enterprise SaaS · Pharmaceutical",
     title: "Designing for Trust in a Gen AI Marketing System",
     description:
-      "Pfizer's marketing teams faced low AI adoption — not because of poor UX, but because marketers couldn't defend generated outputs in medical-legal review. I reframed the problem as a transparency design challenge, orchestrated cross-functional alignment across marketing, regulatory, and engineering stakeholders, and developed the strategic blueprint that repositioned AI as an Idea Accelerator. MVP delivered for beta onboarding.",
+      "Pfizer's marketing teams had low Gen AI adoption — not because of poor UX, but because marketers couldn't defend generated outputs in medical-legal review. I reframed the problem as a transparency challenge, orchestrated cross-functional alignment, and positioned AI as an Idea Accelerator rather than a replacement. MVP delivered for beta onboarding.",
     href: "/work/pfizer",
     nda: true,
   },

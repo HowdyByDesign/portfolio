@@ -205,12 +205,10 @@ export default function DcmnCaseStudy() {
         {/* ── Hook summary + Hero image ─────────────────────────────────── */}
         <section className="pt-12 pb-16 border-b border-warm-100">
           <p className="text-warm-900 font-medium leading-relaxed mb-10 max-w-[58ch]">
-            400 hours of monthly strategist capacity reclaimed. I orchestrated the
-            full transformation — leading co-creation strategy sessions to synthesize
-            stakeholder and user needs across 5 teams, then developing the strategic
-            blueprint for a live dashboard that unified 50 client accounts onto a
-            single platform and achieved institutional alignment company-wide.
-            Adopted by 40 individuals across the organization. The Excel templates are gone.
+            I orchestrated the full transformation — co-creation strategy sessions
+            across 5 teams, a unified data model, and a live dashboard that replaced
+            400 hours of monthly manual work across 50 client accounts.
+            40 adopters. The Excel templates are gone.
           </p>
 
           <div className="rounded-xl overflow-hidden border border-warm-100">
@@ -226,7 +224,10 @@ export default function DcmnCaseStudy() {
 
         {/* ── 01 — Context & Constraints ───────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">01 — Context & Constraints</p>
+          <p className="label mb-3">01 — Context & Constraints</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+            400 Hours Wasted Before a Single Insight Reached a Client
+          </h2>
 
           <div className="space-y-8 mb-12">
             <div>
@@ -309,7 +310,10 @@ export default function DcmnCaseStudy() {
           <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-14 lg:items-start">
             {/* ── Main narrative ── */}
             <div>
-              <p className="label mb-10">03 — Discovery &amp; Research</p>
+              <p className="label mb-3">03 — Discovery &amp; Research</p>
+              <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+                Building Consensus Before Building Anything
+              </h2>
 
               <div className="space-y-8">
                 <div>
@@ -410,7 +414,10 @@ export default function DcmnCaseStudy() {
 
         {/* ── 05 — The Dashboard System ────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">05 — The Dashboard System</p>
+          <p className="label mb-3">05 — The Dashboard System</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-4 leading-tight">
+            Three Views Built Around How Strategists Actually Think
+          </h2>
           <p className="text-warm-900 font-medium leading-relaxed mb-8">
             The final dashboard split reporting into three distinct views aligned to how
             strategists actually communicate performance — not how the data happened to

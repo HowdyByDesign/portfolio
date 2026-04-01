@@ -142,7 +142,7 @@ export default function AirForceCaseStudy() {
 
         {/* H1 */}
         <h1 className="font-display text-display font-semibold text-warm-900 leading-tight mb-10">
-          Modernizing Mission-Critical Training at Scale
+          4,000+ Airmen. A 20-Year System Replaced. Delivered 3 Months Early.
         </h1>
 
         {/* ── TLDR ───────────────────────────────────────────────────────── */}
@@ -224,12 +224,10 @@ export default function AirForceCaseStudy() {
         {/* ── Hook summary + Hero image ─────────────────────────────────── */}
         <section className="pt-12 pb-16 border-b border-warm-100">
           <p className="text-warm-900 font-medium leading-relaxed mb-10 max-w-[58ch]">
-            I orchestrated the full modernization of the legacy ETMS on the MyVector
-            platform — standardizing the interaction model and component architecture,
-            reconciling fragmented training and personnel records across three
-            disconnected legacy systems, and implementing a governance structure built
-            to outlast the project team. Delivered 3 months ahead of schedule. Now
-            serving 4,000+ daily active users, with Phase 2 approved and funded.
+            I orchestrated end-to-end modernization of the DAF&apos;s legacy training
+            platform — reconciling three disconnected systems, establishing a governance
+            structure built to outlast the project team, and delivering 3 months ahead
+            of schedule. Now serving 4,000+ daily active users. Phase 2 approved and funded.
           </p>
 
           <div className="rounded-xl overflow-hidden border border-warm-100">
@@ -245,7 +243,10 @@ export default function AirForceCaseStudy() {
 
         {/* ── 01 — Context & Constraints ───────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">01 — Context & Constraints</p>
+          <p className="label mb-3">01 — Context & Constraints</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+            A 20-Year System That Shouldn&apos;t Have Lasted This Long
+          </h2>
 
           <div className="space-y-8 mb-12">
             <div>
@@ -301,7 +302,10 @@ export default function AirForceCaseStudy() {
 
         {/* ── 02 — The Strategic Frame ─────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">02 — The Strategic Frame</p>
+          <p className="label mb-3">02 — The Strategic Frame</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+            The Real Problem Wasn&apos;t the UI
+          </h2>
 
           <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-14 lg:items-start">
             {/* ── Main narrative ── */}

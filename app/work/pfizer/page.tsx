@@ -93,7 +93,7 @@ export default function PfizerCaseStudy() {
             className="font-display font-semibold text-warm-900 leading-tight mb-8"
             style={{ fontSize: "clamp(2.25rem, 4vw + 0.75rem, 3.75rem)", letterSpacing: "-0.035em" }}
           >
-            Designing for Trust in a Gen AI Marketing System
+            Gen AI Adoption Unlocked — Designing for Trust in a Pharmaceutical Regulatory Environment
           </h1>
 
           {/* ── TLDR ─────────────────────────────────────────────────────── */}
@@ -191,7 +191,10 @@ export default function PfizerCaseStudy() {
 
         {/* ── Section 01 — Context & Constraints ──────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">01 — Context &amp; Constraints</p>
+          <p className="label mb-3">01 — Context &amp; Constraints</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+            Pharmaceutical AI Has a Trust Problem, Not a Technology Problem
+          </h2>
 
           <div className="space-y-8 mb-12">
             <div>
@@ -238,7 +241,10 @@ export default function PfizerCaseStudy() {
           <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-14 lg:items-start">
             {/* ── Main narrative ── */}
             <div>
-              <p className="label mb-10">02 — The Strategic Frame</p>
+              <p className="label mb-3">02 — The Strategic Frame</p>
+              <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+                Reframing Adoption Resistance as a Design Problem
+              </h2>
 
               <div className="space-y-8">
                 <div>
@@ -294,7 +300,10 @@ export default function PfizerCaseStudy() {
 
         {/* ── Section 03 — Prompt Architecture ────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">03 — Prompt Architecture</p>
+          <p className="label mb-3">03 — Prompt Architecture</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+            Designing a Transparent Generation Pipeline
+          </h2>
 
           <p className="text-warm-900 font-medium leading-relaxed mb-10">
             The generation workflow was designed as a transparent pipeline.
@@ -397,7 +406,10 @@ export default function PfizerCaseStudy() {
 
         {/* ── Section 04 — Process ─────────────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">04 — Process</p>
+          <p className="label mb-3">04 — Process</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+            From Journey Map to Validated Prototype
+          </h2>
 
           <div className="space-y-8">
             <div>
@@ -474,7 +486,10 @@ export default function PfizerCaseStudy() {
         <section className="py-16 border-b border-warm-100">
           <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-14 lg:items-start">
           <div>
-          <p className="label mb-4">05 — The Hard Part</p>
+          <p className="label mb-3">05 — The Hard Part</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-4 leading-tight">
+            What Wasn&apos;t in the Brief
+          </h2>
           <p className="text-warm-900 font-medium leading-relaxed mb-10">
             The problems that weren&apos;t in the brief — and how they changed the design.
           </p>

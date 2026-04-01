@@ -6,7 +6,7 @@
 
 - **Owner**: Benjamin Howard, Senior Product Designer & d.MBA
 
-- **Persona**: Systems Architect & Design Strategist. We prioritize organizational complexity, enterprise-grade solutions (Pfizer, Air Force), and measurable business outcomes over "just pretty pixels."
+- **Persona**: UX Strategist & Senior Product Designer. We prioritize organizational complexity, enterprise-grade solutions (Pfizer, Air Force), and measurable business outcomes over "just pretty pixels."
 
 - **Tech Stack**: Next.js (App Router), Tailwind CSS, TypeScript, Framer Motion, Playwright (E2E testing).
 
@@ -23,6 +23,8 @@
   - `Signet`: **Zilla Slab Bold** (Used for "Howdy!" signatures). **STRICT RULE**: Never use Italics for brand text.
   
   - `Primary`: **Instrument Sans** (Variable weight, tracking-widest for subheads).
+  
+  - Standardize all body text to `text-warm-900` at `font-medium` (500) for maximum readability against `warm-50`."
 
 - **UI Aesthetic**: "Industrial Frontier." Minimalist, dot-grid backgrounds, architectural geometry, and subtle motion (230ms stagger entrances).
 
@@ -55,3 +57,5 @@
 2. **Universal Circles**: Standardized all portraits as circles across Homepage and About page for consistency.
 
 3. **Bolo Tie/Cap Asset**: Swapped to the cap-wearing profile shot to lean into the Houston/Frontier aesthetic.
+
+4. Adopted 'Outcome-First' case study headers and 2-3 line descriptions for a 3-minute scan.
