@@ -7,7 +7,6 @@ interface CaseStudyCardProps {
   title: string;
   description: string;
   href: string;
-  nda?: boolean;
 }
 
 export default function CaseStudyCard({
@@ -17,7 +16,6 @@ export default function CaseStudyCard({
   title,
   description,
   href,
-  nda,
 }: CaseStudyCardProps) {
   return (
     <Link
@@ -49,11 +47,6 @@ export default function CaseStudyCard({
           {/* Meta row */}
           <div className="flex items-center gap-2 mb-4">
             <span className="label">{client}</span>
-            {nda && (
-              <span className="text-[10px] font-semibold text-warm-700 tracking-widest uppercase">
-                · NDA
-              </span>
-            )}
           </div>
 
           {/* Title + arrow row */}

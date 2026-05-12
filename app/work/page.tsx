@@ -29,7 +29,6 @@ const caseStudies = [
     description:
       "A 20-year-old DAF training platform was costing millions annually while leaving Airmen without a reliable readiness source of truth. I orchestrated end-to-end modernization — unifying three fragmented systems, establishing governance built to outlast the project, and delivering 3 months early. 4,000+ daily users at launch. Phase 2 funded.",
     href: "/work/air-force",
-    nda: true,
   },
   {
     index: "02",
@@ -39,7 +38,6 @@ const caseStudies = [
     description:
       "A performance marketing agency was burning 400 hours monthly on manual Excel reporting while its sharpest strategists were trapped doing data entry. I orchestrated the full transformation — workshops across 5 teams, a unified data model, and a live dashboard adopted by 40 individuals company-wide. The Excel templates are gone.",
     href: "/work/dcmn",
-    nda: false,
   },
   {
     index: "03",
@@ -49,7 +47,6 @@ const caseStudies = [
     description:
       "Pfizer's marketing teams had low Gen AI adoption — not because of poor UX, but because marketers couldn't defend generated outputs in medical-legal review. I reframed the problem as a transparency challenge, orchestrated cross-functional alignment, and positioned AI as an Idea Accelerator rather than a replacement. MVP delivered for beta onboarding.",
     href: "/work/pfizer",
-    nda: true,
   },
 ];
 
