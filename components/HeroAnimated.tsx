@@ -78,7 +78,7 @@ export default function HeroAnimated({ credentials }: Props) {
             variants={heroItem}
             className="font-sans text-[0.68rem] font-medium tracking-widest uppercase text-warm-400 mb-6"
           >
-            UX Strategist&nbsp;&middot;&nbsp;10 Years Experience
+            UX Strategist &amp; Senior Product Designer&nbsp;&middot;&nbsp;10+ Years
           </motion.p>
 
           {/* Main headline */}
@@ -95,7 +95,7 @@ export default function HeroAnimated({ credentials }: Props) {
             className="text-xl text-warm-900 font-medium leading-relaxed max-w-xl"
           >
             I bridge the gap between business strategy and human-centric
-            design. Leveraging a d.MBA lens and a decade of experience with
+            design. Leveraging a d.MBA lens and 10+ years of experience with
             partners like Pfizer and the U.S. Air Force, I develop strategic
             blueprints that solve real problems for real people — and deliver
             outcomes organizations can measure.
@@ -144,7 +144,7 @@ export default function HeroAnimated({ credentials }: Props) {
           View Work
         </Link>
         <a
-          href="/Benjamin_Howard_Product_Designer.pdf"
+          href="/Ben_Howard_Resume_2026.pdf"
           download
           className="inline-flex items-center gap-2 px-5 py-2.5 border border-warm-200 text-warm-600 text-sm font-medium rounded-full hover:border-warm-400 hover:text-warm-900 transition-colors"
         >
@@ -167,9 +167,9 @@ export default function HeroAnimated({ credentials }: Props) {
         className="grid grid-cols-3 gap-px bg-warm-100 rounded-xl overflow-hidden border border-warm-100"
       >
         {[
-          { value: "10",  unit: "yrs", label: "Enterprise UX strategy experience" },
+          { value: "10+", unit: "yrs", label: "Enterprise UX strategy experience" },
           { value: "4k+", unit: "",    label: "Daily active users on live systems" },
-          { value: "3",   unit: "×",   label: "Fortune 500 + DoD clients" },
+          { value: "3",   unit: "",    label: "Pfizer · Capital Group · U.S. Air Force" },
         ].map((stat) => (
           <div
             key={stat.label}

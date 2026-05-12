@@ -3,9 +3,22 @@ import Image from "next/image";
 import PortraitAnimated from "@/components/PortraitAnimated";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: { absolute: "About Ben Howard | UX Strategist & Senior Product Designer" },
   description:
-    "Staff designer working at the intersection of organizational complexity, AI integration, and measurable business outcomes.",
+    "How I bridge business strategy and human-centric design. d.MBA-trained, working at the intersection of operational complexity and user experience.",
+  openGraph: {
+    title: "About Ben Howard | UX Strategist & Senior Product Designer",
+    description:
+      "How I bridge business strategy and human-centric design. d.MBA-trained, working at the intersection of operational complexity and user experience.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Ben Howard | UX Strategist & Senior Product Designer",
+    description:
+      "How I bridge business strategy and human-centric design. d.MBA-trained, working at the intersection of operational complexity and user experience.",
+    images: ["/og-image.png"],
+  },
 };
 
 // ── Data ─────────────────────────────────────────────────────────────────────
@@ -54,7 +67,7 @@ export default function About() {
             <p className="font-signet font-bold tracking-tight text-xl text-[#FF3200] mb-3">
               Howdy!
             </p>
-            <p className="label mb-6">UX Strategist</p>
+            <p className="label mb-6">UX Strategist &amp; Senior Product Designer</p>
             <h1
               className="font-display font-semibold text-warm-900 leading-tight mb-8"
               style={{ fontSize: "clamp(2.25rem, 4vw + 0.75rem, 3.75rem)", letterSpacing: "-0.035em" }}
@@ -180,7 +193,9 @@ export default function About() {
             { tool: "Figma",        level: "Expert",                  detail: "Design systems, prototyping, component architecture" },
             { tool: "WCAG 2.2",     level: "Accessibility",           detail: "Audit, remediation, and compliance across enterprise products" },
             { tool: "React JS",     level: "Component-level",         detail: "Implementation, design–engineering handoff, token integration" },
-            { tool: "Claude Code",  level: "AI-native tooling",       detail: "Agentic workflows, prompt architecture, AI-assisted design" },
+            { tool: "Claude Code",         level: "AI-native tooling",    detail: "Agentic workflows, prompt architecture, AI-assisted design" },
+            { tool: "Service Blueprinting", level: "Strategic methodology", detail: "Aligning internal operations with customer journeys to surface upstream constraints and drive cross-functional alignment." },
+            { tool: "Vercel",               level: "Deployment & AI tooling", detail: "AI-native deployment workflows, integrated with Claude Code for shipping prototypes and small production apps." },
           ].map((s) => (
             <div key={s.tool} className="p-4 rounded-lg border border-warm-200 bg-warm-50">
               <div className="flex items-baseline justify-between gap-2 mb-1.5">
@@ -220,10 +235,10 @@ export default function About() {
       <section className="py-16">
         <p className="label mb-6">Currently</p>
         <p className="text-warm-900 font-medium leading-relaxed mb-8 max-w-prose-wide">
-          Open to Staff / Principal Designer roles at enterprise SaaS companies
-          and top-tier consulting practices where design operates at the
-          strategic level — particularly teams building AI-native products in
-          complex, regulated, or mission-critical environments.
+          Open to UX Strategy, Senior Product Design, or Staff/Principal Designer
+          roles at enterprise SaaS companies and top-tier consulting practices,
+          particularly teams building AI-native products in complex, regulated,
+          or mission-critical environments.
         </p>
         <a
           href="mailto:Howdy@Howdybydesign.com"

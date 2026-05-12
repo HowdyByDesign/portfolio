@@ -33,7 +33,7 @@ const navItem = {
 };
 
 const links = [
-  { href: "/", label: "Work" },
+  { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
 ];
 
@@ -86,12 +86,16 @@ export default function Nav() {
             </motion.li>
           ))}
           <motion.li variants={navItem}>
-            <a
-              href="mailto:Howdy@Howdybydesign.com"
-              className="text-sm text-warm-400 hover:text-warm-900 transition-colors duration-300"
+            <Link
+              href="/contact"
+              className={`text-sm transition-colors duration-300 ${
+                pathname === "/contact"
+                  ? "text-warm-900 font-medium"
+                  : "text-warm-400 hover:text-warm-900"
+              }`}
             >
               Contact
-            </a>
+            </Link>
           </motion.li>
           <motion.li variants={navItem}>
             <a

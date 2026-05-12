@@ -15,12 +15,13 @@
   }
 
   body {
-    /* Warm tinted base — feels human, not clinical */
-    background-color: #faf8f7; /* warm-50 */
+    /* Cream warm base — feels human, not clinical. Matches howdyart.works
+       so the design + art studios share a visual family (2026-05-12). */
+    background-color: #FAF7F0; /* warm-50 / cream-50 */
     /* Deep warm near-black — never pure #000 */
     color: #252120; /* warm-900 */
     /* 8pt geometric dot grid — fixed canvas, warm-300 at 10% */
-    background-image: radial-gradient(circle, rgba(205, 198, 190, 0.10) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(circle, rgba(214, 205, 184, 0.10) 1.5px, transparent 1.5px);
     background-size: 24px 24px;
     background-attachment: fixed;
     background-position: 12px 12px;
@@ -38,7 +39,7 @@
 
   ::selection {
     background-color: #FF3200;
-    color: #faf8f7;
+    color: #FAF7F0;
   }
 }
 

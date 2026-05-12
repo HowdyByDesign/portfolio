@@ -4,9 +4,22 @@ import type { Metadata } from "next";
 import EfficiencyMap from "@/components/EfficiencyMap";
 
 export const metadata: Metadata = {
-  title: "DCMN Reporting Dashboard",
+  title: { absolute: "DCMN Reporting Dashboard | Ben Howard" },
   description:
-    "Eliminating 400 hours of monthly manual Excel reporting at a performance marketing agency through co-creation strategy sessions, user research, and a strategic reporting system that unified 50 clients onto a single platform.",
+    "Eliminated 400 hours of monthly Excel reporting waste across 50 client accounts.",
+  openGraph: {
+    title: "DCMN Reporting Dashboard | Ben Howard",
+    description:
+      "Eliminated 400 hours of monthly Excel reporting waste across 50 client accounts.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DCMN Reporting Dashboard | Ben Howard",
+    description:
+      "Eliminated 400 hours of monthly Excel reporting waste across 50 client accounts.",
+    images: ["/og-image.png"],
+  },
 };
 
 // ── Data ─────────────────────────────────────────────────────────────────────
@@ -99,7 +112,7 @@ export default function DcmnCaseStudy() {
         {/* Breadcrumb */}
         <div className="pt-12 pb-10">
           <Link
-            href="/"
+            href="/work"
             className="inline-flex items-center gap-2 text-sm text-warm-400 hover:text-warm-900 transition-colors"
             style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
           >
@@ -166,9 +179,7 @@ export default function DcmnCaseStudy() {
           <p className="font-display text-display font-semibold text-warm-900 leading-tight max-w-[22ch]">
             At the start of each month, I had five reports due. Each one could take a full day.
           </p>
-          <footer className="mt-6 flex items-center gap-4">
-            <span className="font-signet font-bold tracking-tight text-base text-accent leading-none">Howdy</span>
-            <span className="w-px h-5 bg-warm-200" aria-hidden />
+          <footer className="mt-6">
             <cite className="not-italic text-xs text-warm-400 uppercase tracking-widest">
               Janine · Senior Marketing Strategist, DCMN
             </cite>

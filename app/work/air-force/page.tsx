@@ -3,9 +3,22 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "DAF Training Modernization",
+  title: { absolute: "DAF Training Modernization | Ben Howard" },
   description:
-    "Replacing a 20-year-old Air Force training management system with a unified platform serving 4,000+ Airmen daily — delivered 3 months ahead of schedule.",
+    "Replaced a 20-year-old Air Force training system. 4,000+ daily users, delivered 3 months early, Phase 2 funded.",
+  openGraph: {
+    title: "DAF Training Modernization | Ben Howard",
+    description:
+      "Replaced a 20-year-old Air Force training system. 4,000+ daily users, delivered 3 months early, Phase 2 funded.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DAF Training Modernization | Ben Howard",
+    description:
+      "Replaced a 20-year-old Air Force training system. 4,000+ daily users, delivered 3 months early, Phase 2 funded.",
+    images: ["/og-image.png"],
+  },
 };
 
 // ── Data ─────────────────────────────────────────────────────────────────────
@@ -128,7 +141,7 @@ export default function AirForceCaseStudy() {
         {/* Breadcrumb */}
         <div className="pt-12 pb-10">
           <Link
-            href="/"
+            href="/work"
             className="inline-flex items-center gap-2 text-sm text-warm-400 hover:text-warm-900 transition-colors"
             style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
           >
@@ -574,9 +587,7 @@ export default function AirForceCaseStudy() {
                   <p className="font-display text-h2 font-semibold text-warm-900 leading-tight max-w-[28ch]">
                     This report used to take a full day; now it takes 15 minutes.
                   </p>
-                  <footer className="mt-8 flex items-center gap-4">
-                    <span className="font-signet font-bold tracking-tight text-base text-accent leading-none">Howdy</span>
-                    <span className="w-px h-5 bg-warm-200" aria-hidden />
+                  <footer className="mt-8">
                     <cite className="not-italic text-xs text-warm-400 uppercase tracking-widest">
                       Unit Training Manager · DAF
                     </cite>

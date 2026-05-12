@@ -15,7 +15,7 @@ export default function Footer() {
               Ben Howard
             </p>
             <p className="text-xs text-warm-400">
-              UX Strategist
+              UX Strategist &amp; Senior Product Designer
             </p>
           </div>
 
@@ -34,7 +34,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="/Benjamin_Howard_Product_Designer.pdf"
+              href="/Ben_Howard_Resume_2026.pdf"
               download
               className="inline-flex items-center gap-1.5 text-sm text-warm-400 hover:text-warm-900 transition-colors"
               style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
@@ -42,6 +42,18 @@ export default function Footer() {
               Resume
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
                 <path d="M5 1v6M2 7l3 2.5L8 7" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+            <a
+              href="https://howdyart.works"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-warm-400 hover:text-warm-900 transition-colors"
+              style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
+            >
+              Howdy Art Works
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
+                <path d="M1.5 8.5l7-7M8.5 8V1.5H2" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
             <a

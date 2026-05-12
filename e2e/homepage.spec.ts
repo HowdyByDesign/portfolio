@@ -29,7 +29,7 @@ test.describe("Homepage", () => {
 
   test("renders role label", async ({ page }) => {
     await expect(
-      page.getByText("UX Strategist · 10 Years Experience", {
+      page.getByText("UX Strategist & Senior Product Designer · 10+ Years", {
         exact: true,
       })
     ).toBeVisible();

@@ -4,9 +4,22 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import HeroAnimated from "@/components/HeroAnimated";
 
 export const metadata: Metadata = {
-  title: "Ben Howard | UX Strategist",
+  title: { absolute: "Ben Howard | UX Strategist & Senior Product Designer" },
   description:
-    "Specializing in enterprise digital transformation, AI integration, and design systems for global organizations like the U.S. Air Force and Pfizer.",
+    "10+ years orchestrating strategic blueprints for Pfizer, Capital Group, and the U.S. Air Force. d.MBA. Open to UX Strategy and Senior/Principal Product Design roles.",
+  openGraph: {
+    title: "Ben Howard | UX Strategist & Senior Product Designer",
+    description:
+      "10+ years orchestrating strategic blueprints for Pfizer, Capital Group, and the U.S. Air Force. d.MBA. Open to UX Strategy and Senior/Principal Product Design roles.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ben Howard | UX Strategist & Senior Product Designer",
+    description:
+      "10+ years orchestrating strategic blueprints for Pfizer, Capital Group, and the U.S. Air Force. d.MBA. Open to UX Strategy and Senior/Principal Product Design roles.",
+    images: ["/og-image.png"],
+  },
 };
 
 // ─── UPDATE THESE ────────────────────────────────────────────────────────────

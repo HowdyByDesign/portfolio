@@ -29,13 +29,15 @@ const config: Config = {
           DEFAULT: "#FF3200",
           hover:   "#CC2800",
         },
-        // Warm neutral palette — zinc-equivalent tinted toward #FF3200 at ~4% saturation
-        // Each step is perceptually balanced; the warmth is felt, not seen
+        // Warm neutral palette — light end (50-300) retuned 2026-05-12 to
+        // match the cream palette on howdyart.works, so the design + art
+        // studios feel like cousins. Dark end (400-950) kept as authored —
+        // they pair well with both the red accent and the cream surfaces.
         warm: {
-          50:  "#faf8f7",
-          100: "#f3efec",
-          200: "#e5dfda",
-          300: "#cdc6be",
+          50:  "#FAF7F0",  // cream-50  (was #faf8f7)
+          100: "#F5F0E6",  // cream-100 (was #f3efec)
+          200: "#E8E2D4",  // cream-200 (was #e5dfda)
+          300: "#D6CDB8",  // cream-300 (was #cdc6be)
           400: "#b0a79d",
           500: "#928881",
           600: "#756c65",

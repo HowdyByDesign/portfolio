@@ -3,9 +3,22 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pfizer Gen AI Marketing Platform",
+  title: { absolute: "Pfizer Gen AI Marketing Platform | Ben Howard" },
   description:
-    "Designing for trust in a generative AI marketing system inside a pharmaceutical regulatory environment — where the hard problem isn't the UI, it's adoption.",
+    "Designing for trust in a pharmaceutical regulatory environment. The 'Idea Accelerator' reframe that unlocked Gen AI adoption.",
+  openGraph: {
+    title: "Pfizer Gen AI Marketing Platform | Ben Howard",
+    description:
+      "Designing for trust in a pharmaceutical regulatory environment. The 'Idea Accelerator' reframe that unlocked Gen AI adoption.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pfizer Gen AI Marketing Platform | Ben Howard",
+    description:
+      "Designing for trust in a pharmaceutical regulatory environment. The 'Idea Accelerator' reframe that unlocked Gen AI adoption.",
+    images: ["/og-image.png"],
+  },
 };
 
 // ── Data ─────────────────────────────────────────────────────────────────────
@@ -78,7 +91,7 @@ export default function PfizerCaseStudy() {
       <div className="max-w-3xl mx-auto px-6">
         <div className="pt-12 pb-8">
           <Link
-            href="/"
+            href="/work"
             className="inline-flex items-center gap-2 text-sm text-warm-400 hover:text-warm-900 transition-colors"
             style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
           >
@@ -679,14 +692,6 @@ export default function PfizerCaseStudy() {
               </p>
             </div>
 
-            <div className="p-5 rounded-lg border border-warm-200 bg-warm-50">
-              <p className="label mb-2">[Add specific metrics here if available]</p>
-              <p className="text-sm text-warm-900 font-medium leading-relaxed">
-                e.g., number of beta users, time saved per copy iteration,
-                adoption rate among target teams, number of brands onboarded,
-                stakeholder count, engagement rate — whatever is shareable under NDA terms.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -700,7 +705,7 @@ export default function PfizerCaseStudy() {
               &ldquo;I&apos;m not using AI to write copy. I&apos;m using it to
               never start from a blank page again.&rdquo;
             </p>
-            <p className="text-sm text-warm-400">— Howdy, on the Idea Accelerator framing</p>
+            <p className="text-sm text-warm-400">— On the Idea Accelerator framing</p>
           </blockquote>
         </section>
 
@@ -714,10 +719,6 @@ export default function PfizerCaseStudy() {
             requirements shaped every design decision we made. Getting that
             perspective in week two rather than week eight would have changed the
             initial framing significantly.
-          </p>
-          <p className="text-warm-900 font-medium leading-relaxed">
-            [Add a second reflection here — something specific to this project
-            that you&apos;d change with hindsight.]
           </p>
         </section>
 
