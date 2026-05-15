@@ -154,9 +154,14 @@ export default function AirForceCaseStudy() {
         <p className="label mb-5">U.S. Air Force · Enterprise Platform · DAF Modernization</p>
 
         {/* H1 */}
-        <h1 className="font-display text-display font-semibold text-warm-900 leading-tight mb-10">
+        <h1 className="font-display text-display font-semibold text-warm-900 leading-tight mb-4">
           4,000+ Airmen. A 20-Year System Replaced. Delivered 3 Months Early.
         </h1>
+
+        {/* Sub-headline — the system problem before the outcome numbers */}
+        <p className="text-warm-500 text-[1.0625rem] leading-relaxed mb-10">
+          Three disconnected systems. One training record. Four user roles, all with different authority over the same data.
+        </p>
 
         {/* ── TLDR ───────────────────────────────────────────────────────── */}
         <div className="my-8 border-l-2 border-warm-200 pl-5 space-y-3">
@@ -317,7 +322,7 @@ export default function AirForceCaseStudy() {
         <section className="py-16 border-b border-warm-100">
           <p className="label mb-3">02 — The Strategic Frame</p>
           <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
-            The Real Problem Wasn&apos;t the UI
+            The lift-and-shift that became an architectural redesign
           </h2>
 
           <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-14 lg:items-start">
@@ -325,29 +330,67 @@ export default function AirForceCaseStudy() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-sm font-semibold text-warm-700 mb-3">
-                  The actual problem under the stated problem
+                  The engagement started reasonable. We killed it in week three.
                 </h3>
                 <p className="text-warm-900 font-medium leading-relaxed">
-                  The client brief described a UI modernization. The real problem was
-                  organizational: no shared definition of what "training readiness" meant
-                  across commands — which meant every downstream system was tracking different
-                  things under the same label. You cannot design a good interface on top of a
-                  broken data model. The design work had to be preceded by a definitional
-                  alignment exercise across stakeholders. That&apos;s not a UX project.
-                  That&apos;s an information architecture project with UX implications.
+                  The original brief was a lift-and-shift — move the existing system to a
+                  modern stack without breaking anything. Not because we wanted scope creep.
+                  Because we found the Monolith.
+                </p>
+                <p className="text-warm-900 font-medium leading-relaxed mt-4">
+                  The Air Force&apos;s personnel and training records didn&apos;t live in
+                  the same system. They lived in three separate platforms — an OutSystems
+                  layer, a legacy monolith, and an Angular front-end — with the Monolith
+                  holding the critical integration between civilian and airmen records. Every
+                  training status update required a reconciliation step that was invisible to
+                  users but present in every screen. You could redesign the UI and still ship
+                  a system where a member&apos;s training record contradicted their personnel
+                  record.
+                </p>
+                <p className="text-warm-900 font-medium leading-relaxed mt-4">
+                  That&apos;s not a UX problem. That&apos;s an information architecture
+                  problem with UX implications — and it was the actual scope of the work once
+                  we named it.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-sm font-semibold text-warm-700 mb-3">
-                  How the d.MBA framing shaped the engagement
+                  How we reframed the engagement
                 </h3>
                 <p className="text-warm-900 font-medium leading-relaxed">
-                  Coming in with a business lens meant asking questions not in the original
-                  brief: What is the operational cost of the current friction? What decisions
-                  does the readiness data actually inform? What would it take for this system
-                  to scale to additional installations? Those questions shaped product strategy,
-                  not just design direction.
+                  Rather than designing around the broken data model, we made the architectural
+                  problem visible to the client and proposed a path that addressed it: document
+                  the Monolith as a dependency rather than a background condition, design
+                  explicitly for the three-system data states, and build reconciliation handling
+                  directly into the component architecture.
+                </p>
+                <p className="text-warm-900 font-medium leading-relaxed mt-4">
+                  The client approved the expanded scope. Not because the design argument was
+                  compelling, but because we framed it as operational risk: every hour a
+                  training record was out of sync was an hour a commander was making readiness
+                  decisions on stale data.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-warm-700 mb-3">
+                  The four-role authority problem
+                </h3>
+                <p className="text-warm-900 font-medium leading-relaxed">
+                  Once the data model was clear, the real design problem emerged. Four different
+                  user types — Member, Supervisor, Unit Training Manager (UTM), and Education
+                  &amp; Development Specialist (EDS) — all acted on the same training record.
+                  Each with different permissions. Each seeing a different slice of the same
+                  data. Each whose action triggered a downstream state change for someone else.
+                </p>
+                <p className="text-warm-900 font-medium leading-relaxed mt-4">
+                  The interesting design problem wasn&apos;t any individual screen. It was
+                  making authority visible without making the platform feel like a bureaucracy.
+                  A Supervisor looking at &ldquo;Pending Class Approval&rdquo; is deciding
+                  whether to approve. An EDS looking at the same status is managing capacity.
+                  Same label, different action affordances. That constraint drove every
+                  component decision on the platform.
                 </p>
               </div>
             </div>
@@ -357,7 +400,7 @@ export default function AirForceCaseStudy() {
               <div className="border-l-2 border-accent/40 pl-4">
                 <p className="text-xs font-semibold text-warm-400 uppercase tracking-widest mb-2">Business case made</p>
                 <p className="text-sm text-warm-600 leading-relaxed">
-                  Framing the data model problem as operational risk — not technical debt — secured scope approval that would otherwise have been deferred.
+                  Reframing the data model problem as operational risk — not technical debt — secured scope approval that would otherwise have been deferred to a future phase.
                 </p>
               </div>
               <div className="border-l-2 border-warm-200 pl-4">
@@ -554,9 +597,7 @@ export default function AirForceCaseStudy() {
                 The Hard Part
               </h2>
               <p className="text-warm-900 font-medium leading-relaxed mb-10">
-                Junior designers document the ideal flow. This is the section that makes
-                everything else credible — the honest account of resistance, pivots, and
-                the path to consensus.
+                The honest account — resistance, pivots, and the path to consensus.
               </p>
 
               <div className="space-y-4">
@@ -585,11 +626,11 @@ export default function AirForceCaseStudy() {
                     &ldquo;
                   </span>
                   <p className="font-display text-h2 font-semibold text-warm-900 leading-tight max-w-[28ch]">
-                    This report used to take a full day; now it takes 15 minutes.
+                    I had Airmen with approved training that didn&apos;t show up as approved. Every week, calls. Now it just shows.
                   </p>
                   <footer className="mt-8">
                     <cite className="not-italic text-xs text-warm-400 uppercase tracking-widest">
-                      Unit Training Manager · DAF
+                      Supervisor · DAF
                     </cite>
                   </footer>
                 </blockquote>
@@ -697,6 +738,46 @@ export default function AirForceCaseStudy() {
           <p className="text-xs text-warm-400 mt-3 text-center mb-10">
             Final interface designs on the MyVector platform
           </p>
+
+          <div className="border border-warm-200 rounded-xl p-6 mb-6 space-y-4">
+            <p className="label mb-4">The four roles, in the platform</p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <p className="text-sm font-semibold text-warm-900 mb-1">Member</p>
+                <p className="text-sm text-warm-600 leading-relaxed">
+                  Owns their training record. Enrolls in classes, tracks status, initiates
+                  SF-182 reimbursements.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-warm-900 mb-1">Supervisor</p>
+                <p className="text-sm text-warm-600 leading-relaxed">
+                  Sees their team. Approves class enrollment. The authority node where
+                  individual records become command-level data.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-warm-900 mb-1">UTM — Unit Training Manager</p>
+                <p className="text-sm text-warm-600 leading-relaxed">
+                  Manages the supply side. Class schedules, capacity, availability. Doesn&apos;t
+                  touch individual records.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-warm-900 mb-1">EDS — Education &amp; Development Specialist</p>
+                <p className="text-sm text-warm-600 leading-relaxed">
+                  Manages the catalog. Course lifecycle, compliance requirements, institutional
+                  administration.
+                </p>
+              </div>
+            </div>
+            <p className="text-sm text-warm-600 leading-relaxed pt-2 border-t border-warm-200">
+              Member and Supervisor were the primary design targets — the interfaces where most
+              users spent most of their time and where friction was most visible. UTM and EDS
+              workflows were governance layers: high-stakes, low-frequency, designed for
+              precision over speed.
+            </p>
+          </div>
 
           <div className="bg-warm-100 rounded-xl p-6 border border-warm-200">
             <p className="label mb-3">Second-Order Outcomes</p>
