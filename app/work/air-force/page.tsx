@@ -395,6 +395,20 @@ export default function AirForceCaseStudy() {
               </div>
             </div>
 
+            {/* ── Supervisor screen ── */}
+            <div className="mt-10 rounded-xl overflow-hidden border border-warm-100">
+              <Image
+                src="/images/supervisor-training-requirements.png"
+                alt="Supervisor Training Requirements — Sgt. Snuffy, Samuel — 8 courses with mixed statuses"
+                width={1440}
+                height={1024}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-xs text-warm-400 mt-2 mb-0">
+              Supervisor view — the authority node where individual records become command-level data
+            </p>
+
             {/* ── Margin aside ── */}
             <aside className="mt-10 lg:mt-0 lg:sticky lg:top-24 space-y-6">
               <div className="border-l-2 border-accent/40 pl-4">
@@ -731,6 +745,24 @@ export default function AirForceCaseStudy() {
                 alt="User journey map — training management workflow"
                 width={800}
                 height={600}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden border border-warm-100">
+              <Image
+                src="/images/member-my-training.png"
+                alt="Member My Training — tab view with status badges"
+                width={1440}
+                height={900}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden border border-warm-100">
+              <Image
+                src="/images/class-management.png"
+                alt="Class Management — Member class list with dates and capacity"
+                width={1440}
+                height={900}
                 className="w-full h-auto"
               />
             </div>
