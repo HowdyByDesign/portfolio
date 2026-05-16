@@ -748,15 +748,6 @@ export default function AirForceCaseStudy() {
                 className="w-full h-auto"
               />
             </div>
-            <div className="rounded-xl overflow-hidden border border-warm-100">
-              <Image
-                src="/images/class-management.png"
-                alt="Class Management — Member class list with dates and capacity"
-                width={1440}
-                height={900}
-                className="w-full h-auto"
-              />
-            </div>
           </div>
           <p className="text-xs text-warm-400 mt-3 text-center mb-10">
             Final interface designs on the MyVector platform
