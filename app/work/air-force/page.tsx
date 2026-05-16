@@ -395,20 +395,6 @@ export default function AirForceCaseStudy() {
               </div>
             </div>
 
-            {/* ── Supervisor screen ── */}
-            <div className="mt-10 rounded-xl overflow-hidden border border-warm-100">
-              <Image
-                src="/images/supervisor-training-requirements.png"
-                alt="Supervisor Training Requirements — Sgt. Snuffy, Samuel — 8 courses with mixed statuses"
-                width={1440}
-                height={1024}
-                className="w-full h-auto"
-              />
-            </div>
-            <p className="text-xs text-warm-400 mt-2 mb-0">
-              Supervisor view — the authority node where individual records become command-level data
-            </p>
-
             {/* ── Margin aside ── */}
             <aside className="mt-10 lg:mt-0 lg:sticky lg:top-24 space-y-6">
               <div className="border-l-2 border-accent/40 pl-4">
@@ -424,6 +410,20 @@ export default function AirForceCaseStudy() {
               </div>
             </aside>
           </div>
+
+          {/* ── Supervisor screen — full width below the grid ── */}
+          <div className="mt-10 rounded-xl overflow-hidden border border-warm-100">
+            <Image
+              src="/images/supervisor-training-requirements.png"
+              alt="Supervisor Training Requirements — Sgt. Snuffy, Samuel — 8 courses with mixed statuses"
+              width={1440}
+              height={1024}
+              className="w-full h-auto"
+            />
+          </div>
+          <p className="text-xs text-warm-400 mt-3 text-center">
+            Supervisor view — the authority node where individual records become command-level data
+          </p>
         </section>
 
         {/* ── 03 — System Atoms (Visual System / Technical Deep-Dive) ──── */}
@@ -729,22 +729,13 @@ export default function AirForceCaseStudy() {
             ))}
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 mt-10">
+          <div className="flex flex-col gap-6 mt-10">
             <div className="rounded-xl overflow-hidden border border-warm-100">
               <Image
                 src="https://framerusercontent.com/images/SXIbre2GyhwJYLZbjj3rp0d52E.png"
                 alt="MyVector platform — final interface design"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="rounded-xl overflow-hidden border border-warm-100">
-              <Image
-                src="https://framerusercontent.com/images/e9I6jC7yIrIahk9irQp1pha6ZwE.png"
-                alt="User journey map — training management workflow"
-                width={800}
-                height={600}
+                width={1400}
+                height={788}
                 className="w-full h-auto"
               />
             </div>
