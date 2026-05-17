@@ -117,15 +117,11 @@ const statusConfig: Record<string, { label: string; className: string }> = {
 const technicalConstraints = [
   {
     title: "Designing for the data model, not the ideal model",
-    body: `The three-system fragmentation meant our information architecture had to accommodate data states that wouldn't exist in a greenfield design — specifically, a "reconciling" state where data across systems disagreed. Every component needed to handle that state gracefully. Designing for it honestly, rather than assuming clean data, was a non-trivial creative and engineering challenge.`,
+    body: `Three-system fragmentation meant every component had to handle a "reconciling" state — data that disagreed across systems. Designing for that reality, rather than assuming clean data, shaped the entire information architecture.`,
   },
   {
     title: "Engineering collaboration mechanism",
-    body: `Weekly design–tech syncs with a shared "constraint ledger" — a living document where design decisions and their technical dependencies were tracked together. When a constraint changed, the design team was notified before it affected a sprint. This prevented the two-week rework cycles that had plagued earlier project phases.`,
-  },
-  {
-    title: "Security-first interaction design",
-    body: `Every feature touching classified record types required a security review before user testing. I built this cycle in as a fixed checkpoint rather than treating it as a blocker — which meant we never had a feature that passed design review and failed security review.`,
+    body: `Weekly design–tech syncs with a shared "constraint ledger" tracked design decisions and technical dependencies together. When a constraint changed, design knew before it hit a sprint — eliminating the rework cycles that had plagued earlier phases.`,
   },
 ];
 
@@ -155,12 +151,12 @@ export default function AirForceCaseStudy() {
 
         {/* H1 */}
         <h1 className="font-display text-display font-semibold text-warm-900 leading-tight mb-4">
-          4,000+ Airmen. A 20-Year System Replaced. Delivered 3 Months Early.
+          From Operational Fog to Readiness Clarity
         </h1>
 
         {/* Sub-headline — the system problem before the outcome numbers */}
         <p className="text-warm-500 text-[1.0625rem] leading-relaxed mb-10">
-          Three disconnected systems. One training record. Four user roles, all with different authority over the same data.
+          Three disconnected systems. Four user roles. One platform that 4,000+ Airmen — and their commanders — could finally trust.
         </p>
 
         {/* ── TLDR ───────────────────────────────────────────────────────── */}
@@ -219,9 +215,9 @@ export default function AirForceCaseStudy() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="grid grid-cols-3 divide-x divide-warm-200">
             {[
-              { label: "Role",               value: "Strategic Designer" },
-              { label: "Timeline",           value: "18 Months" },
-              { label: "Daily Active Users", value: "4,000+" },
+              { label: "Role",            value: "Strategic Designer" },
+              { label: "Timeline",        value: "12 Months" },
+              { label: "Value Created",   value: "Improved Operational Efficiency" },
             ].map((item) => (
               <div key={item.label} className="py-4 px-5 first:pl-0 last:pr-0">
                 <p className="label mb-1">{item.label}</p>
@@ -239,15 +235,8 @@ export default function AirForceCaseStudy() {
       ──────────────────────────────────────────────────────────────────── */}
       <div className="max-w-4xl mx-auto px-6">
 
-        {/* ── Hook summary + Hero image ─────────────────────────────────── */}
+        {/* ── Hero image ───────────────────────────────────────────────── */}
         <section className="pt-12 pb-16 border-b border-warm-100">
-          <p className="text-warm-900 font-medium leading-relaxed mb-10 max-w-[58ch]">
-            I orchestrated end-to-end modernization of the DAF&apos;s legacy training
-            platform — reconciling three disconnected systems, establishing a governance
-            structure built to outlast the project team, and delivering 3 months ahead
-            of schedule. Now serving 4,000+ daily active users. Phase 2 approved and funded.
-          </p>
-
           <div className="rounded-xl overflow-hidden border border-warm-100">
             <Image
               src="https://framerusercontent.com/images/zVA7Z8FIh18dbzcK8WJYAE3YW58.png"
@@ -266,29 +255,11 @@ export default function AirForceCaseStudy() {
             A 20-Year System That Shouldn&apos;t Have Lasted This Long
           </h2>
 
-          <div className="space-y-8 mb-12">
-            <div>
-              <h3 className="text-sm font-semibold text-warm-700 mb-2">The organization</h3>
-              <p className="text-warm-900 font-medium leading-relaxed">
-                A mission-critical training and readiness management platform for a major
-                branch of the U.S. Armed Forces, operating at scale across multiple
-                installations. Users ranged from front-line personnel completing required
-                training to program administrators managing compliance across thousands of records.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-warm-700 mb-2">My role</h3>
-              <p className="text-warm-900 font-medium leading-relaxed">
-                Systems architect and lead UX strategist responsible for orchestrating
-                the full modernization — developing the customer experience blueprint,
-                synthesizing stakeholder and user needs across multiple commands into a
-                unified strategy, and establishing a governance structure built to outlast
-                the project team. I orchestrated the technical and business roadmap,
-                owned stakeholder relationships across commands, and drove the
-                co-creation strategy sessions that aligned design intent with
-                engineering constraints before sprints began.
-              </p>
-            </div>
+          <div className="mb-12">
+            <h3 className="text-sm font-semibold text-warm-700 mb-2">My role</h3>
+            <p className="text-warm-900 font-medium leading-relaxed">
+              Systems architect and lead UX strategist — developed the customer experience blueprint, aligned stakeholder needs across multiple commands, and established a governance structure built to outlast the project team.
+            </p>
           </div>
 
           <h3 className="text-sm font-semibold text-warm-700 mb-5">The real constraints</h3>
@@ -759,15 +730,13 @@ export default function AirForceCaseStudy() {
               <div>
                 <p className="text-sm font-semibold text-warm-900 mb-1">Member</p>
                 <p className="text-sm text-warm-600 leading-relaxed">
-                  Owns their training record. Enrolls in classes, tracks status, initiates
-                  SF-182 reimbursements.
+                  Owns their training record. Enrolls in classes, tracks status. When a course requires funding, the system automatically generates an SF-182 form — pre-populated with course and member data — and routes it for approval without manual entry.
                 </p>
               </div>
               <div>
                 <p className="text-sm font-semibold text-warm-900 mb-1">Supervisor</p>
                 <p className="text-sm text-warm-600 leading-relaxed">
-                  Sees their team. Approves class enrollment. The authority node where
-                  individual records become command-level data.
+                  Approves class enrollment and SF-182 funding requests for their unit. The authority node where individual training records become command-level readiness data.
                 </p>
               </div>
               <div>
@@ -786,10 +755,10 @@ export default function AirForceCaseStudy() {
               </div>
             </div>
             <p className="text-sm text-warm-600 leading-relaxed pt-2 border-t border-warm-200">
-              Member and Supervisor were the primary design targets — the interfaces where most
-              users spent most of their time and where friction was most visible. UTM and EDS
-              workflows were governance layers: high-stakes, low-frequency, designed for
-              precision over speed.
+              Member and Supervisor were the primary design targets — where most users spent most of their time and where friction was most visible. UTM and EDS workflows were governance layers: high-stakes, low-frequency, designed for precision over speed.
+            </p>
+            <p className="text-sm text-warm-600 leading-relaxed pt-2">
+              The SF-182 flow connected all four roles automatically: a Member selects a funded course, the system pre-populates the form, the Supervisor approves, and higher authorities receive it for final sign-off. Once cleared, the Member&apos;s training record updates automatically. A workflow that was previously manual across three systems — handled end-to-end by the platform.
             </p>
           </div>
 
@@ -806,22 +775,6 @@ export default function AirForceCaseStudy() {
           </div>
         </section>
 
-        {/* ── 08 — What I'd Do Differently ─────────────────────────────── */}
-        <section className="py-16">
-          <p className="label mb-8">08 — What I&apos;d Do Differently</p>
-          <p className="text-warm-900 font-medium leading-relaxed mb-4">
-            If I had it to do again, I would have run a structured technical constraint
-            workshop with engineering in week one — before any concepting. We lost roughly
-            two weeks to designs that couldn&apos;t be built given the legacy data model,
-            and a half-day session at the start would have surfaced those constraints earlier.
-          </p>
-          <p className="text-warm-900 font-medium leading-relaxed">
-            I&apos;d also have brought the security review team in during the concepting
-            phase rather than the review phase. Their perspective shaped several final
-            decisions regardless — the only thing that changed by involving them late
-            was the timeline.
-          </p>
-        </section>
 
       </div>
     </>
