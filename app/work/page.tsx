@@ -4,18 +4,18 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 export const metadata: Metadata = {
   title: { absolute: "Selected Work | Ben Howard" },
   description:
-    "Three case studies in enterprise UX, AI design, and operational redesign — for the U.S. Air Force, Pfizer, and DCMN.",
+    "Case studies in enterprise UX, AI design, and operational redesign — for the U.S. Air Force, Capital Group, Pfizer, and DCMN.",
   openGraph: {
     title: "Selected Work | Ben Howard",
     description:
-      "Three case studies in enterprise UX, AI design, and operational redesign — for the U.S. Air Force, Pfizer, and DCMN.",
+      "Case studies in enterprise UX, AI design, and operational redesign — for the U.S. Air Force, Capital Group, Pfizer, and DCMN.",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Selected Work | Ben Howard",
     description:
-      "Three case studies in enterprise UX, AI design, and operational redesign — for the U.S. Air Force, Pfizer, and DCMN.",
+      "Case studies in enterprise UX, AI design, and operational redesign — for the U.S. Air Force, Capital Group, Pfizer, and DCMN.",
     images: ["/og-image.png"],
   },
 };
@@ -32,6 +32,15 @@ const caseStudies = [
   },
   {
     index: "02",
+    client: "Capital Group",
+    category: "Financial Services · Enterprise UX · Multi-Role Systems",
+    title: "From Wet Ink to One Click",
+    description:
+      "A 40-field paper form and a scan-and-email workflow were the only tools business owners, advisors, and Capital Group associates had to manage Small Business 401k plans. I redesigned the entire experience role by role — replacing a seven-step analog chain with a single platform and a dual approval workflow that finally worked.",
+    href: "/work/capital-group",
+  },
+  {
+    index: "03",
     client: "DCMN",
     category: "Dashboard Design · Data Visualization · Performance Marketing",
     title: "Eliminating 400 Hours of Monthly Reporting Waste",
@@ -40,7 +49,7 @@ const caseStudies = [
     href: "/work/dcmn",
   },
   {
-    index: "03",
+    index: "04",
     client: "Pfizer",
     category: "Generative AI · Enterprise SaaS · Pharmaceutical",
     title: "Designing for Trust in a Gen AI Marketing System",
@@ -58,7 +67,7 @@ export default function WorkIndex() {
           <p className="label">Selected Work</p>
         </div>
         <p className="text-warm-400 font-medium text-[1.05rem] leading-relaxed mb-16 max-w-[60ch]">
-          Three engagements where business strategy and design craft had to
+          Four engagements where business strategy and design craft had to
           operate at the same scale.
         </p>
         <div className="space-y-4">

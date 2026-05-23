@@ -3,81 +3,87 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Capital Group Client Service Center",
+  title: { absolute: "Capital Group 401k Platform | Ben Howard" },
   description:
-    "Replacing a print-fill-scan-email retirement plan process with a digital guided platform for Capital Group's small business clients.",
+    "From wet ink to one click. A 40-field paper form and scan-and-email workflow replaced by a single platform across three roles, with a required dual approval that finally worked.",
+  openGraph: {
+    title: "Capital Group 401k Platform | Ben Howard",
+    description:
+      "From wet ink to one click. A 40-field paper form and scan-and-email workflow replaced by a single platform across three roles, with a required dual approval that finally worked.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Capital Group 401k Platform | Ben Howard",
+    description:
+      "A 40-field paper form and a scan-and-email workflow replaced by a single platform. Three roles, one source of truth, required dual approval — made intentional.",
+    images: ["/og-image.png"],
+  },
 };
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
-const metaBar = [
-  { label: "Role",        value: `UX Strategist · Workshop Facilitator` },
-  { label: "Deliverables", value: `Design sprints, user journeys, wireframes, prototypes, user testing` },
-  { label: "Domain",      value: `Retirement planning · Financial services` },
-];
-
-const researchFindings = [
+const constraints = [
   {
-    title: `No clarity on which form to use`,
-    body:  `Users couldn't determine which form applied to their situation or where to find it. The form catalog was large, the language was technical, and there was no guidance system — just a list.`,
+    title: "Three roles, zero differentiation",
+    body: "The same paper form was the interface for everyone — the business owner making a change once a year, the TPA managing compliance across multiple plans, and the Internal Associate processing updates daily. Each had completely different information needs, different action authority, and different stakes. The form treated them identically.",
   },
   {
-    title: `No in-form guidance`,
-    body:  `Once users found the right form, there was no contextual help for filling it out. Business owners managing retirement plans are not pension administrators — the forms assumed expertise they didn't have.`,
+    title: "Dual approval was non-negotiable",
+    body: "Both the TPA and Internal Associate were required to sign off on every plan change before it could be applied. This wasn't bureaucracy to design around — it was a compliance requirement baked into the product. The challenge was making that required two-party approval fast, visible, and not a bottleneck. It couldn't be eliminated. It had to be made intentional.",
   },
   {
-    title: `Print → fill → scan → email`,
-    body:  `The entire submission process was analog. Users printed forms, filled them by hand, scanned them, and emailed them to associates. No confirmation, no tracking, no audit trail on the user's side.`,
-  },
-  {
-    title: `Manual re-entry on the associate side`,
-    body:  `Associates receiving the scanned forms manually re-keyed the data into a legacy system. This introduced a second layer of human error downstream from the first, with no mechanism to catch discrepancies.`,
-  },
-  {
-    title: `No confirmation of success`,
-    body:  `After submitting, users had no way to know whether their change had been received, processed, or applied. The process ended with an email into a void.`,
+    title: "No shared record, no shared visibility",
+    body: "Before the platform, there was no single place where a request lived. It existed as an email attachment, a scanned PDF, a phone call someone might or might not remember. Nobody knew where anything was in the approval chain without asking. The absence of a shared record was the root problem — everything else was downstream of that.",
   },
 ];
 
-const designDecisions = [
+const sprintSummaries = [
   {
-    title: `Homepage as navigation, not a form portal`,
-    body:  `The entry point uses a CTA alongside categorized navigation cards — not a flat form list. Illustrations replace business jargon as wayfinding signals. The goal was to give users enough orientation to self-direct without reading dense copy.`,
+    label: "Sprint 01 — Business Owner",
+    body: "Replaced the 40-50 field form with a guided, step-by-step request flow. Business owners see only the fields relevant to their specific change type. Fewer fields, less confusion, fewer errors requiring phone reconciliation.",
   },
   {
-    title: `A guided form flexible enough for 40+ form types`,
-    body:  `All 40+ form types were mapped to a single guided experience architecture. Simplified, contextual copy replaced regulatory language. A progress tracker shows users exactly how long the form is. The continue button sets expectations for what comes next — eliminating the uncertainty that was causing abandonment.`,
+    label: "Sprint 02 — Third Party Administrator",
+    body: "Designed a shared view into the plan record with the ability to review and approve change requests directly in the platform. The TPA role stays read-plus-approve — no direct edit access to a regulated record, but no more working entirely outside the system.",
   },
   {
-    title: `Search and categorization for discoverability`,
-    body:  `Forms were categorized by business need (not regulatory type) and made searchable. The redesign of the information architecture was as impactful as the UI — users who couldn't find the right form never reached the design.`,
+    label: "Sprint 03 — Internal Associate (Primary MVP)",
+    body: "The core deliverable. Organized 40-50 fields into tabbed sections: Plan Info, Contributions, Eligibility, Distributions, Admin. Both approvals — TPA and associate — now tracked in the same place. Iterated through multiple rounds of user testing with real associates.",
+  },
+];
+
+const hardPart = [
+  {
+    label: "The stated preference vs. the real need",
+    body: "Some associates pushed back on the tabbed layout — they wanted a single long page. When we asked why, the answer was specific: they used Cmd+F to jump directly to the field they needed. Tabbed navigation broke that behavior. Giving them a long page would have solved the stated preference and recreated the cognitive load problem. We gave them what they actually needed: a persistent search bar and a View All tab. The organized structure stayed intact. Power users got their speed back.",
   },
   {
-    title: `Digital submission with confirmation`,
-    body:  `The print/fill/scan/email process was replaced entirely. Users submit digitally and receive explicit confirmation of a successful change. Associates receive structured digital data, eliminating manual re-entry. The feedback loop that was missing from the original process was built in as a design requirement.`,
+    label: "Earning trust through testing, not assertion",
+    body: "Associates who had processed paper forms for years knew every workaround in the existing system. The tabbed interface asked them to trust that the workarounds wouldn't be needed. That trust had to be earned. The Cmd+F finding was the inflection point — once we showed that we understood how they actually worked, and addressed it directly, resistance shifted to advocacy.",
   },
 ];
 
 const outcomes = [
   {
-    metric: "Analog process eliminated",
+    metric: "Seven steps became one request",
     detail:
-      "Print, fill, scan, and email replaced with a digital submission flow. The outcome was incredibly well received by both end users and the internal associates who had been re-entering data manually.",
+      "The phone call, the emailed form, the scan, the email back, the chased approvals, and the manual update — replaced by a single tracked request that all three parties act on in the same platform.",
   },
   {
-    metric: "One form architecture for 40+ types",
+    metric: "Speed and visibility were the same outcome",
     detail:
-      "A single guided experience structure handles the full range of retirement plan forms. This reduced development complexity and gave users a consistent, learnable pattern regardless of which form they needed.",
+      "Before, nobody knew where a request was in the approval chain without picking up the phone. The platform didn't speed things up by cutting steps — it sped things up by making every step visible. When reviewers can see what's waiting and act without coordination overhead, the required approval chain stops feeling like a bottleneck.",
   },
   {
-    metric: "Simplified language throughout",
+    metric: "The compliance requirement became a feature",
     detail:
-      "Illustrations and plain-language copy replaced business and regulatory terminology. The language simplification addressed the clarity gap that user research identified as the primary source of friction.",
+      "The dual TPA and Internal Associate approval was non-negotiable. In the paper process, it was invisible friction. In the platform, it became an explicit, trackable workflow state. Plan sponsors could see their request was in review. Associates could see what needed action. The requirement didn't change. The experience of it did.",
   },
   {
-    metric: "Discoverability solved at the IA level",
+    metric: "MVP shipped · feedback in hand",
     detail:
-      "Categorization and search reduced the time-to-form for users who previously couldn't identify which form applied to their situation — a problem that no amount of UI polish could fix without addressing the underlying information architecture.",
+      "Launched with real associates. Post-launch feedback captured and grounded in actual usage — a better foundation for phase two than any pre-launch assumption.",
   },
 ];
 
@@ -86,255 +92,274 @@ const outcomes = [
 export default function CapitalGroupCaseStudy() {
   return (
     <>
-      {/* ── Hero ───────────────────────────────────────────────────────────── */}
+      {/* ────────────────────────────────────────────────────────────────────
+          ABOVE THE FOLD
+      ──────────────────────────────────────────────────────────────────── */}
       <div className="max-w-3xl mx-auto px-6">
-        <div className="pt-12 pb-8">
+        {/* Breadcrumb */}
+        <div className="pt-12 pb-10">
           <Link
-            href="/"
-            className="text-sm text-warm-400 hover:text-warm-900 transition-colors"
+            href="/work"
+            className="inline-flex items-center gap-2 text-sm text-warm-400 hover:text-warm-900 transition-colors"
+            style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
           >
-            ← Work
+            <span aria-hidden>←</span>
+            Work
           </Link>
         </div>
 
-        <section className="pb-16 border-b border-warm-100">
-          <p className="label mb-5">Capital Group · Financial Services · Platform Design</p>
-          <h1
-            className="font-display font-semibold text-warm-900 leading-tight mb-8"
-            style={{ fontSize: "clamp(2.25rem, 4vw + 0.75rem, 3.75rem)", letterSpacing: "-0.035em" }}
-          >
-            Replacing an Analog Retirement Plan Process with a Digital Platform
-          </h1>
+        {/* Category label */}
+        <p className="label mb-5">Capital Group · Financial Services · Enterprise UX</p>
 
-          <div className="rounded-xl overflow-hidden border border-warm-200">
-            <Image
-              src="https://framerusercontent.com/images/nndmupd15IlC7Eaf3bsszdjes.png"
-              alt="Capital Group Client Service Center — homepage design with navigation cards"
-              width={1400}
-              height={788}
-              className="w-full h-auto"
-            />
-          </div>
-        </section>
+        {/* H1 */}
+        <h1 className="font-display text-display font-semibold text-warm-900 leading-tight mb-4">
+          From wet ink to one click.
+        </h1>
+
+        {/* Sub-headline */}
+        <p className="text-warm-500 text-[1.0625rem] leading-relaxed mb-10">
+          A 40-field paper form and a scan-and-email workflow were the only tools three roles had to manage Small Business 401k plans. I redesigned the entire experience — role by role, sprint by sprint.
+        </p>
+
+        {/* ── TLDR ───────────────────────────────────────────────────────── */}
+        <div className="my-8 border-l-2 border-warm-200 pl-5 space-y-3">
+          {[
+            {
+              label: "Problem",
+              text: "Adding a single employee to a Small Business 401k plan required a phone call, an emailed paper form, a handwritten change, a scan, an email back, parallel sign-off from two parties, and a manual system update. Seven steps across three people — with no visibility into where any request stood.",
+            },
+            {
+              label: "Action",
+              text: "Served as sole designer across a series of design sprints, each targeting a specific role. Reframed the brief from \"digitize the form\" to \"build a single source of truth for plan changes.\" Designed purpose-built interfaces for Business Owners, TPAs, and Internal Associates — all acting on the same underlying record.",
+            },
+            {
+              label: "Outcome",
+              text: "MVP launched and adopted by internal associates. The scan-and-email loop replaced by a single platform. Change requests became trackable in real time. Speed and visibility improved as the same outcome — not two separate ones.",
+            },
+          ].map(({ label, text }) => (
+            <div key={label} className="flex gap-3 items-baseline">
+              <span className="font-signet font-bold text-xs text-[#FF3200] uppercase tracking-widest w-16 flex-shrink-0">
+                {label}
+              </span>
+              <p className="text-sm text-warm-600 leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Pull quote */}
+        <p className="text-warm-600 text-[1.0625rem] leading-relaxed max-w-[52ch] mb-2">
+          The approval chain couldn&apos;t be removed. It had to be made intentional.
+        </p>
       </div>
 
-      {/* ── Sticky Meta Bar ────────────────────────────────────────────────── */}
-      <div className="sticky top-16 z-10 border-b border-warm-200" style={{ backdropFilter: "blur(12px)", backgroundColor: "oklch(from #faf8f7 l c h / 0.95)" }}>
+      {/* ────────────────────────────────────────────────────────────────────
+          STICKY IMPACT CARD
+      ──────────────────────────────────────────────────────────────────── */}
+      <div
+        className="sticky top-16 z-10 border-b border-warm-200 bg-warm-50/95 backdrop-blur-md"
+        aria-label="Project at a glance"
+      >
         <div className="max-w-3xl mx-auto px-6">
           <div className="grid grid-cols-3 divide-x divide-warm-200">
-            {metaBar.map((item) => (
-              <div key={item.label} className="py-4 first:pl-0 px-5">
-                <p className="label mb-0.5">{item.label}</p>
-                <p className="text-xs text-warm-700 leading-snug">{item.value}</p>
+            {[
+              { label: "Role",         value: "Sole Designer" },
+              { label: "Methodology", value: "Design Sprints" },
+              { label: "Roles Served", value: "3 — Owner, TPA, Associate" },
+            ].map((item) => (
+              <div key={item.label} className="py-4 px-5 first:pl-0 last:pr-0">
+                <p className="label mb-1">{item.label}</p>
+                <p className="font-display text-h4 font-semibold text-warm-900 leading-tight">
+                  {item.value}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ── Body Content ───────────────────────────────────────────────────── */}
-      <div className="max-w-3xl mx-auto px-6">
+      {/* ────────────────────────────────────────────────────────────────────
+          BODY
+      ──────────────────────────────────────────────────────────────────── */}
+      <div className="max-w-4xl mx-auto px-6">
 
-        {/* ── The Hook ────────────────────────────────────────────────────── */}
-        <section className="py-16 border-b border-warm-100">
-          <p
-            className="font-display font-semibold text-warm-900 leading-snug max-w-[42ch]"
-            style={{ fontSize: "clamp(1.25rem, 1.5vw + 0.5rem, 1.875rem)", letterSpacing: "-0.02em" }}
-          >
-            Business owners managing retirement plans for their employees
-            shouldn&apos;t need to be pension administrators. The existing process
-            assumed they were.
-          </p>
-          <p className="mt-6 text-warm-900 font-medium leading-relaxed">
-            Capital Group&apos;s Client Service Center handled retirement plan
-            management for small businesses — a complex, high-stakes domain where
-            users were filling out forms they didn&apos;t understand, submitting
-            them through an analog process that had no feedback loop, and getting
-            no confirmation that anything had worked. I led the UX redesign from
-            user research through delivery.
-          </p>
+        {/* ── Hero image ───────────────────────────────────────────────── */}
+        <section className="pt-12 pb-16 border-b border-warm-100">
+          <div className="rounded-xl overflow-hidden border border-warm-100">
+            <Image
+              src="/images/csc-plan-info.png"
+              alt="Client Service Center — Plan Info tab, Internal Associate view"
+              width={1400}
+              height={952}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
         </section>
 
-        {/* ── Section 01 — Context & Research ──────────────────────────────── */}
+        {/* ── 01 — Context & Constraints ───────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">01 — Context &amp; User Research</p>
+          <p className="label mb-3">01 — Context &amp; Constraints</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-6 leading-tight">
+            The workflow, not the form.
+          </h2>
 
-          <div className="space-y-8 mb-12">
-            <div>
-              <h3 className="text-sm font-semibold text-warm-700 mb-2">The organization</h3>
-              <p className="text-warm-900 font-medium leading-relaxed">
-                Capital Group is one of the largest investment management firms in
-                the world. The Client Service Center is the platform through which
-                employers — typically small business owners — create and maintain
-                retirement plans for their employees. The users are not financial
-                professionals. The product had been built as if they were.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-warm-700 mb-2">My role</h3>
-              <p className="text-warm-900 font-medium leading-relaxed">
-                Orchestrated the end-to-end design process — from initial user
-                interviews through design sprints, wireframes, prototyping, and
-                usability testing. Facilitated workshops with the product team
-                and internal stakeholders to align on information architecture
-                and form system design.
-              </p>
-            </div>
+          <div className="mb-10">
+            <p className="text-warm-900 font-medium leading-relaxed mb-4">
+              The ask was straightforward: modernize a dated internal tool used to file and update Small Business 401k plans. But mapping the actual workflow made the real problem visible fast.
+            </p>
+            <p className="text-warm-900 font-medium leading-relaxed">
+              Say a business owner calls to add a new employee. The associate emails a paper form — all 40-50 fields, regardless of what needs to change. The owner fills in the one relevant field, scans the entire form, emails it back. From there, both the TPA and the Internal Associate need to review and sign off — in parallel, both required — before anything gets applied. Once both approvals land, the associate manually updates the system.
+            </p>
           </div>
 
-          <h3 className="text-sm font-semibold text-warm-700 mb-5">What user interviews revealed</h3>
-          <div className="space-y-3">
-            {researchFindings.map((f) => (
-              <div key={f.title} className="p-5 rounded-lg border border-warm-200 bg-warm-50">
-                <p className="text-sm font-semibold text-warm-800 mb-1">{f.title}</p>
-                <p className="text-sm text-warm-900 font-medium leading-relaxed">{f.body}</p>
+          <h3 className="text-sm font-semibold text-warm-700 mb-5">The real constraints</h3>
+          <div className="space-y-4">
+            {constraints.map((c) => (
+              <div
+                key={c.title}
+                className="pl-5 border-l-2 border-warm-200 py-1"
+              >
+                <p className="text-sm font-semibold text-warm-800 mb-1">{c.title}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{c.body}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* ── Section 02 — Process ──────────────────────────────────────────── */}
+        {/* ── 02 — Strategic Frame ─────────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">02 — Process</p>
+          <p className="label mb-3">02 — The Strategic Frame</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-6 leading-tight">
+            3 Roles. 3 Design Sprints.
+          </h2>
 
-          <div className="space-y-8 mb-10">
-            <div>
-              <h3 className="text-sm font-semibold text-warm-700 mb-3">
-                Design sprints to move from research to concept
-              </h3>
-              <p className="text-warm-900 font-medium leading-relaxed">
-                After user interviews established the five core friction points, I
-                ran a series of design sprints to ideate, sketch, and test
-                solutions before committing to full wireframes. The sprint format
-                was intentional — the problem space was large enough that
-                premature wireframing would have locked in the wrong solutions.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-warm-700 mb-3">
-                The IA problem came first
-              </h3>
-              <p className="text-warm-900 font-medium leading-relaxed">
-                Form discoverability was an information architecture problem, not
-                a UI problem. Before designing any screens, we mapped the 40+
-                form types against user needs (not regulatory categories) and
-                built a classification system that a small business owner could
-                navigate. This work preceded all wireframes.
-              </p>
-            </div>
+          <p className="text-warm-900 font-medium leading-relaxed mb-10">
+            We ran a series of design sprints, one per role. Each sprint was its own contained design problem. The approach let us build purpose-built interfaces for each user type — all acting on the same underlying record — without losing sight of the shared platform they needed to create.
+          </p>
+
+          <div className="space-y-4 mb-10">
+            {sprintSummaries.map((sp) => (
+              <div
+                key={sp.label}
+                className="p-5 rounded-lg border border-warm-200 bg-warm-50"
+              >
+                <p className="text-sm font-semibold text-warm-800 mb-1">{sp.label}</p>
+                <p className="text-sm text-warm-900 font-medium leading-relaxed">{sp.body}</p>
+              </div>
+            ))}
           </div>
 
+          {/* Two-up: Business Owner + Guided Request */}
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="rounded-xl overflow-hidden border border-warm-200">
               <Image
-                src="https://framerusercontent.com/images/OHZb0WzL9TiuB5GGCcw1nwHvSOg.png"
-                alt="Design sprint sketches — early ideation for the Client Service Center"
-                width={800}
-                height={600}
+                src="/images/csc-business-owner.png"
+                alt="Client Service Center — Business Owner dashboard view"
+                width={1300}
+                height={885}
                 className="w-full h-auto"
               />
             </div>
             <div className="rounded-xl overflow-hidden border border-warm-200">
               <Image
-                src="https://framerusercontent.com/images/V0sX2L5QzifrDpva3GtCzXhBgU.jpg"
-                alt="Workshop sketching — form system and navigation ideation"
-                width={800}
-                height={600}
+                src="/images/csc-guided-request.png"
+                alt="Client Service Center — guided change request flow, step 1 of 3"
+                width={1300}
+                height={885}
                 className="w-full h-auto"
               />
             </div>
           </div>
           <p className="text-xs text-warm-400 mt-3 text-center">
-            Design sprint sketches from early ideation sessions
+            Business Owner portal — dashboard and guided change request flow
+          </p>
+
+          <div className="mt-10 rounded-lg bg-warm-950 p-6">
+            <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
+              The approval workflow was a constraint, not a choice
+            </p>
+            <p className="text-warm-300 leading-relaxed">
+              The TPA and Internal Associate both had to approve every plan change — in parallel, both required. That wasn&apos;t going away. What we could change was how it happened. Instead of a request disappearing into an email chain and resurfacing whenever someone remembered to follow up, every change request now lived in the platform. Both reviewers were notified simultaneously, could see the same record, and acted on the same request. The approval chain stayed intact. The chaos around it was gone.
+            </p>
+          </div>
+        </section>
+
+        {/* ── 03 — The Key Insight ─────────────────────────────────────── */}
+        <section className="py-16 border-b border-warm-100">
+          <p className="label mb-3">03 — The Key Insight</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-6 leading-tight">
+            The Cmd+F Finding
+          </h2>
+
+          <p className="text-warm-900 font-medium leading-relaxed mb-8">
+            User testing on the Internal Associate experience surfaced a specific tension. Some associates pushed back on the tabbed layout — they wanted a single, scrollable long page. We pushed back and asked why.
+          </p>
+
+          <div className="space-y-4 mb-10">
+            {hardPart.map((h) => (
+              <div key={h.label} className="rounded-lg bg-warm-950 p-6">
+                <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
+                  {h.label}
+                </p>
+                <p className="text-warm-300 leading-relaxed">{h.body}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* View All + Search screenshot */}
+          <div className="rounded-xl overflow-hidden border border-warm-200 mb-3">
+            <Image
+              src="/images/csc-view-all-search.png"
+              alt="Client Service Center — View All tab with search active, safe harbor fields highlighted"
+              width={1400}
+              height={952}
+              className="w-full h-auto"
+            />
+          </div>
+          <p className="text-xs text-warm-400 text-center">
+            View All tab with persistent search — &ldquo;safe harbor&rdquo; surfaces two matches across sections
           </p>
         </section>
 
-        {/* ── Section 03 — Design Decisions ────────────────────────────────── */}
+        {/* ── 04 — The Design Decisions ────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">03 — Key Design Decisions</p>
+          <p className="label mb-3">04 — The Design Decisions</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-8 leading-tight">
+            Authority Encoded in Interface, Not Just Permissions
+          </h2>
 
-          <div className="space-y-3 mb-10">
-            {designDecisions.map((item) => (
-              <div key={item.title} className="p-5 rounded-lg border border-warm-200 bg-warm-50">
+          <div className="space-y-4 mb-10">
+            {[
+              {
+                title: "Tabs as primary navigation, search as power-user escape hatch",
+                body: "The tabbed structure — Plan Info, Contributions, Eligibility, Distributions, Admin — maps to how 401k plans are structured as documents. Associates can build a mental model quickly. The search bar resolves the navigation problem for experienced users without dismantling the structure.",
+              },
+              {
+                title: "The View All tab as deliberate pressure valve",
+                body: "Rather than fighting the preference for a long page, we accommodated it explicitly. View All mode gives associates the ability to drop into an unfiltered view for complex changes touching multiple sections, or for senior associates who have internalized the full field set.",
+              },
+              {
+                title: "The entire IA shifts by role, not just the permissions",
+                body: "A Business Owner sees only fields relevant to their change request. An Internal Associate sees the full record with workflow context — pending requests, change history, validation status. Same underlying data. Completely different frames.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="pl-5 border-l-2 border-warm-200 py-1"
+              >
                 <p className="text-sm font-semibold text-warm-800 mb-1">{item.title}</p>
                 <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
-
-          <div className="rounded-xl overflow-hidden border border-warm-200 mb-3">
-            <Image
-              src="https://framerusercontent.com/images/shC2uvmSCzP96lBDfnl80tO7A.png"
-              alt="Wireframe — guided form experience with progress tracker"
-              width={1200}
-              height={675}
-              className="w-full h-auto"
-            />
-          </div>
-          <p className="text-xs text-warm-400 text-center mb-8">
-            Wireframe of the guided form experience
-          </p>
-
-          <div className="rounded-xl overflow-hidden border border-warm-200 mb-3">
-            <Image
-              src="https://framerusercontent.com/images/E0YJ3sM3t7fDdt1J3rWkDGA3k.png"
-              alt="Final form design — simplified copy, progress tracker, contextual guidance"
-              width={1200}
-              height={675}
-              className="w-full h-auto"
-            />
-          </div>
-          <p className="text-xs text-warm-400 text-center">
-            Final form design — simplified copy with progress tracking
-          </p>
         </section>
 
-        {/* ── Section 04 — The Hard Part ───────────────────────────────────── */}
-        <section className="py-16 border-b border-warm-100">
-          <p className="label mb-4">04 — The Hard Part</p>
-          <p className="text-warm-900 font-medium leading-relaxed mb-10">
-            The hardest part of this project wasn&apos;t the UI — it was
-            negotiating what &quot;simplified&quot; actually meant in a regulated
-            financial context.
-          </p>
-
-          <div className="space-y-4">
-            <div className="rounded-lg bg-warm-950 p-6">
-              <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
-                The language problem
-              </p>
-              <p className="text-warm-300 leading-relaxed">
-                Simplifying copy in a regulated financial product isn&apos;t just
-                a writing exercise — every change to form language requires legal
-                and compliance review. What reads as plain English to a small
-                business owner may omit a required disclosure. The design process
-                had to account for legal review cycles that weren&apos;t in the
-                original brief, and the &quot;simplified copy&quot; that shipped
-                was the product of multiple rounds of negotiation between plain
-                language and regulatory requirement.
-              </p>
-            </div>
-
-            <div className="rounded-lg bg-warm-950 p-6">
-              <p className="text-xs font-semibold text-warm-600 uppercase tracking-widest mb-4">
-                40+ forms, one pattern
-              </p>
-              <p className="text-warm-300 leading-relaxed">
-                The decision to design a single guided form architecture for all
-                40+ form types was right — but proving it required mapping every
-                form against the proposed pattern before a single wireframe was
-                built. There were edge cases that required the pattern to flex in
-                ways the initial architecture didn&apos;t accommodate. Finding
-                those edge cases early, before they became late-stage
-                engineering problems, was the value of the sprint format.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Section 05 — Outcomes ─────────────────────────────────────────── */}
+        {/* ── 05 — Outcomes ─────────────────────────────────────────────── */}
         <section className="py-16">
-          <p className="label mb-10">05 — Outcomes</p>
+          <p className="label mb-3">05 — Outcomes</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-10 leading-tight">
+            One Place. No More Guessing.
+          </h2>
 
           <div className="space-y-0">
             {outcomes.map((item, i) => (
