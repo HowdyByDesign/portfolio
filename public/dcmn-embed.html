@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DCMN — TV Campaign Analytics</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F4F6F9; color: #1C1C2E; font-size: 14px; line-height: 1.5; min-width: 1024px; }
+    :root {
+      --aw: #4A3F8F; --aw-light: #EEEDF8;
+      --vo: #D94F5C; --vo-light: #FDEEF0;
+      --fr: #C47D1A; --fr-light: #FDF4E3;
+      --cobalt: #2563EB;
+      --text: #1C1C2E; --muted: #6E6E84; --faint: #A0A0B0;
+      --border: rgba(0,0,0,0.07);
+      --card: #FFFFFF;
+    }
+    .topbar { background:#fff; border-bottom:1px solid var(--border); padding:0 24px; height:48px; display:flex; align-items:center; gap:0; position:sticky; top:0; z-index:100; }
+    .topbar-logo { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--muted); padding-right:16px; border-right:1px solid var(--border); margin-right:16px; white-space:nowrap; }
+    .logo-mark { width:28px; height:28px; background:#1C1C2E; border-radius:6px; display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:700; letter-spacing:-0.5px; flex-shrink:0; }
+    .breadcrumb { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); }
+    .breadcrumb .current { color:var(--text); font-weight:500; }
+    .breadcrumb-sep { color:var(--faint); }
+    .topbar-actions { margin-left:auto; display:flex; align-items:center; gap:12px; }
+    .icon-btn { width:30px; height:30px; border-radius:50%; border:none; background:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:15px; }
+    .avatar { width:30px; height:30px; border-radius:50%; background:#4A3F8F; color:white; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; }
+    .tabs-bar { background:#fff; border-bottom:1px solid var(--border); padding:0 24px; display:flex; align-items:center; }
+    .tab { padding:12px 16px; font-size:13px; color:var(--muted); border-bottom:2px solid transparent; cursor:pointer; white-space:nowrap; display:flex; align-items:center; gap:6px; user-select:none; transition:color .15s; }
+    .tab:hover:not(.disabled) { color:var(--text); }
+    .tab.active { color:var(--cobalt); border-bottom-color:var(--cobalt); font-weight:500; }
+    .tab.disabled { color:var(--faint); cursor:not-allowed; }
+    .tab-badge { background:#E8E8F0; color:var(--muted); border-radius:10px; padding:1px 6px; font-size:11px; font-weight:500; }
+    .tab.active .tab-badge { background:#E8EFFF; color:var(--cobalt); }
+    .filters-bar { background:#fff; border-bottom:1px solid var(--border); padding:10px 24px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .filter-pill { display:flex; align-items:center; gap:5px; padding:5px 10px; border:1px solid var(--border); border-radius:6px; font-size:12px; color:var(--text); cursor:pointer; background:#fff; white-space:nowrap; }
+    .filter-pill .lbl { color:var(--muted); }
+    .filter-pill .chev { color:var(--faint); font-size:10px; margin-left:2px; }
+    .filters-right { margin-left:auto; display:flex; gap:8px; align-items:center; }
+    .btn-ghost { padding:6px 12px; border:1px solid var(--border); border-radius:6px; background:#fff; font-size:12px; color:var(--text); cursor:pointer; }
+    .btn-primary { padding:6px 12px; border:none; border-radius:6px; background:var(--cobalt); color:#fff; font-size:12px; font-weight:500; cursor:pointer; }
+    .main { padding:20px 24px; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
+    .card { background:var(--card); border-radius:12px; border:1px solid var(--border); overflow:hidden; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:12px; }
+    .grid-2-1 { display:grid; grid-template-columns:2fr 1fr; gap:12px; margin-bottom:12px; }
+    .grid-3b { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .kpi-card { padding:20px; }
+    .kpi-header { display:flex; align-items:center; gap:6px; margin-bottom:10px; }
+    .kpi-dot { width:8px; height:8px; border-radius:50%; }
+    .kpi-lbl { font-size:12px; color:var(--muted); }
+    .kpi-value { font-size:34px; font-weight:300; letter-spacing:-1px; margin-bottom:6px; }
+    .kpi-value .cur { font-size:18px; vertical-align:super; font-weight:400; }
+    .kpi-change { display:flex; align-items:center; gap:6px; font-size:12px; margin-bottom:12px; }
+    .badge-up { color:#16A34A; background:#F0FDF4; padding:2px 6px; border-radius:4px; font-weight:500; }
+    .badge-down { color:#DC2626; background:#FEF2F2; padding:2px 6px; border-radius:4px; font-weight:500; }
+    .period-lbl { color:var(--faint); }
+    .kpi-spark { height:40px; margin-bottom:10px; position:relative; }
+    .kpi-sub { font-size:11px; color:var(--faint); }
+    .ch-card { display:flex; align-items:center; gap:12px; padding:14px 16px; }
+    .ch-bar { width:3px; height:34px; border-radius:2px; flex-shrink:0; }
+    .ch-lbl { font-size:11px; color:var(--muted); margin-bottom:3px; }
+    .ch-val { font-size:17px; font-weight:500; }
+    .ch-sub { font-size:11px; color:var(--faint); margin-top:2px; }
+    .ch-header { padding:16px 20px 0; display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:4px; }
+    .ch-title { font-size:13px; font-weight:500; }
+    .ch-desc { font-size:11px; color:var(--faint); margin-top:2px; }
+    .ch-actions { display:flex; align-items:center; gap:6px; }
+    .ch-tag { display:flex; align-items:center; gap:4px; padding:3px 8px; background:#F4F4F8; border-radius:4px; font-size:11px; color:var(--muted); }
+    .ch-tag .dot { width:6px; height:6px; border-radius:50%; background:var(--aw); }
+    .ch-icon { width:26px; height:26px; border:none; background:none; cursor:pointer; color:var(--faint); font-size:14px; display:flex; align-items:center; justify-content:center; border-radius:4px; }
+    .ch-icon:hover { background:#F4F4F8; color:var(--muted); }
+    .ch-foot { padding:8px 20px 12px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:16px; font-size:11px; color:var(--muted); }
+    .ch-foot strong { color:var(--text); }
+    .donut-body { padding:16px 20px; display:flex; align-items:center; gap:20px; }
+    .donut-wrap { flex-shrink:0; position:relative; width:120px; height:120px; }
+    .donut-center { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; pointer-events:none; }
+    .donut-cval { font-size:16px; font-weight:500; }
+    .donut-clbl { font-size:10px; color:var(--faint); }
+    .donut-legend { flex:1; }
+    .dl-row { display:grid; grid-template-columns:10px 1fr 30px 48px; align-items:center; gap:6px; padding:4px 0; font-size:12px; }
+    .dl-dot { width:8px; height:8px; border-radius:50%; }
+    .dl-pct { color:var(--muted); text-align:right; }
+    .dl-val { font-weight:500; text-align:right; }
+    .mc-header { padding:16px 20px 0; }
+    .mc-badge { float:right; display:flex; align-items:center; gap:4px; font-size:11px; color:var(--muted); }
+    .mc-badge .dot { width:6px; height:6px; border-radius:50%; }
+    .mc-title { font-size:12px; color:var(--muted); margin-bottom:3px; }
+    .mc-sub { font-size:11px; color:var(--faint); }
+    .mc-value { font-size:30px; font-weight:300; letter-spacing:-0.5px; padding:8px 20px 4px; }
+    .mc-change { font-size:11px; padding:0 20px 10px; color:var(--faint); }
+    .mc-chart { padding:0 16px 14px; position:relative; }
+    .ch-controls { display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+    .legend-chips { display:flex; gap:12px; }
+    .l-chip { display:flex; align-items:center; gap:5px; font-size:12px; color:var(--muted); }
+    .l-dot { width:10px; height:10px; border-radius:2px; }
+    .sel-pill { padding:6px 10px; border:1px solid var(--border); border-radius:6px; font-size:12px; color:var(--text); background:#fff; cursor:pointer; appearance:none; -webkit-appearance:none; }
+    .ch-controls-right { margin-left:auto; display:flex; gap:8px; }
+    .neg { color:#DC2626; }
+    .pos { color:#16A34A; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-mark">DC</div>
+      <span>TV Analytics Suite</span>
+    </div>
+    <div class="breadcrumb">
+      <span>Workspace</span>
+      <span class="breadcrumb-sep">/</span>
+      <span>Q1 2024 reporting</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="current">TV and Out of Home</span>
+    </div>
+    <div class="topbar-actions">
+      <button class="icon-btn" title="Search">&#9906;</button>
+      <button class="icon-btn" title="Notifications">&#9993;</button>
+      <div class="avatar">EM</div>
+    </div>
+  </div>
+
+  <div class="tabs-bar">
+    <div class="tab active" onclick="switchTab('overview', this)">Overview</div>
+    <div class="tab" onclick="switchTab('channels', this)">Channels <span class="tab-badge">11</span></div>
+    <div class="tab disabled">Dayparts</div>
+    <div class="tab disabled">Spots <span class="tab-badge">2,738</span></div>
+    <div class="tab disabled">Reach</div>
+    <div class="tab disabled">Attribution</div>
+  </div>
+
+  <div class="filters-bar">
+    <div class="filter-pill"><span class="lbl">Period</span> 03/01 &ndash; 03/30/2024 <span class="chev">&#9662;</span></div>
+    <div class="filter-pill"><span class="lbl">Campaign</span> TV and Out of Home <span class="chev">&#9662;</span></div>
+    <div class="filter-pill"><span class="lbl">Country</span> Germany <span class="chev">&#9662;</span></div>
+    <div class="filter-pill"><span class="lbl">Compared to</span> Prior month <span class="chev">&#9662;</span></div>
+    <div class="filters-right">
+      <button class="btn-ghost">&#8659; Export</button>
+      <button class="btn-primary">&#9733; Save view</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div id="tab-overview" class="tab-panel active">
+      <div class="grid-3">
+        <div class="card kpi-card">
+          <div class="kpi-header"><div class="kpi-dot" style="background:var(--aw)"></div><div class="kpi-lbl">Net Media Spend</div></div>
+          <div class="kpi-value"><span class="cur">$</span>120,000</div>
+          <div class="kpi-change"><span class="badge-up">&#9650; +8.2%</span><span class="period-lbl">vs prior period</span></div>
+          <div class="kpi-spark"><canvas id="spark1" role="img" aria-label="Spend trend">Trending upward.</canvas></div>
+          <div class="kpi-sub">Avg. daily: $4,000</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-header"><div class="kpi-dot" style="background:var(--vo)"></div><div class="kpi-lbl">Aired Spots</div></div>
+          <div class="kpi-value">2,738</div>
+          <div class="kpi-change"><span class="badge-up">&#9650; +4.6%</span><span class="period-lbl">vs prior period</span></div>
+          <div class="kpi-spark"><canvas id="spark2" role="img" aria-label="Spots trend">Trending upward.</canvas></div>
+          <div class="kpi-sub">Avg. per day: 91 spots</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-header"><div class="kpi-dot" style="background:var(--fr)"></div><div class="kpi-lbl">Visits</div></div>
+          <div class="kpi-value">22,031</div>
+          <div class="kpi-change"><span class="badge-up">&#9650; +12.4%</span><span class="period-lbl">vs prior period</span></div>
+          <div class="kpi-spark"><canvas id="spark3" role="img" aria-label="Visits trend">Trending upward.</canvas></div>
+          <div class="kpi-sub">Avg. per spot: 8.05</div>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card ch-card">
+          <div class="ch-bar" style="background:var(--aw)"></div>
+          <div><div class="ch-lbl">Awareness channels</div><div class="ch-val">$58,200</div><div class="ch-sub">2 channels &middot; 48.5% of spend</div></div>
+        </div>
+        <div class="card ch-card">
+          <div class="ch-bar" style="background:var(--vo)"></div>
+          <div><div class="ch-lbl">Volume channels</div><div class="ch-val">$38,400</div><div class="ch-sub">3 channels &middot; 32.0% of spend</div></div>
+        </div>
+        <div class="card ch-card">
+          <div class="ch-bar" style="background:var(--fr)"></div>
+          <div><div class="ch-lbl">Frequency channels</div><div class="ch-val">$23,400</div><div class="ch-sub">6 channels &middot; 19.5% of spend</div></div>
+        </div>
+      </div>
+
+      <div class="grid-2-1">
+        <div class="card">
+          <div class="ch-header">
+            <div><div class="ch-title">Five-Step Marketing Funnel</div><div class="ch-desc">Drop-off across the conversion journey &middot; TV + OOH attributed</div></div>
+            <div class="ch-actions">
+              <div class="ch-tag"><div class="dot"></div> Awareness flow</div>
+              <button class="ch-icon">&#8659;</button>
+              <button class="ch-icon">&middot;&middot;&middot;</button>
+            </div>
+          </div>
+          <div style="padding:12px 16px 4px; height:240px; position:relative;">
+            <canvas id="funnelChart" role="img" aria-label="Five-step funnel: Visits 22031 to Checkout 7890">Funnel data.</canvas>
+          </div>
+          <div class="ch-foot">
+            <span>Overall conversion <strong>35.8%</strong></span>
+            <span>Biggest drop <strong>Sign In &rarr; Add to Cart</strong></span>
+            <span>Best step <strong>Visits &rarr; Page View (84.3%)</strong></span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch-header">
+            <div><div class="ch-title">Budget per Day</div><div class="ch-desc">Distribution across the active week</div></div>
+            <button class="ch-icon">&middot;&middot;&middot;</button>
+          </div>
+          <div class="donut-body">
+            <div class="donut-wrap">
+              <canvas id="donutChart" width="120" height="120" role="img" aria-label="Budget by weekday">Budget by day.</canvas>
+              <div class="donut-center"><div class="donut-cval">$120k</div><div class="donut-clbl">Net media spend</div></div>
+            </div>
+            <div class="donut-legend">
+              <div class="dl-row"><div class="dl-dot" style="background:#1C1C2E"></div><span>Monday</span><span class="dl-pct">20%</span><span class="dl-val">$24.0k</span></div>
+              <div class="dl-row"><div class="dl-dot" style="background:#3D3A6B"></div><span>Tuesday</span><span class="dl-pct">22%</span><span class="dl-val">$26.4k</span></div>
+              <div class="dl-row"><div class="dl-dot" style="background:#5D5A8B"></div><span>Wednesday</span><span class="dl-pct">20%</span><span class="dl-val">$24.0k</span></div>
+              <div class="dl-row"><div class="dl-dot" style="background:#7E7BAB"></div><span>Thursday</span><span class="dl-pct">13%</span><span class="dl-val">$15.6k</span></div>
+              <div class="dl-row"><div class="dl-dot" style="background:#9E9CC0"></div><span>Friday</span><span class="dl-pct">12%</span><span class="dl-val">$14.4k</span></div>
+              <div class="dl-row"><div class="dl-dot" style="background:#C4C3D8"></div><span>Saturday</span><span class="dl-pct">13%</span><span class="dl-val">$15.6k</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3b">
+        <div class="card">
+          <div class="mc-header">
+            <div class="mc-badge"><div class="dot" style="background:var(--vo)"></div> CPV</div>
+            <div class="mc-title">Cost per Visit</div><div class="mc-sub">Trend vs reference periods</div>
+          </div>
+          <div class="mc-value">$3.79</div>
+          <div class="mc-change"><span class="neg">&#8595; 5.7% vs LM</span></div>
+          <div class="mc-chart" style="height:90px;"><canvas id="cpvChart" role="img" aria-label="CPV comparison">CPV data.</canvas></div>
+          <div class="ch-foot"><span>YoY <strong class="pos">3.6%</strong></span><span>MoM <strong class="neg">-5.7%</strong></span></div>
+        </div>
+        <div class="card">
+          <div class="mc-header">
+            <div class="mc-badge"><div class="dot" style="background:var(--fr)"></div> CPM</div>
+            <div class="mc-title">Cost per Mille</div><div class="mc-sub">Trend vs reference periods</div>
+          </div>
+          <div class="mc-value">$1.27</div>
+          <div class="mc-change"><span class="pos">&#8593; 16.5% vs LM</span></div>
+          <div class="mc-chart" style="height:90px;"><canvas id="cpmChart" role="img" aria-label="CPM comparison">CPM data.</canvas></div>
+          <div class="ch-foot"><span>YoY <strong class="neg">-24.9%</strong></span><span>MoM <strong class="pos">16.5%</strong></span></div>
+        </div>
+        <div class="card">
+          <div class="mc-header">
+            <div class="mc-title">Visits per Spot</div><div class="mc-sub">Last 12 weeks trend</div>
+          </div>
+          <div class="mc-value">8.05</div>
+          <div class="mc-change"><span class="neg">&#8595; 7.3% vs LM</span></div>
+          <div class="mc-chart" style="height:90px;"><canvas id="vpsChart" role="img" aria-label="Visits per spot trend">Visits per spot data.</canvas></div>
+          <div class="ch-foot"><span>Best week <strong>W11 &middot; 8.30</strong></span><span>Goal &ge; <strong>8.00</strong></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-channels" class="tab-panel">
+      <div class="ch-controls">
+        <div class="legend-chips">
+          <div class="l-chip"><div class="l-dot" style="background:var(--aw)"></div> Awareness</div>
+          <div class="l-chip"><div class="l-dot" style="background:var(--vo)"></div> Volume</div>
+          <div class="l-chip"><div class="l-dot" style="background:var(--fr)"></div> Frequency</div>
+        </div>
+        <div class="ch-controls-right">
+          <select class="sel-pill" id="metricSelect" onchange="updateChannelsChart()">
+            <option value="cpv">Metric: Cost per Visit</option>
+            <option value="cpm">Metric: Cost per Mille</option>
+          </select>
+          <select class="sel-pill" id="sortSelect" onchange="updateChannelsChart()">
+            <option value="desc">Sort: Price Descending</option>
+            <option value="asc">Sort: Price Ascending</option>
+            <option value="alpha">Sort: Alphabetical</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:12px;">
+        <div class="ch-header" style="padding-bottom:12px;">
+          <div><div class="ch-title">Channel CPV by cluster</div><div class="ch-desc">Cost per direct visit &middot; Germany &middot; March 2024 &middot; colored by channel type</div></div>
+          <button class="ch-icon">&middot;&middot;&middot;</button>
+        </div>
+        <div style="padding:0 16px 8px; height:340px; position:relative;">
+          <canvas id="channelsChart" role="img" aria-label="CPV per TV channel by cluster type">Channel CPV data.</canvas>
+        </div>
+        <div class="ch-foot" id="channelsFoot">
+          <span>Awareness avg. <strong>&euro;11.68</strong></span>
+          <span>Volume avg. <strong>&euro;4.51</strong></span>
+          <span>Frequency avg. <strong>&euro;0.76</strong></span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ch-header" style="padding-bottom:12px;"><div class="ch-title">Channel breakdown</div></div>
+        <table style="width:100%; border-collapse:collapse; font-size:12px;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border);">
+              <th style="text-align:left; padding:8px 20px; color:var(--faint); font-weight:400;">Cluster</th>
+              <th style="text-align:left; padding:8px 12px; color:var(--faint); font-weight:400;">Channel</th>
+              <th style="text-align:right; padding:8px 20px; color:var(--faint); font-weight:400;">CPV</th>
+              <th style="text-align:right; padding:8px 20px; color:var(--faint); font-weight:400;">CPM</th>
+            </tr>
+          </thead>
+          <tbody id="channelsTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const AW='#4A3F8F',AW2='#7068BA',AW_L='#C8C4E8';
+const VO='#D94F5C',VO2='#E8828C',VO_L='#F5C5C9';
+const FR='#C47D1A',FR2='#D9A046',FR_L='#EDD095';
+
+function switchTab(id,el){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab:not(.disabled)').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+function sparkline(id,color,data){
+  new Chart(document.getElementById(id),{
+    type:'line',
+    data:{labels:data.map((_,i)=>i),datasets:[{data,borderColor:color,borderWidth:1.5,pointRadius:0,fill:true,backgroundColor:color+'18',tension:0.4}]},
+    options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}}}
+  });
+}
+sparkline('spark1',AW,[98,102,99,104,108,106,110,112,109,115,118,120].map(v=>v*1000));
+sparkline('spark2',VO,[2400,2450,2480,2510,2530,2520,2580,2600,2620,2680,2710,2738]);
+sparkline('spark3',FR,[18000,18500,19000,19800,20200,20800,21000,21500,21800,22100,22000,22031]);
+
+new Chart(document.getElementById('funnelChart'),{
+  type:'bar',
+  data:{labels:['Visits','Page View','Sign In','Add to Cart','Checkout'],datasets:[{data:[22031,18578,14112,11890,7890],backgroundColor:[AW,AW2,'#8A83C8','#A29ED4',AW_L],borderRadius:4,borderSkipped:false}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'  '+ctx.raw.toLocaleString()+' visits'}}},scales:{x:{grid:{display:false},border:{display:false},ticks:{color:'#A0A0B0',font:{size:11}}},y:{grid:{color:'rgba(0,0,0,0.04)'},border:{display:false},ticks:{color:'#A0A0B0',font:{size:11},callback:v=>v>=1000?(v/1000).toFixed(0)+'k':v}}}}
+});
+
+new Chart(document.getElementById('donutChart'),{
+  type:'doughnut',
+  data:{labels:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],datasets:[{data:[20,22,20,13,12,13],backgroundColor:['#1C1C2E','#3D3A6B','#5D5A8B','#7E7BAB','#9E9CC0','#C4C3D8'],borderWidth:2,borderColor:'#fff',hoverOffset:3}]},
+  options:{responsive:false,cutout:'70%',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'  '+ctx.label+': '+ctx.raw+'%'}}}}
+});
+
+new Chart(document.getElementById('cpvChart'),{
+  type:'bar',
+  data:{labels:['Prior year','Prior month','Current'],datasets:[{data:[3.66,4.02,3.79],backgroundColor:[VO_L,VO_L,VO],borderRadius:3,borderSkipped:false}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'  $'+ctx.raw.toFixed(2)}}},scales:{x:{grid:{display:false},border:{display:false},min:0,max:5,ticks:{color:'#A0A0B0',font:{size:10},callback:v=>'$'+v}},y:{grid:{display:false},border:{display:false},ticks:{color:'#A0A0B0',font:{size:11}}}}}
+});
+
+new Chart(document.getElementById('cpmChart'),{
+  type:'bar',
+  data:{labels:['Prior year','Prior month','Current'],datasets:[{data:[1.69,1.09,1.27],backgroundColor:[FR_L,FR_L,FR],borderRadius:3,borderSkipped:false}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'  $'+ctx.raw.toFixed(2)}}},scales:{x:{grid:{display:false},border:{display:false},min:0,max:2.5,ticks:{color:'#A0A0B0',font:{size:10},callback:v=>'$'+v}},y:{grid:{display:false},border:{display:false},ticks:{color:'#A0A0B0',font:{size:11}}}}}
+});
+
+new Chart(document.getElementById('vpsChart'),{
+  type:'line',
+  data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8','W9','W10','W11','W12'],datasets:[{data:[7.2,7.8,7.5,8.1,7.9,8.2,7.7,7.4,7.8,8.0,8.3,8.05],borderColor:AW,borderWidth:2,pointRadius:0,pointHoverRadius:4,fill:true,backgroundColor:AW+'15',tension:0.4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'  '+ctx.raw}}},scales:{x:{display:false},y:{grid:{color:'rgba(0,0,0,0.04)'},border:{display:false},ticks:{color:'#A0A0B0',font:{size:10},maxTicksLimit:3}}}}
+});
+
+const CHANNELS=[
+  {name:'RTL',cluster:'Awareness',cpv:12.31,cpm:4.20},
+  {name:'VOX',cluster:'Awareness',cpv:11.04,cpm:3.87},
+  {name:'RTL II',cluster:'Volume',cpv:7.08,cpm:2.51},
+  {name:'NITRO',cluster:'Volume',cpv:5.24,cpm:1.94},
+  {name:'DMAX',cluster:'Volume',cpv:1.21,cpm:0.62},
+  {name:'krone.tv',cluster:'Frequency',cpv:1.56,cpm:0.44},
+  {name:'RTL plus',cluster:'Frequency',cpv:1.47,cpm:0.41},
+  {name:'Comedy Central',cluster:'Frequency',cpv:0.80,cpm:0.28},
+  {name:'TLC',cluster:'Frequency',cpv:0.36,cpm:0.15},
+  {name:'SPORT1',cluster:'Frequency',cpv:0.36,cpm:0.14},
+  {name:'oe24',cluster:'Frequency',cpv:0.00,cpm:0.00},
+];
+
+function clusterColor(c,a){
+  const hex=a!==undefined?Math.round(a*255).toString(16).padStart(2,'0'):'';
+  if(c==='Awareness')return AW+hex;
+  if(c==='Volume')return VO+hex;
+  return FR+hex;
+}
+
+let channelsChartInstance=null;
+
+function buildChannelsTable(data){
+  const tbody=document.getElementById('channelsTable');
+  let html='',lastCluster='';
+  data.forEach(ch=>{
+    const isFirst=ch.cluster!==lastCluster;
+    lastCluster=ch.cluster;
+    const color=clusterColor(ch.cluster);
+    html+=`<tr style="border-bottom:1px solid rgba(0,0,0,0.04);${isFirst?'border-top:1px solid rgba(0,0,0,0.05);':''}">
+      <td style="padding:8px 20px;color:${color};font-weight:500;white-space:nowrap;">${isFirst?ch.cluster:''}</td>
+      <td style="padding:8px 12px;color:#1C1C2E;">${ch.name}</td>
+      <td style="padding:8px 20px;text-align:right;font-weight:500;">&euro;${ch.cpv.toFixed(2)}</td>
+      <td style="padding:8px 20px;text-align:right;color:#6E6E84;">&euro;${ch.cpm.toFixed(2)}</td>
+    </tr>`;
+  });
+  tbody.innerHTML=html;
+}
+
+function updateChannelsChart(){
+  const metric=document.getElementById('metricSelect').value;
+  const sort=document.getElementById('sortSelect').value;
+  let data=[...CHANNELS];
+  const order=sort==='asc'?1:-1;
+  if(sort!=='alpha'){
+    data=[
+      ...data.filter(c=>c.cluster==='Awareness').sort((a,b)=>order*(b[metric]-a[metric])),
+      ...data.filter(c=>c.cluster==='Volume').sort((a,b)=>order*(b[metric]-a[metric])),
+      ...data.filter(c=>c.cluster==='Frequency').sort((a,b)=>order*(b[metric]-a[metric])),
+    ];
+  } else {
+    data.sort((a,b)=>a.name.localeCompare(b.name));
+  }
+  const labels=data.map(c=>c.name);
+  const values=data.map(c=>c[metric]);
+  const bgColors=data.map(c=>clusterColor(c.cluster,0.85));
+  const hoverColors=data.map(c=>clusterColor(c.cluster));
+  const metricLabel=metric==='cpv'?'CPV':'CPM';
+  const awAvg=(CHANNELS.filter(c=>c.cluster==='Awareness').reduce((s,c)=>s+c[metric],0)/2).toFixed(2);
+  const voAvg=(CHANNELS.filter(c=>c.cluster==='Volume').reduce((s,c)=>s+c[metric],0)/3).toFixed(2);
+  const frAvg=(CHANNELS.filter(c=>c.cluster==='Frequency').reduce((s,c)=>s+c[metric],0)/6).toFixed(2);
+  document.getElementById('channelsFoot').innerHTML=
+    `<span>Awareness avg. <strong>&euro;${awAvg}</strong></span><span>Volume avg. <strong>&euro;${voAvg}</strong></span><span>Frequency avg. <strong>&euro;${frAvg}</strong></span>`;
+  buildChannelsTable(data);
+  if(channelsChartInstance)channelsChartInstance.destroy();
+  channelsChartInstance=new Chart(document.getElementById('channelsChart'),{
+    type:'bar',
+    data:{labels,datasets:[{data:values,backgroundColor:bgColors,hoverBackgroundColor:hoverColors,borderRadius:4,borderSkipped:false}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{title:ctx=>ctx[0].label,label:ctx=>'  '+metricLabel+': €'+ctx.raw.toFixed(2),afterLabel:ctx=>'  Cluster: '+data[ctx.dataIndex].cluster}}},scales:{x:{grid:{display:false},border:{display:false},ticks:{color:'#A0A0B0',font:{size:11},maxRotation:30}},y:{grid:{color:'rgba(0,0,0,0.04)'},border:{display:false},ticks:{color:'#A0A0B0',font:{size:11},callback:v=>'€'+v.toFixed(2)}}}}
+  });
+}
+updateChannelsChart();
+</script>
+</body>
+</html>

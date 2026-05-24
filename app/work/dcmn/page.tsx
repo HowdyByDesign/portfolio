@@ -222,15 +222,6 @@ export default function DcmnCaseStudy() {
             40 adopters. The Excel templates are gone.
           </p>
 
-          <div className="rounded-xl overflow-hidden border border-warm-100">
-            <Image
-              src="https://framerusercontent.com/images/9HCoWtNKaquV4mQyBQAyp2MqDs.png"
-              alt="DCMN reporting dashboard — live connected performance reporting"
-              width={1400}
-              height={788}
-              className="w-full h-auto"
-            />
-          </div>
         </section>
 
         {/* ── 01 — Context & Constraints ───────────────────────────────── */}
@@ -444,38 +435,29 @@ export default function DcmnCaseStudy() {
             ))}
           </div>
 
-          <div className="mt-10 space-y-4">
-            <div className="rounded-xl overflow-hidden border border-warm-100">
-              <Image
-                src="https://framerusercontent.com/images/9HCoWtNKaquV4mQyBQAyp2MqDs.png"
-                alt="Funnel overview — 5-step marketing funnel with budget and KPI breakdown"
-                width={1400}
-                height={788}
-                className="w-full h-auto"
+          {/* Interactive prototype embed */}
+          <div className="mt-10 -mx-6">
+            <p className="text-xs text-warm-400 mb-2 ml-6">
+              Interactive prototype &mdash; click the tabs to explore Overview and Channels views
+            </p>
+            <div
+              className="rounded-xl overflow-hidden border border-warm-100 bg-[#F4F6F9]"
+              style={{ position: "relative", height: "680px" }}
+            >
+              <iframe
+                src="/dcmn-embed.html"
+                title="DCMN TV Analytics — interactive prototype"
+                style={{
+                  border: "none",
+                  width: "133.33%",
+                  height: "133.33%",
+                  transform: "scale(0.75)",
+                  transformOrigin: "top left",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                }}
               />
-              <p className="text-xs text-warm-400 text-center py-3 px-4">Funnel overview view</p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden border border-warm-100">
-                <Image
-                  src="https://framerusercontent.com/images/Bde4pAcz329j4jJlFqj8CbFI9ZE.png"
-                  alt="Channel performance view"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                />
-                <p className="text-xs text-warm-400 text-center py-3 px-4">Channel performance view</p>
-              </div>
-              <div className="rounded-xl overflow-hidden border border-warm-100">
-                <Image
-                  src="https://framerusercontent.com/images/Q5sj3pphU9PkMkiFGXBdGLt9k.png"
-                  alt="Daypart & timing view"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                />
-                <p className="text-xs text-warm-400 text-center py-3 px-4">Daypart & timing view</p>
-              </div>
             </div>
           </div>
 
