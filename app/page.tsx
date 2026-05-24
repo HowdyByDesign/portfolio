@@ -41,6 +41,15 @@ const caseStudies = [
   },
   {
     index: "02",
+    client: "Capital Group",
+    category: "Financial Services · Enterprise UX · Multi-Role Systems",
+    title: "From Wet Ink to One Click",
+    description:
+      "A 40-field paper form and a scan-and-email workflow were the only tools business owners, advisors, and Capital Group associates had to manage Small Business 401k plans. Three design sprints. Seven steps collapsed into one platform with a dual approval workflow that finally worked.",
+    href: "/work/capital-group",
+  },
+  {
+    index: "03",
     client: "DCMN",
     category: "Dashboard Design · Data Visualization · Performance Marketing",
     title: "Eliminating 400 Hours of Monthly Reporting Waste",
@@ -49,7 +58,7 @@ const caseStudies = [
     href: "/work/dcmn",
   },
   {
-    index: "03",
+    index: "04",
     client: "Pfizer",
     category: "Generative AI · Enterprise SaaS · Pharmaceutical",
     title: "Designing for Trust in a Gen AI Marketing System",
