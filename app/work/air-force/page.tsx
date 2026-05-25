@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import ETMSStoryCard from "@/components/ETMSStoryCard";
 
 export const metadata: Metadata = {
   title: { absolute: "DAF Training Modernization | Ben Howard" },
@@ -26,19 +27,19 @@ export const metadata: Metadata = {
 const constraints = [
   {
     title: "20+ year-old software",
-    body: "The existing system predated modern UX practice entirely. The interaction model had accreted over two decades of patches and workarounds with no underlying design system.",
+    body: "Two decades of patches and workarounds with no underlying design system. The interaction model had never been designed — it had accreted.",
   },
   {
     title: "Training and personnel records not connected",
-    body: "Airmen's training records and personnel records lived in separate systems with no integration. Every status update required manual reconciliation — a structural problem that no amount of UI improvement could solve.",
+    body: "Separate systems, no integration. Every status update required manual reconciliation — a structural problem no UI improvement could solve.",
   },
   {
     title: "Non-intuitive class creation process",
-    body: "The core task for Unit Training Managers — creating and managing courses, classes, and rosters — required navigating a fragmented multi-step process built across different system modules.",
+    body: "Creating and managing courses, classes, and rosters required navigating a fragmented multi-step process split across different system modules.",
   },
   {
     title: "High maintenance costs",
-    body: "The legacy system was costing the Department of the Air Force millions annually in maintenance for software that wasn't meeting user needs. The business case for replacement was already made — the design brief was to make sure the replacement was actually better.",
+    body: "Millions annually in maintenance for software that wasn't meeting user needs. The business case for replacement was already made — the brief was to make sure the replacement was actually better.",
   },
 ];
 
@@ -60,42 +61,38 @@ const hardPart = [
 const systemItems = [
   {
     title: "Component architecture",
-    body: "Standardized the platform's foundational component library — forms, data tables, status indicators — by implementing a two-archetype model (operational vs. administrative users) that eliminated duplicated component definitions across the system.",
+    body: "Two-archetype model (operational vs. administrative) eliminated duplicated component definitions across the platform.",
   },
   {
     title: "Design token system",
-    body: "Implemented a color, spacing, and typography token system structured around two display contexts: standard workstation and low-bandwidth field environments. Same tokens, different resolved values per context.",
+    body: "Color, spacing, and typography tokens structured around two contexts: standard workstation and low-bandwidth field. Same tokens, different resolved values.",
   },
   {
     title: "Documentation standard",
-    body: "Established joint design–engineering documentation for each component: a usage spec, an anti-patterns doc, and a technical notes field co-maintained by design and engineering — the first co-owned component documentation on the platform.",
+    body: "Joint design–engineering docs for every component: usage spec, anti-patterns, and technical notes — the first co-owned component documentation on the platform.",
   },
   {
     title: "Governance model",
-    body: "Implemented a contribution process (proposal → review → adoption) with a named design system owner on the client team. The system was in active use six months after project closeout with no design team involvement.",
+    body: "Contribution process (proposal → review → adoption) with a named design system owner on the client team. Active six months after project closeout, no design team involvement.",
   },
 ];
 
 const impactItems = [
   {
     metric: "4,000+ daily active users",
-    detail:
-      "Launched a unified platform now serving 4,000+ Airmen and Guardians daily across the Air Force — users who previously navigated a fragmented 20-year-old system.",
+    detail: "A unified platform serving 4,000+ Airmen and Guardians daily — users who previously navigated a fragmented 20-year-old system.",
   },
   {
     metric: "25% reduction in development cycles",
-    detail:
-      "Multi-day co-creation strategy sessions aligned design intent with engineering constraints before a single sprint began — eliminating the rework cycles that had plagued earlier project phases. A direct result of strategic stakeholder alignment, not design speed. Delivered the full project scope 3 months ahead of schedule.",
+    detail: "Co-creation sessions aligned design intent with engineering constraints before a single sprint began, eliminating the rework cycles that had plagued earlier phases. Delivered 3 months ahead of schedule.",
   },
   {
     metric: "Millions saved annually",
-    detail:
-      "Displaced a legacy system that was costing the Department of the Air Force millions per year in maintenance. The new platform runs on a modern Angular-based architecture with improved load times and component reusability.",
+    detail: "Displaced a legacy system costing the DAF millions per year in maintenance. Modern Angular architecture, improved load times, reusable components.",
   },
   {
     metric: "Phase 2 approved and funded",
-    detail:
-      "The project's outcomes directly resulted in the approval and funding of Phase 2, expanding the system's functionality and feature set — including the features deferred from Phase 1.",
+    detail: "Project outcomes directly resulted in Phase 2 approval — including the features deliberately deferred from Phase 1.",
   },
 ];
 
@@ -216,7 +213,7 @@ export default function AirForceCaseStudy() {
           <div className="grid grid-cols-3 divide-x divide-warm-200">
             {[
               { label: "Role",            value: "Strategic Designer" },
-              { label: "Timeline",        value: "12 Months" },
+              { label: "Timeline",        value: "18 Months" },
               { label: "Value Created",   value: "Improved Operational Efficiency" },
             ].map((item) => (
               <div key={item.label} className="py-4 px-5 first:pl-0 last:pr-0">
@@ -336,12 +333,6 @@ export default function AirForceCaseStudy() {
                   explicitly for the three-system data states, and build reconciliation handling
                   directly into the component architecture.
                 </p>
-                <p className="text-warm-900 font-medium leading-relaxed mt-4">
-                  The client approved the expanded scope. Not because the design argument was
-                  compelling, but because we framed it as operational risk: every hour a
-                  training record was out of sync was an hour a commander was making readiness
-                  decisions on stale data.
-                </p>
               </div>
 
               <div>
@@ -349,11 +340,9 @@ export default function AirForceCaseStudy() {
                   The four-role authority problem
                 </h3>
                 <p className="text-warm-900 font-medium leading-relaxed">
-                  Once the data model was clear, the real design problem emerged. Four different
-                  user types — Member, Supervisor, Unit Training Manager (UTM), and Education
-                  &amp; Development Specialist (EDS) — all acted on the same training record.
-                  Each with different permissions. Each seeing a different slice of the same
-                  data. Each whose action triggered a downstream state change for someone else.
+                  Four user types — Member, Supervisor, UTM, and EDS — all acted on the same
+                  training record, each with different permissions, a different slice of the
+                  data, and downstream consequences for everyone else.
                 </p>
                 <p className="text-warm-900 font-medium leading-relaxed mt-4">
                   The interesting design problem wasn&apos;t any individual screen. It was
@@ -395,6 +384,11 @@ export default function AirForceCaseStudy() {
           <p className="text-xs text-warm-400 mt-3 text-center">
             Supervisor view — the authority node where individual records become command-level data
           </p>
+        </section>
+
+        {/* ── Story card — links to the two-role scrollytelling experience ── */}
+        <section className="py-10">
+          <ETMSStoryCard />
         </section>
 
         {/* ── 03 — System Atoms (Visual System / Technical Deep-Dive) ──── */}
@@ -642,28 +636,11 @@ export default function AirForceCaseStudy() {
           </div>
         </section>
 
-        {/* ── 05 — Technical Constraints as Design Inputs ──────────────── */}
-        <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">05 — Technical Constraints as Design Inputs</p>
-          <p className="text-warm-900 font-medium leading-relaxed mb-8">
-            The technical environment wasn&apos;t a background condition — it was an
-            active design input. Understanding the constraints precisely is what allowed
-            us to design solutions that could actually be built.
-          </p>
 
-          <div className="space-y-4">
-            {technicalConstraints.map((item) => (
-              <div key={item.title} className="pl-5 border-l-2 border-warm-200 py-1">
-                <p className="text-sm font-semibold text-warm-800 mb-1">{item.title}</p>
-                <p className="text-sm text-warm-900 font-medium leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* ── 06 — The System, Not Just the Screens ────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">06 — The System, Not Just the Screens</p>
+          <p className="label mb-10">05 — The System, Not Just the Screens</p>
           <p className="text-warm-900 font-medium leading-relaxed mb-8">
             At Staff/Principal level, the deliverable isn&apos;t a set of screens —
             it&apos;s the system that makes the screens possible and the governance
@@ -682,7 +659,7 @@ export default function AirForceCaseStudy() {
 
         {/* ── 07 — Business Impact ─────────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
-          <p className="label mb-10">07 — Business Impact</p>
+          <p className="label mb-10">06 — Business Impact</p>
 
           <div className="space-y-0 mb-10">
             {impactItems.map((item, i) => (
@@ -730,49 +707,33 @@ export default function AirForceCaseStudy() {
               <div>
                 <p className="text-sm font-semibold text-warm-900 mb-1">Member</p>
                 <p className="text-sm text-warm-600 leading-relaxed">
-                  Owns their training record. Enrolls in classes, tracks status. When a course requires funding, the system automatically generates an SF-182 form — pre-populated with course and member data — and routes it for approval without manual entry.
+                  Enrolls in classes, tracks status. Funded courses auto-generate a pre-populated SF-182 routed for approval without manual entry.
                 </p>
               </div>
               <div>
                 <p className="text-sm font-semibold text-warm-900 mb-1">Supervisor</p>
                 <p className="text-sm text-warm-600 leading-relaxed">
-                  Approves class enrollment and SF-182 funding requests for their unit. The authority node where individual training records become command-level readiness data.
+                  Approves class enrollment and SF-182 requests. The node where individual records become command-level readiness data.
                 </p>
               </div>
               <div>
-                <p className="text-sm font-semibold text-warm-900 mb-1">UTM — Unit Training Manager</p>
+                <p className="text-sm font-semibold text-warm-900 mb-1">UTM</p>
                 <p className="text-sm text-warm-600 leading-relaxed">
-                  Manages the supply side. Class schedules, capacity, availability. Doesn&apos;t
-                  touch individual records.
+                  Manages supply: class schedules, capacity, availability. Doesn&apos;t touch individual records.
                 </p>
               </div>
               <div>
-                <p className="text-sm font-semibold text-warm-900 mb-1">EDS — Education &amp; Development Specialist</p>
+                <p className="text-sm font-semibold text-warm-900 mb-1">EDS</p>
                 <p className="text-sm text-warm-600 leading-relaxed">
-                  Manages the catalog. Course lifecycle, compliance requirements, institutional
-                  administration.
+                  Manages the catalog: course lifecycle, compliance requirements, institutional administration.
                 </p>
               </div>
             </div>
             <p className="text-sm text-warm-600 leading-relaxed pt-2 border-t border-warm-200">
-              Member and Supervisor were the primary design targets — where most users spent most of their time and where friction was most visible. UTM and EDS workflows were governance layers: high-stakes, low-frequency, designed for precision over speed.
-            </p>
-            <p className="text-sm text-warm-600 leading-relaxed pt-2">
-              The SF-182 flow connected all four roles automatically: a Member selects a funded course, the system pre-populates the form, the Supervisor approves, and higher authorities receive it for final sign-off. Once cleared, the Member&apos;s training record updates automatically. A workflow that was previously manual across three systems — handled end-to-end by the platform.
+              The SF-182 flow connected all four roles automatically: Member selects a funded course → system pre-populates the form → Supervisor approves → higher authorities sign off → training record updates. A workflow that was previously manual across three systems, handled end-to-end by the platform.
             </p>
           </div>
 
-          <div className="bg-warm-100 rounded-xl p-6 border border-warm-200">
-            <p className="label mb-3">Second-Order Outcomes</p>
-            <p className="text-sm text-warm-700 leading-relaxed">
-              The data model reconciliation pattern created during this project was
-              subsequently referenced in a separate platform modernization initiative
-              within the same organization — an unplanned reuse that validated the
-              architectural decision. The design system documentation standard became
-              the template for how the client team structured component libraries in
-              subsequent projects, an outcome well outside the original scope.
-            </p>
-          </div>
         </section>
 
 
