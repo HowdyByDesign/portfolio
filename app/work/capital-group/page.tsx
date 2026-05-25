@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import WalkthroughEmbed from "@/components/WalkthroughEmbed";
 
 export const metadata: Metadata = {
   title: { absolute: "Capital Group 401k Platform | Ben Howard" },
@@ -26,64 +27,60 @@ export const metadata: Metadata = {
 const constraints = [
   {
     title: "Three roles, zero differentiation",
-    body: "The same paper form was the interface for everyone — the business owner making a change once a year, the TPA managing compliance across multiple plans, and the Internal Associate processing updates daily. Each had completely different information needs, different action authority, and different stakes. The form treated them identically.",
+    body: "The same paper form was the interface for everyone — a business owner changing one field a year, a TPA managing compliance across multiple plans, an Internal Associate processing updates daily. The form treated them identically.",
   },
   {
     title: "Dual approval was non-negotiable",
-    body: "Both the TPA and Internal Associate were required to sign off on every plan change before it could be applied. This wasn't bureaucracy to design around — it was a compliance requirement baked into the product. The challenge was making that required two-party approval fast, visible, and not a bottleneck. It couldn't be eliminated. It had to be made intentional.",
+    body: "Both TPA and Internal Associate were required to sign off on every plan change — a compliance requirement, not bureaucracy to design around. It couldn't be eliminated. It had to be made intentional.",
   },
   {
     title: "No shared record, no shared visibility",
-    body: "Before the platform, there was no single place where a request lived. It existed as an email attachment, a scanned PDF, a phone call someone might or might not remember. Nobody knew where anything was in the approval chain without asking. The absence of a shared record was the root problem — everything else was downstream of that.",
+    body: "Before the platform, a request existed as an email attachment, a scanned PDF, a phone call someone might not remember. Nobody knew where anything was in the approval chain without asking. The absence of a shared record was the root problem.",
   },
 ];
 
 const sprintSummaries = [
   {
     label: "Sprint 01 — Business Owner",
-    body: "Replaced the 40-50 field form with a guided, step-by-step request flow. Business owners see only the fields relevant to their specific change type. Fewer fields, less confusion, fewer errors requiring phone reconciliation.",
+    body: "Replaced the 40-50 field form with a guided, step-by-step request flow. Business owners see only the fields relevant to their specific change type.",
   },
   {
     label: "Sprint 02 — Third Party Administrator",
-    body: "Designed a shared view into the plan record with the ability to review and approve change requests directly in the platform. The TPA role stays read-plus-approve — no direct edit access to a regulated record, but no more working entirely outside the system.",
+    body: "Shared view into the plan record with the ability to review and approve change requests directly in the platform. Read-plus-approve — no direct edit access to a regulated record.",
   },
   {
     label: "Sprint 03 — Internal Associate (Primary MVP)",
-    body: "The core deliverable. Organized 40-50 fields into tabbed sections: Plan Info, Contributions, Eligibility, Distributions, Admin. Both approvals — TPA and associate — now tracked in the same place. Iterated through multiple rounds of user testing with real associates.",
+    body: "The core deliverable. 40-50 fields organized into tabbed sections: Plan Info, Contributions, Eligibility, Distributions, Admin. Both approvals tracked in the same place.",
   },
 ];
 
 const hardPart = [
   {
     label: "The stated preference vs. the real need",
-    body: "Some associates pushed back on the tabbed layout — they wanted a single long page. When we asked why, the answer was specific: they used Cmd+F to jump directly to the field they needed. Tabbed navigation broke that behavior. Giving them a long page would have solved the stated preference and recreated the cognitive load problem. We gave them what they actually needed: a persistent search bar and a View All tab. The organized structure stayed intact. Power users got their speed back.",
+    body: "Associates pushed back on the tabbed layout — they wanted a single long page. When we asked why, the answer was specific: they used Cmd+F to jump to the field they needed. Tabbed navigation broke that behavior. We gave them what they actually needed: a persistent search bar and a View All tab. The organized structure stayed intact. Power users got their speed back.",
   },
   {
     label: "Earning trust through testing, not assertion",
-    body: "Associates who had processed paper forms for years knew every workaround in the existing system. The tabbed interface asked them to trust that the workarounds wouldn't be needed. That trust had to be earned. The Cmd+F finding was the inflection point — once we showed that we understood how they actually worked, and addressed it directly, resistance shifted to advocacy.",
+    body: "The Cmd+F finding was the inflection point. Once we showed we understood how they actually worked — and addressed it directly — resistance shifted to advocacy. The workarounds weren't needed. They just had to see it.",
   },
 ];
 
 const outcomes = [
   {
     metric: "Seven steps became one request",
-    detail:
-      "The phone call, the emailed form, the scan, the email back, the chased approvals, and the manual update — replaced by a single tracked request that all three parties act on in the same platform.",
+    detail: "The phone call, emailed form, scan, email back, chased approvals, and manual update — replaced by a single tracked request that all three parties act on in the same platform.",
   },
   {
     metric: "Speed and visibility were the same outcome",
-    detail:
-      "Before, nobody knew where a request was in the approval chain without picking up the phone. The platform didn't speed things up by cutting steps — it sped things up by making every step visible. When reviewers can see what's waiting and act without coordination overhead, the required approval chain stops feeling like a bottleneck.",
+    detail: "The platform didn't speed things up by cutting steps — it sped things up by making every step visible. When reviewers can see what's waiting, the required approval chain stops feeling like a bottleneck.",
   },
   {
     metric: "The compliance requirement became a feature",
-    detail:
-      "The dual TPA and Internal Associate approval was non-negotiable. In the paper process, it was invisible friction. In the platform, it became an explicit, trackable workflow state. Plan sponsors could see their request was in review. Associates could see what needed action. The requirement didn't change. The experience of it did.",
+    detail: "Dual approval was non-negotiable. In the paper process it was invisible friction. In the platform it became an explicit, trackable workflow state. The requirement didn't change. The experience of it did.",
   },
   {
     metric: "MVP shipped · feedback in hand",
-    detail:
-      "Launched with real associates. Post-launch feedback captured and grounded in actual usage — a better foundation for phase two than any pre-launch assumption.",
+    detail: "Launched with real associates. Post-launch feedback grounded in actual usage — a better foundation for phase two than any pre-launch assumption.",
   },
 ];
 
@@ -205,10 +202,10 @@ export default function CapitalGroupCaseStudy() {
 
           <div className="mb-10">
             <p className="text-warm-900 font-medium leading-relaxed mb-4">
-              The ask was straightforward: modernize a dated internal tool used to file and update Small Business 401k plans. But mapping the actual workflow made the real problem visible fast.
+              The ask was to modernize a dated internal tool. Mapping the actual workflow made the real problem visible fast.
             </p>
             <p className="text-warm-900 font-medium leading-relaxed">
-              Say a business owner calls to add a new employee. The associate emails a paper form — all 40-50 fields, regardless of what needs to change. The owner fills in the one relevant field, scans the entire form, emails it back. From there, both the TPA and the Internal Associate need to review and sign off — in parallel, both required — before anything gets applied. Once both approvals land, the associate manually updates the system.
+              Adding one employee: associate emails the full 40-50 field form → owner fills in the one relevant field → scans everything → emails it back → TPA and Internal Associate both review and sign off in parallel → associate manually updates the system. Seven steps. No visibility into where any of it stood.
             </p>
           </div>
 
@@ -234,7 +231,7 @@ export default function CapitalGroupCaseStudy() {
           </h2>
 
           <p className="text-warm-900 font-medium leading-relaxed mb-10">
-            We ran a series of design sprints, one per role. Each sprint was its own contained design problem. The approach let us build purpose-built interfaces for each user type — all acting on the same underlying record — without losing sight of the shared platform they needed to create.
+            One sprint per role. Each a contained design problem. Purpose-built interfaces for each user type — all acting on the same underlying record.
           </p>
 
           <div className="space-y-4 mb-10">
@@ -279,7 +276,7 @@ export default function CapitalGroupCaseStudy() {
               The approval workflow was a constraint, not a choice
             </p>
             <p className="text-warm-300 leading-relaxed">
-              The TPA and Internal Associate both had to approve every plan change — in parallel, both required. That wasn&apos;t going away. What we could change was how it happened. Instead of a request disappearing into an email chain and resurfacing whenever someone remembered to follow up, every change request now lived in the platform. Both reviewers were notified simultaneously, could see the same record, and acted on the same request. The approval chain stayed intact. The chaos around it was gone.
+              Both TPA and Internal Associate approval on every plan change — in parallel, both required. That wasn&apos;t going away. What changed: instead of a request disappearing into an email chain, it lived in the platform. Both reviewers notified simultaneously, acting on the same record. The approval chain stayed intact. The chaos around it was gone.
             </p>
           </div>
         </section>
@@ -332,15 +329,15 @@ export default function CapitalGroupCaseStudy() {
             {[
               {
                 title: "Tabs as primary navigation, search as power-user escape hatch",
-                body: "The tabbed structure — Plan Info, Contributions, Eligibility, Distributions, Admin — maps to how 401k plans are structured as documents. Associates can build a mental model quickly. The search bar resolves the navigation problem for experienced users without dismantling the structure.",
+                body: "The tabbed structure maps to how 401k plans are structured as documents — Plan Info, Contributions, Eligibility, Distributions, Admin. Associates build a mental model quickly. The search bar handles experienced users without dismantling the structure.",
               },
               {
                 title: "The View All tab as deliberate pressure valve",
-                body: "Rather than fighting the preference for a long page, we accommodated it explicitly. View All mode gives associates the ability to drop into an unfiltered view for complex changes touching multiple sections, or for senior associates who have internalized the full field set.",
+                body: "Rather than fighting the long-page preference, we accommodated it explicitly. View All drops into an unfiltered view for complex changes or senior associates who have internalized the full field set.",
               },
               {
                 title: "The entire IA shifts by role, not just the permissions",
-                body: "A Business Owner sees only fields relevant to their change request. An Internal Associate sees the full record with workflow context — pending requests, change history, validation status. Same underlying data. Completely different frames.",
+                body: "Business Owner: only the fields relevant to their change. Internal Associate: full record with workflow context — pending requests, change history, validation status. Same data. Completely different frames.",
               },
             ].map((item) => (
               <div
@@ -352,6 +349,18 @@ export default function CapitalGroupCaseStudy() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ── Walkthrough ──────────────────────────────────────────────── */}
+        <section className="py-16 border-b border-warm-100">
+          <p className="label mb-3">The Flow in Motion</p>
+          <h2 className="font-display text-h2 font-semibold text-warm-900 mb-4 leading-tight">
+            From change request to approved.
+          </h2>
+          <p className="text-warm-600 text-[1.0625rem] leading-relaxed mb-8">
+            Business owner initiates a change, it routes through the platform, and both the TPA and Internal Associate approve — in parallel, tracked the whole way.
+          </p>
+          <WalkthroughEmbed />
         </section>
 
         {/* ── 05 — Outcomes ─────────────────────────────────────────────── */}
