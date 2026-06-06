@@ -33,34 +33,34 @@ const meta = [
 const constraints = [
   {
     title: "8 hours per report, 50 clients",
-    body: `Each monthly client report required up to 8 hours of manual Excel work — data entry, formatting, chart creation, and export. With 50 active clients, that was 400 hours of error-prone effort every month before a single insight reached a client.`,
+    body: `Up to 8 hours of manual Excel work per report — data entry, formatting, export. Across 50 clients: 400 error-prone hours every month before a single insight reached a client.`,
   },
   {
     title: "Inconsistent templates across the company",
-    body: `There was no single report standard. Each account manager maintained their own Excel file with their own structure, meaning clients received different-looking reports depending on who handled their account — a quality and trust problem, not just a time problem.`,
+    body: `No single report standard. Each account manager's own Excel file, their own structure. Clients received different-looking reports depending on who handled their account.`,
   },
   {
     title: "No live data connection",
-    body: `All data was pulled manually from ad platforms and pasted into spreadsheets. There was no API integration, no version control, and no audit trail. A single copy-paste error could silently corrupt a client's performance numbers.`,
+    body: `Data pulled manually from ad platforms and pasted into spreadsheets. No API integration, no version control, no audit trail. A single copy-paste error could silently corrupt a client's numbers.`,
   },
   {
     title: "Reporting consumed strategist capacity",
-    body: `The people most capable of turning data into insight — the marketing strategists — were spending the bulk of their monthly cycle doing data entry. The reporting process was cannibalizing the work the reports were supposed to enable.`,
+    body: `The people most capable of turning data into insight were spending their month on data entry. The reporting process was cannibalizing the work the reports were supposed to enable.`,
   },
 ];
 
 const hardPart = [
   {
     label: "The resistance",
-    body: `Our Head of Marketing championed the new tool, but some team members quietly ran the old Excel process in parallel — comparing numbers until they fully trusted the data. Rather than forcing a hard cutover, we let the dashboard prove itself. That dual-use period became an unexpected validation phase. When the numbers matched consistently over three cycles, adoption accelerated on its own.`,
+    body: `Some team members quietly ran the old Excel process in parallel — comparing numbers until they trusted the data. We let the dashboard prove itself instead of forcing a cutover. That dual-use period became a validation phase. When numbers matched consistently over three cycles, adoption accelerated on its own.`,
   },
   {
     label: `The prototype that looked "too familiar"`,
-    body: `My first prototype validated splitting reports into views by funnel stage. But users flagged immediately that it looked and felt too much like the old Excel report — same visual language, same cognitive pattern. That was well-noted feedback. We had redesigned the data model but hadn't redesigned the experience. The second round addressed layout, color system, and navigation before it went to client testing.`,
+    body: `My first prototype was functionally correct but looked too much like the old Excel report — same visual language, same cognitive pattern. We had redesigned the data model but not the experience. The second round addressed layout, color system, and navigation before it went to client testing.`,
   },
   {
     label: "The KPI negotiation",
-    body: `Every team had a different opinion on which metrics belonged on each view. The workshop process was essential here — not to reach consensus by committee, but to surface the underlying disagreement about what "performance" actually meant across channels. Once we had that conversation explicitly, the KPI prioritization became a product decision rather than a political one.`,
+    body: `Every team had a different opinion on which metrics belonged on each view. The workshop process surfaced the underlying disagreement about what "performance" meant across channels. Once that conversation happened explicitly, KPI prioritization became a product decision rather than a political one.`,
   },
 ];
 
@@ -82,23 +82,23 @@ const dashboardFeatures = [
 const impactItems = [
   {
     metric: "30+ hours reclaimed",
-    detail: `Per strategist, per month. Not hours saved on a spreadsheet — hours returned to campaign strategy, client storytelling, and the analysis the reports were supposed to enable in the first place.`,
+    detail: `Per strategist, per month — returned to campaign strategy, client storytelling, and the analysis the reports were supposed to enable.`,
   },
   {
     metric: "400 hrs/mo — eliminated",
-    detail: `Four hundred hours of manual Excel work removed from the monthly cycle across 50 clients. Every hour that was being silently lost to data entry is now billable capacity.`,
+    detail: `Four hundred hours of manual Excel work removed from the monthly cycle across 50 clients. Now billable capacity.`,
   },
   {
     metric: "40 adopters across 5 teams",
-    detail: `Rolled out to 40 individuals across 5 internal teams, starting with 3 beta testers. The adoption curve was steep once the parallel validation period resolved — no mandate required.`,
+    detail: `Rolled out across 5 internal teams starting with 3 beta testers. Steep adoption curve once the parallel validation period resolved — no mandate required.`,
   },
   {
     metric: "One report, company-wide",
-    detail: `A single standardized report template replaced the inconsistent Excel patchwork. Every client now receives the same structure, same visual language, and the same quality floor regardless of account manager.`,
+    detail: `A single standardized template replaced the inconsistent Excel patchwork. Every client receives the same structure and quality floor regardless of account manager.`,
   },
   {
     metric: "Reactive → proactive",
-    detail: `Real-time, shareable reports shifted the team's relationship with data from reactive entry to proactive storytelling. Strategists could pull a live view during a client call rather than scheduling a reporting cycle.`,
+    detail: `Real-time shareable reports shifted the team from reactive data entry to proactive storytelling — pulling a live view during a client call rather than scheduling a reporting cycle.`,
   },
 ];
 
@@ -236,20 +236,16 @@ export default function DcmnCaseStudy() {
               <h3 className="text-sm font-semibold text-warm-700 mb-2">The organization</h3>
               <p className="text-warm-900 font-medium leading-relaxed">
                 DCMN is a performance marketing agency specializing in offline channels —
-                TV, audio, out-of-home — for growth-stage companies. The business model
-                depends on demonstrating measurable channel performance to clients every
-                month. The reporting process was the primary mechanism for that
-                demonstration. It was broken.
+                TV, audio, out-of-home — for growth-stage companies. Monthly client reporting
+                was the primary mechanism for demonstrating channel performance. The process was broken.
               </p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">The target user</h3>
               <p className="text-warm-900 font-medium leading-relaxed">
-                Janine — a senior marketing strategist and our primary target user — put it
-                plainly: a single client report could consume a full working day, and at
-                the start of each month, she had up to five clients expecting reports
-                simultaneously. This was not an edge case. It was the standard experience
-                for every account manager on the offline marketing teams.
+                Janine — a senior marketing strategist — put it plainly: a single client report
+                could consume a full working day, and at the start of each month she had up to
+                five clients expecting reports simultaneously.
               </p>
             </div>
           </div>
@@ -323,12 +319,10 @@ export default function DcmnCaseStudy() {
                     Co-creation strategy sessions as the engine
                   </h3>
                   <p className="text-warm-900 font-medium leading-relaxed">
-                    I orchestrated weekly co-creation strategy sessions via Miro with the
-                    product team and internal users throughout the engagement. These weren&apos;t
-                    status meetings — they were structured alignment sessions where we audited
-                    the current reports together, synthesized competing views on what data
-                    mattered, and built stakeholder consensus on the information architecture
-                    of the new system before a single component was designed.
+                    Weekly co-creation sessions via Miro throughout the engagement — not status
+                    meetings, but structured alignment sessions where we audited existing reports,
+                    synthesized competing views on what data mattered, and built consensus on
+                    the information architecture before a single component was designed.
                   </p>
                 </div>
 
@@ -337,12 +331,10 @@ export default function DcmnCaseStudy() {
                     Auditing what existed — before designing anything new
                   </h3>
                   <p className="text-warm-900 font-medium leading-relaxed">
-                    Before committing to a direction, I audited the existing reports and
-                    catalogued the most common data points across all client accounts. The
-                    audit revealed that roughly 70% of the content was consistent — the
-                    inconsistency was in structure, not substance. That meant standardization
-                    was viable by leveraging what already existed. The data model could be
-                    implemented before the UI was designed.
+                    I audited existing reports and catalogued data points across all client accounts.
+                    Roughly 70% of content was consistent — the inconsistency was in structure, not
+                    substance. Standardization was viable. The data model could be implemented before
+                    the UI was designed.
                   </p>
                 </div>
               </div>
@@ -508,18 +500,16 @@ export default function DcmnCaseStudy() {
         <section className="py-16">
           <p className="label mb-8">07 — What I&apos;d Do Differently</p>
           <p className="text-warm-900 font-medium leading-relaxed mb-4">
-            I would have built the parallel validation period into the rollout plan
-            intentionally rather than discovering it emergently. The insight — that letting
-            teams self-verify accelerates adoption more than a hard cutover — was real and
-            useful, but we stumbled into it. A planned transition protocol would have been
-            faster and less anxious for the team members running dual systems.
+            I would have built the parallel validation period into the rollout plan intentionally
+            rather than stumbling into it. Letting teams self-verify accelerates adoption more
+            than a hard cutover — that insight was real, but we discovered it emergently. A
+            planned transition protocol would have been faster and less anxious for the team.
           </p>
           <p className="text-warm-900 font-medium leading-relaxed">
-            I would also have pushed earlier for a client-facing version of the dashboard.
-            We built for internal users first, and the shareable reporting capability was
-            partially retrofitted. The client interaction model — exploring data live in a
-            call — was the most valuable behavioral shift that came out of this project,
-            and it deserved to be a design brief in its own right from the start.
+            I would also have pushed earlier for a client-facing version. The shareable
+            reporting capability was partially retrofitted — but the client interaction model
+            (exploring data live in a call) was the most valuable shift in the whole project.
+            It deserved to be a design brief from the start.
           </p>
         </section>
 

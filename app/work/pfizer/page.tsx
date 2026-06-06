@@ -32,53 +32,53 @@ const metaBar = [
 const constraints = [
   {
     title: `Regulatory environment that doesn't move as fast as the technology`,
-    body:  `Every piece of pharmaceutical marketing copy requires review against brand guidelines, regulatory standards, and medical-legal approval processes. A Gen AI tool that generates content faster than it can be reviewed creates compliance risk, not efficiency. The design had to accommodate the review workflow as a first-class feature — not an afterthought.`,
+    body:  `Every piece of pharmaceutical marketing copy requires medical-legal review. A Gen AI tool that generates content faster than it can be reviewed creates compliance risk, not efficiency. The review workflow had to be a first-class design feature — not an afterthought.`,
   },
   {
     title: `Marketers who didn't trust the output`,
-    body:  `Pfizer's marketing teams are experts at copy. They arrive at pitches with 3–5 carefully developed ideas. Asking them to use AI-generated content meant asking them to stake their professional judgment on output they couldn't fully verify. The adoption problem wasn't technological — it was about trust in a system whose accuracy they had no way to independently evaluate.`,
+    body:  `Pfizer marketers arrive at pitches with 3–5 carefully developed ideas. Using AI-generated content meant staking professional judgment on output they couldn't verify. The adoption problem wasn't technological — it was trust in a system whose accuracy they had no way to independently evaluate.`,
   },
   {
     title: `Brand-specific language across multiple pharmaceutical brands`,
-    body:  `Pfizer operates dozens of pharmaceutical brands, each with its own approved language, tone, and regulatory constraints. The tool couldn't be a generic text generator — it had to produce output that was brand-appropriate and defensible inside Pfizer's review process.`,
+    body:  `Dozens of pharmaceutical brands, each with its own approved language, tone, and regulatory constraints. The tool couldn't be a generic text generator — output had to be brand-appropriate and defensible inside Pfizer's review process.`,
   },
   {
     title: `Scalable MVP under active feature expansion`,
-    body:  `The initial brief covered copy generation, translation, and image generation. The roadmap included significantly more. The architecture of the UI — layout, navigation, component structure — had to accommodate features that hadn't been scoped yet without requiring a redesign each time one shipped.`,
+    body:  `The brief covered copy generation, translation, and image generation — with significantly more on the roadmap. The UI architecture had to accommodate features that hadn't been scoped yet without requiring a redesign each time one shipped.`,
   },
 ];
 
 const mvpFeatures = [
   {
     feature: `Copy generation`,
-    detail:  `Brand-specific marketing copy for web banners, emails, and advertisements — generated from parameter inputs and evaluated against brand guidelines.`,
+    detail:  `Brand-specific copy for web banners, emails, and advertisements — generated from parameter inputs, evaluated against brand guidelines.`,
   },
   {
     feature: `Translation`,
-    detail:  `Workflow for translating generated content across markets, with error-handling for post-generation translation failures and user feedback mechanisms.`,
+    detail:  `Post-generation translation across markets, with error-handling for translation failures and feedback capture.`,
   },
   {
     feature: `Image generation & regeneration`,
-    detail:  `Image selection and generation workflow, designed as wireframes to accommodate the interaction model for visual content within the same generation context.`,
+    detail:  `Image selection and generation workflow, designed as wireframes within the same generation context as copy.`,
   },
 ];
 
 const designDecisions = [
   {
     title: `Dual-panel layout built for future features`,
-    body:  `The core screen uses a right panel for Gen AI inputs, filters, and generation controls — and a left side panel for user context, settings, and menu items that don't exist yet. The left rail was designed explicitly as a future feature slot, so every new capability has a home without restructuring the primary workspace.`,
+    body:  `Right panel for Gen AI inputs and generation controls. Left rail designed explicitly as a future feature slot — every new capability has a home without restructuring the primary workspace.`,
   },
   {
     title: `Parameters visible at output time`,
-    body:  `Generated content is shown alongside a text description of the parameters that produced it — brand, tone, format, constraints. This was a trust decision: marketers needed to see not just what was generated, but why, so they could evaluate output against the inputs rather than judging content in a vacuum.`,
+    body:  `Generated content shown alongside the parameters that produced it — brand, tone, format, constraints. Marketers needed to see not just what was generated, but why, before they could defend it in a review meeting.`,
   },
   {
     title: `Feedback capture as a first-class feature`,
-    body:  `Detailed feedback mechanisms for generated content and translation were built in from the start — not as a product analytics play, but as a mechanism for improving the language model with real pharmaceutical marketing data. The loop between user judgment and model improvement was a design requirement, not an engineering afterthought.`,
+    body:  `Feedback mechanisms built in from the start — not as a product analytics play, but to improve the language model with real pharmaceutical marketing data. The loop between user judgment and model improvement was a design requirement, not an afterthought.`,
   },
   {
     title: `Design–engineering bridge on generation constraints`,
-    body:  `Leveraged direct collaboration with developers to translate engineering constraints into interaction design decisions: generation attempt limits, duplicate content handling, and content saving behavior. These weren't edge cases — they were load-bearing behaviors in a regulated environment where every generated output is a potential compliance artifact.`,
+    body:  `Generation attempt limits, duplicate content handling, content saving behavior — engineering constraints that arrived mid-design and each required a full design response. Load-bearing behaviors in a regulated environment where every output is a potential compliance artifact.`,
   },
 ];
 
@@ -181,14 +181,10 @@ export default function PfizerCaseStudy() {
             that doesn&apos;t move as fast as the technology.&quot;
           </p>
           <p className="mt-6 text-warm-900 font-medium leading-relaxed">
-            I orchestrated the UX architecture for Pfizer&apos;s generative AI
-            marketing platform — leveraging cross-functional alignment across
-            marketing, regulatory, and engineering stakeholders to implement a
-            shared definition of &quot;trustworthy AI output&quot; inside a
-            pharmaceutical review workflow. The real project was institutional:
-            reframing AI adoption resistance as a transparency design problem,
-            not a training problem, and standardizing that framing across teams
-            before a line of production code shipped.
+            I orchestrated the UX architecture for Pfizer&apos;s generative AI marketing platform.
+            The real project was institutional: reframing AI adoption resistance as a transparency
+            design problem — not a training problem — and standardizing that framing across
+            marketing, regulatory, and engineering before a line of production code shipped.
           </p>
 
           <div className="mt-10 rounded-xl overflow-hidden border border-warm-200">
@@ -213,24 +209,18 @@ export default function PfizerCaseStudy() {
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">The organization</h3>
               <p className="text-warm-900 font-medium leading-relaxed">
-                Pfizer&apos;s marketing teams develop brand-specific content for
-                pharmaceutical products across multiple channels and global
-                markets. Content must pass through medical-legal review and comply
-                with pharmaceutical advertising regulations. The business case for
-                Gen AI was efficiency — the design problem was making that
-                efficiency trustworthy.
+                Pfizer&apos;s marketing teams develop brand-specific content across multiple
+                channels and global markets. Content must pass medical-legal review and comply
+                with pharmaceutical advertising regulations. The business case for Gen AI was
+                efficiency — the design problem was making that efficiency trustworthy.
               </p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-2">My role</h3>
               <p className="text-warm-900 font-medium leading-relaxed">
-                Systems architect and lead UX strategist responsible for orchestrating
-                cross-functional alignment across marketing, regulatory, and engineering
-                stakeholders. I developed the customer experience blueprint, synthesized
-                competing stakeholder needs into a unified adoption strategy, and led
-                the co-creation strategy sessions that produced the "Idea Accelerator"
-                reframe — repositioning AI adoption as a shared organizational goal
-                rather than a top-down mandate.
+                Lead UX strategist — developed the customer experience blueprint, synthesized
+                competing stakeholder needs into a unified adoption strategy, and led the
+                co-creation sessions that produced the &ldquo;Idea Accelerator&rdquo; reframe.
               </p>
             </div>
           </div>
@@ -265,13 +255,11 @@ export default function PfizerCaseStudy() {
                     Reframing adoption resistance as a design problem
                   </h3>
                   <p className="text-warm-900 font-medium leading-relaxed">
-                    The initial framing of low AI adoption was a change management
-                    problem — resistant users who needed training and persuasion. The
-                    actual problem was a design failure: the system gave users no
-                    basis for trusting its output. A marketer who can&apos;t explain
-                    why a piece of copy was generated the way it was can&apos;t
-                    defend it in a review meeting. That&apos;s not a training gap.
-                    That&apos;s a transparency gap in the interface.
+                    Low AI adoption was framed as a change management problem — resistant users
+                    needing training. The actual problem was a design failure: the system gave
+                    users no basis for trusting its output. A marketer who can&apos;t explain
+                    why copy was generated the way it was can&apos;t defend it in a review
+                    meeting. That&apos;s not a training gap. That&apos;s a transparency gap.
                   </p>
                 </div>
 
@@ -280,12 +268,9 @@ export default function PfizerCaseStudy() {
                     Positioning Gen AI as an Idea Accelerator, not a replacement
                   </h3>
                   <p className="text-warm-900 font-medium leading-relaxed">
-                    Pharmaceutical marketers typically develop 3–5 copy concepts to
-                    pitch. The reframe that unlocked adoption: Gen AI as a tool that
-                    generates the same volume of initial concepts in minutes, leaving
-                    human judgment — which is irreplaceable in regulated
-                    communications — for evaluation and refinement rather than first
-                    draft generation. The tool doesn&apos;t replace the marketer.
+                    Marketers develop 3–5 copy concepts per pitch. The reframe: Gen AI
+                    generates that same volume in minutes, leaving human judgment — irreplaceable
+                    in regulated communications — for evaluation rather than first drafts.
                     It front-loads the work the marketer was least good at.
                   </p>
                 </div>
@@ -428,10 +413,9 @@ export default function PfizerCaseStudy() {
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-3">Starting with the user journey</h3>
               <p className="text-warm-900 font-medium leading-relaxed">
-                Before wireframing, I mapped the user journey against the business
-                requirements and MVP features — not as a deliverable but as a
-                guide that was updated throughout the engagement as features were
-                added and scoped. This prevented the workflow design from locking
+                Mapped the user journey against business requirements and MVP features before
+                wireframing — not as a deliverable but as a guide updated throughout the
+                engagement as features were added. This prevented workflow design from locking
                 in too early around a feature set that was actively changing.
               </p>
             </div>
@@ -439,24 +423,19 @@ export default function PfizerCaseStudy() {
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-3">Sketching → wireframes → prototype</h3>
               <p className="text-warm-900 font-medium leading-relaxed">
-                Initial layouts for the copy generation workflow were sketched
-                first, then translated to black-and-white wireframes for
-                structured feedback before any visual design decisions were made.
-                This kept early feedback on the workflow and information
-                architecture rather than aesthetics. The wireframes were then
-                iterated through user testing cycles with Pfizer marketing teams.
+                Sketches first, then black-and-white wireframes before any visual decisions —
+                keeping early feedback on workflow and information architecture rather than
+                aesthetics. Iterated through user testing cycles with Pfizer marketing teams.
               </p>
             </div>
 
             <div>
               <h3 className="text-sm font-semibold text-warm-700 mb-3">Co-creation strategy sessions with stakeholders</h3>
               <p className="text-warm-900 font-medium leading-relaxed">
-                Co-creation strategy sessions with stakeholders across multiple
-                Pfizer teams were held at regular intervals — not to present
-                completed work, but to synthesize competing perspectives before
-                they hardened into blockers. In a regulated environment, surfacing
-                compliance and brand constraints upstream is itself a strategic
-                outcome, not a process step.
+                Regular sessions across multiple Pfizer teams — not to present completed work,
+                but to synthesize competing perspectives before they hardened into blockers.
+                In a regulated environment, surfacing compliance constraints upstream is itself
+                a strategic outcome.
               </p>
             </div>
           </div>
@@ -514,13 +493,12 @@ export default function PfizerCaseStudy() {
                 The trust problem
               </p>
               <p className="text-warm-300 leading-relaxed">
-                Early user testing revealed that marketers weren&apos;t rejecting
-                the generated copy because it was bad — they were rejecting the
-                process of using it because they couldn&apos;t explain to their
-                reviewers why it said what it said. The output quality wasn&apos;t
-                the barrier. Auditability was. The entire transparency layer of
-                the interface — parameter display, generation history, feedback
-                capture — emerged from this finding, not the original brief.
+                Marketers weren&apos;t rejecting the generated copy because it was bad —
+                they were rejecting it because they couldn&apos;t explain to reviewers
+                why it said what it said. Output quality wasn&apos;t the barrier.
+                Auditability was. The entire transparency layer — parameter display,
+                generation history, feedback capture — emerged from this finding,
+                not the original brief.
               </p>
             </div>
 
@@ -546,12 +524,10 @@ export default function PfizerCaseStudy() {
                 </div>
               </div>
               <p className="text-warm-400 text-sm leading-relaxed">
-                The language &ldquo;Idea Accelerator&rdquo; came out of a stakeholder
-                workshop. It wasn&apos;t a marketing line — it was the framing that
-                finally made the tool feel safe to use. Marketers had been trained
-                that their value was their ideas. Positioning Gen AI as a tool that
-                expands ideation volume rather than replacing ideation entirely was
-                the design and change management intervention that moved adoption.
+                &ldquo;Idea Accelerator&rdquo; came from a stakeholder workshop — not a
+                marketing line. It was the framing that made the tool feel safe to use.
+                Positioning Gen AI as expanding ideation volume rather than replacing it
+                was the intervention that moved adoption.
               </p>
             </div>
 
@@ -561,15 +537,12 @@ export default function PfizerCaseStudy() {
                 Designing around constraints I didn&apos;t control
               </p>
               <p className="text-warm-300 leading-relaxed">
-                Generation attempt limits, duplicate content handling, and content
-                saving behavior were all engineering constraints that arrived
-                mid-design. Each one required a design response — how do you show
-                a user they&apos;ve reached their generation limit in a way that
-                feels intentional rather than broken? How do you handle similar
-                outputs without making the system feel repetitive? These
-                constraint-to-design translations were some of the most
-                precise problems in the project and weren&apos;t in the
-                original scope.
+                Generation attempt limits, duplicate content handling, content saving
+                behavior — all engineering constraints that arrived mid-design, each
+                requiring a full design response. How do you show a user they&apos;ve
+                hit their generation limit in a way that feels intentional rather than
+                broken? These constraint-to-design translations were some of the most
+                precise problems in the project.
               </p>
             </div>
           </div>
@@ -645,13 +618,6 @@ export default function PfizerCaseStudy() {
         {/* ── Section 07 — MVP Feature Set ─────────────────────────────────── */}
         <section className="py-16 border-b border-warm-100">
           <p className="label mb-10">07 — MVP Feature Set</p>
-          <p className="text-warm-900 font-medium leading-relaxed mb-8">
-            The MVP was scoped to establish the core generation workflow and
-            layout system before expanding. Each feature was designed not just
-            for its own workflow but for how it would coexist with future
-            features in the same interface.
-          </p>
-
           <div className="space-y-3">
             {mvpFeatures.map((item) => (
               <div
@@ -673,22 +639,19 @@ export default function PfizerCaseStudy() {
             <div className="p-5 rounded-lg border border-warm-200 bg-warm-50">
               <p className="text-sm font-semibold text-warm-800 mb-1">MVP delivered for beta onboarding</p>
               <p className="text-sm text-warm-900 font-medium leading-relaxed">
-                The complete MVP workflow — copy generation, translation, image
-                selection — was delivered and prepared for the first set of beta
-                testers. The flexible layout system means new features can ship
-                into the existing interface without redesign.
+                Copy generation, translation, and image selection — delivered and prepared
+                for beta testers. Flexible layout means new features ship into the existing
+                interface without redesign.
               </p>
             </div>
 
             <div className="p-5 rounded-lg border border-warm-200 bg-warm-50">
               <p className="text-sm font-semibold text-warm-800 mb-1">Institutional alignment around a new way of working</p>
               <p className="text-sm text-warm-900 font-medium leading-relaxed">
-                The Idea Accelerator reframe achieved institutional alignment across
-                marketing, regulatory, and leadership stakeholders — making adoption
-                a shared goal rather than a top-down mandate. The transparency layer
-                — parameter display, generation history, feedback capture — gave
-                marketers the auditability they needed to defend generated outputs
-                inside Pfizer&apos;s existing review workflow.
+                The Idea Accelerator reframe aligned marketing, regulatory, and leadership
+                stakeholders — making adoption a shared goal rather than a top-down mandate.
+                The transparency layer gave marketers the auditability to defend generated
+                outputs inside Pfizer&apos;s existing review workflow.
               </p>
             </div>
 
